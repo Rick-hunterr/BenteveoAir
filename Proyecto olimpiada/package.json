@@ -1,0 +1,28 @@
+{
+  "name": "proyecto-olimpiada",
+  "version": "1.0.0",
+  "description": "Proyecto BenteveoAir para la Olimpiada de Programación",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rick-hunterr/BenteveoAir.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rick-hunterr/BenteveoAir/issues"
+  },
+  "homepage": "https://github.com/Rick-hunterr/BenteveoAir#readme",
+  "author": "Pablo Santellán",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
