@@ -55,4 +55,4 @@ El proyecto fue planificado con una duración de 8 días, iniciando el 27 de jun
 
 ---
 ##Diagrama Base de datos
-![Diagrama](Diagrama de la base de datos.png)
+![Diagrama](Diagrama-de-la-base-de-datos.png)
