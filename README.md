@@ -1,7 +1,3 @@
-![BenteveoAir](Diagrama_de_Gantt_Proyecto_BenteveoAir.png)
-
-
-
 # BenteveoAir – Sistema de Reserva de Vuelos Web
 
 > Proyecto desarrollado por estudiantes de 7ºI para la gestión de reservas de vuelos en línea de forma rápida, intuitiva y moderna.
@@ -53,6 +49,10 @@ Este proyecto simula un sistema completo de reserva de vuelos, incluyendo interf
 
 El proyecto fue planificado con una duración de 8 días, iniciando el 27 de junio de 2025 y finalizando el 4 de julio de 2025.
 
-El diagrama de Gantt se encuentra disponible en el repositorio como archivo PNG.
+![BenteveoAir](Diagrama_de_Gantt_Proyecto_BenteveoAir.png)
 
 ---
+
+---
+##Diagrama Base de datos
+![Diagrama](Diagrama de la base de datos.png)
