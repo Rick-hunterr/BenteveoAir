@@ -66,7 +66,7 @@ Para gestionar mis viajes de forma sencilla desde la web y recibir confirmación
 | Nombre                   | Rol                  |
 |--------------------------|-----------------------|
 | Pablo Daniel Santellán   | Líder de Proyecto     |
-| Axel Zavaleta            | Programador Principal |
+| Axel Zavaleta            | Programador           |
 | Esteban Terrazas         | Analista de Datos     |
 | Valentina Bernasconi     | Diseñadora Gráfica    |
 
