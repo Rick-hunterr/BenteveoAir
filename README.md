@@ -1,3 +1,7 @@
+![BenteveoAir](Diagrama_de_Gantt_Proyecto_BenteveoAir.png)
+
+
+
 # BenteveoAir – Sistema de Reserva de Vuelos Web
 
 > Proyecto desarrollado por estudiantes de 7ºI para la gestión de reservas de vuelos en línea de forma rápida, intuitiva y moderna.
