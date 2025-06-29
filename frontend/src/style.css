@@ -2,6 +2,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-default-black: #1c1c1c;
+  --color-default-dark: #1c1c1c;
+  --color-default-light: #ebebeb;
+  --color-dark-blue: #101426;
+
   --font-manrope: "Manrope", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-open-sans: "Open Sans", sans-serif;
+
+  --container-8xl: 1440px;
 }

@@ -8,7 +8,7 @@
 </head>
 <body>
   
-  <header class="w-full shadow-md flex justify-center items-center text-sm font-manrope font-medium text-default-black">
+  <header class="z-100 w-full shadow-md flex justify-center items-center text-sm font-manrope font-medium text-default-dark">
     <div class="container w-full max-w-7xl py-3 px-5 flex justify-between items-center">
       <div class="flex items-center gap-24">
         <div class="logo flex items-center gap-4">
@@ -23,18 +23,18 @@
 
         <div>
           <ul class="flex gap-12">
-            <li><a class="cursor-pointer hover:text-default-black/85" href="#home">Inicio</a></li>
-            <li><a class="cursor-pointer hover:text-default-black/85" href="#reservation">Reservación</a></li>
-            <li><a class="cursor-pointer hover:text-default-black/85" href="#flights">Viajes</a></li>
-            <li><a class="cursor-pointer hover:text-default-black/85" href="#about-us">Nosotros</a></li>
-            <li><a class="cursor-pointer hover:text-default-black/85" href="#talk-to-us">Hablanos</a></li>
+            <li><a class="cursor-pointer hover:text-default-dark/80" href="#home">Inicio</a></li>
+            <li><a class="cursor-pointer hover:text-default-dark/80" href="#reservation">Reservación</a></li>
+            <li><a class="cursor-pointer hover:text-default-dark/80" href="#flights">Viajes</a></li>
+            <li><a class="cursor-pointer hover:text-default-dark/80" href="#about-us">Nosotros</a></li>
+            <li><a class="cursor-pointer hover:text-default-dark/80" href="#talk-to-us">Hablanos</a></li>
           </ul>
         </div>
       </div>
 
       <div>
         <div class="flex gap-6">
-          <button class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer">Iniciar sesion</button>
+          <button class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">Iniciar sesion</button>
           
           <button onclick="showBoxList()" class="relative flex items-center cursor-pointer">
             <img class="w-5 h-fit" src="src/assets/argentina-bandera.svg" alt="argentina">
@@ -45,7 +45,7 @@
               </svg>
             </span>
 
-            <div id="languages-list" class="absolute opacity-0 bg-red-500 h-[100px] w-[50px] -bottom-25">
+            <div id="languages-list" class="absolute z-100 opacity-0 bg-red-500 h-[100px] w-[50px] -bottom-25">
               
             </div>
           </button>
@@ -55,25 +55,27 @@
   </header>
   
   <main>
-    <section id="hero">
-      <div>
-        <h1>
-          Benteveo Air
-        </h1>
-
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum, quas id impedit ducimus laudantium maiores tenetur odio aliquam saepe neque. Repellendus harum, quo optio labore doloribus aliquid nisi alias cumque.
-        </p>
-      </div>
-
-      <div>
-        <div>
-          <span>¿Algun destino en mente?</span>
-          <input id="viaje" type="text">
+    <section id="hero" class="z-10 relative w-full max-h-[550px] h-svh bg-[url(/src/assets/hero.webp)] bg-cover">
+      <div class="background-image bg-black/25 backdrop-blur max-h-[550px] h-svh w-full grid place-content-center">
+        <div class="max-w-5xl w-full text-center">
+          <h1 class="text-7xl text-dark-blue font-bold capitalize font-manrope mb-5">
+            Benteveo Air
+          </h1>
+  
+          <p class="text-white">
+            Convertimos tu viaje en una experiencia sin complicaciones. Vos elegís el destino, nosotros nos encargamos del resto, con rapidez, confianza y claridad en cada paso.
+          </p>
         </div>
-
-        <div>
-          <button>Buscar vuelo</button>
+  
+        <div class="instant-travel absolute -bottom-5 left-1/2 rounded-b-2xl -translate-x-1/2 bg-white w-2xl border border-black/40 py-6 px-3 flex justify-around items-end">
+          <div>
+            <span class="text-gray-800">¿Algun destino en mente?</span>
+            <input class="w-full bg-white text-sm mt-2 py-2 px-3 border rounded border-black/50" id="viaje" placeholder="Buenos Aires, Argentina" type="text">
+          </div>
+  
+          <div>
+            <button class="bg-amber-400 text-white font-bold py-2 px-4 cursor-pointer rounded-md hover:bg-amber-400/80">Buscar vuelo</button>
+          </div>
         </div>
       </div>
     </section>
