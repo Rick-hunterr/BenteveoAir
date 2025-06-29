@@ -8,32 +8,46 @@
 </head>
 <body>
   
-  <header>
-    <div class="container">
-      <div>
-        <img src="src/assets/logo.png" alt="logo-b-air">
-      </div>
+  <header class="w-full shadow-md flex justify-center items-center text-sm font-manrope font-medium text-default-black">
+    <div class="container w-full max-w-7xl py-3 px-5 flex justify-between items-center">
+      <div class="flex items-center gap-24">
+        <div class="logo flex items-center gap-4">
+          <a href="#">
+            <img class="max-w-8 object-contain cursor-pointer" src="src/assets/logo.png" alt="BS-logo" draggable="false">
+          </a>
 
-      <div>
-        <ul>
-          <li><a href="#home">Inicio</a></li>
-          <li><a href="#reservation">Reservación</a></li>
-          <li><a href="#flights">Viajes</a></li>
-          <li><a href="#about-us">Nosotros</a></li>
-          <li><a href="#talk-to-us">Hablanos</a></li>
-        </ul>
-      </div>
+          <a href="#" class="text-xl text-dark-blue tracking-tighter cursor-pointer">
+            Benteveo Air 
+          </a>
+        </div>
 
-      <div>
         <div>
-          <button>
-            <img src="src/assets/argentina-bandera.svg" alt="argentina">
+          <ul class="flex gap-12">
+            <li><a class="cursor-pointer hover:text-default-black/85" href="#home">Inicio</a></li>
+            <li><a class="cursor-pointer hover:text-default-black/85" href="#reservation">Reservación</a></li>
+            <li><a class="cursor-pointer hover:text-default-black/85" href="#flights">Viajes</a></li>
+            <li><a class="cursor-pointer hover:text-default-black/85" href="#about-us">Nosotros</a></li>
+            <li><a class="cursor-pointer hover:text-default-black/85" href="#talk-to-us">Hablanos</a></li>
+          </ul>
+        </div>
+      </div>
 
-            <span>
+      <div>
+        <div class="flex gap-6">
+          <button class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer">Iniciar sesion</button>
+          
+          <button onclick="showBoxList()" class="relative flex items-center cursor-pointer">
+            <img class="w-5 h-fit" src="src/assets/argentina-bandera.svg" alt="argentina">
+
+            <span class="rotate-180">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" >
                <path d="m7.71 15.71 4.29-4.3 4.29 4.3 1.42-1.42L12 8.59l-5.71 5.7z"></path>
               </svg>
             </span>
+
+            <div id="languages-list" class="absolute opacity-0 bg-red-500 h-[100px] w-[50px] -bottom-25">
+              
+            </div>
           </button>
         </div>
       </div>
@@ -42,7 +56,7 @@
   
   <main>
     <section id="hero">
-      <div class="container">
+      <div>
         <h1>
           Benteveo Air
         </h1>
@@ -52,9 +66,9 @@
         </p>
       </div>
 
-      <div class="instant-travel">
+      <div>
         <div>
-          <label for="viaje">Algun destino en mente?</label>
+          <span>¿Algun destino en mente?</span>
           <input id="viaje" type="text">
         </div>
 
@@ -345,5 +359,6 @@
     </div>
   </footer>
 
+  <script src="src/app.js"></script>
 </body>
 </html>
