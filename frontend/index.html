@@ -8,7 +8,7 @@
 </head>
 <body>
   
-  <header class="z-100 w-full shadow-md flex justify-center items-center text-sm font-medium text-default-dark">
+  <header class="z-100 w-full shadow-md flex justify-center items-center text-sm font-medium text-default-dark font-manrope">
     <div class="container w-full max-w-7xl py-3 px-5 flex justify-between items-center">
       <div class="flex items-center gap-24">
         <div class="logo flex items-center gap-4">
@@ -49,7 +49,7 @@
     </div>
   </header>
   
-  <main>
+  <main class="font-manrope text-default-dark min-h-svh">
     <section id="hero" class="z-10 relative w-full max-h-[550px] h-svh bg-[url(/src/assets/hero.webp)] bg-cover">
       <div class="background-image bg-black/25 backdrop-blur max-h-[550px] h-svh w-full grid place-content-center">
         <div class="max-w-5xl w-full text-center">
@@ -91,7 +91,7 @@
           </a>
         </article>
 
-        <article class="shadow-2xl rounded-2xl max-w-[600px] min-h-[400px] grid place-content-center bg-gradient-to-br from-amber-500 to-amber-300 text-default-dark py-18 px-10">
+        <article class="shadow-2xl rounded-2xl max-w-[600px] min-h-[400px] grid place-content-center bg-gradient-to-br from-amber-500 to-amber-300 py-18 px-10">
           <h2 class="text-4xl font-bold">
             ¿Necesitas ayuda con tu reservacion?
           </h2>
@@ -100,62 +100,64 @@
             Si no sabes como realizar tu reservacion, comunicate con nosotros.
           </p>
   
-          <a href="#" class="w-fit bg-white text-lg text-default-dark font-bold py-2 px-4 cursor-pointer hover:bg-blue-100">
+          <a href="#" class="w-fit bg-white text-lg font-bold py-2 px-4 cursor-pointer hover:bg-blue-100">
             Te ayudamos
           </a>
         </article>
       </div>
     </section>
 
-    <section id="steps">
-      <div class="container">
-        <h1>¿Cómo trabajamos?</h1>
+    <section id="steps" class="bg-gray-100 h-svh max-h-[750px] w-full grid place-items-center py-24 px-8">
+      <div class="container max-w-8xl">
+        <h1 class="text-5xl font-bold mb-10">
+          ¿Cómo trabajamos?
+        </h1>
 
-        <div class="step-bento">
-          <div class="step1">
-            <div class="number">1</div>
+        <div class="step-bento flex flex-wrap gap-5">
+          <div class="step1 flex gap-4 w-full">
+            <div class="number bg-dark-blue text-white rounded-xl text-5xl font-bold grid place-items-center aspect-square w-20">1</div>
 
             <div class="info">
-              <h2>Paso 1</h2>
+              <h2 class="text-xl font-semibold mb-2">Iniciá sesión o registrate</h2>
 
-              <p>
-                Explicacion de lo que hace este paso
+              <p class="text-sm">
+                Para comenzar, creá tu cuenta o iniciá sesión. Esto te permitirá guardar tus paquetes turísticos y confirmar tus compras de forma segura.
               </p>
             </div>
           </div>
 
-          <div class="step2">
-            <div class="number">2</div>
+          <div class="step2 flex gap-4 w-full">
+            <div class="number bg-dark-blue text-white rounded-xl text-5xl font-bold grid place-items-center aspect-square w-20">2</div>
 
             <div class="info">
-              <h2>Paso 2</h2>
+              <h2 class="text-xl font-semibold mb-2">Explorá nuestros paquetes</h2>
 
-              <p>
-                Explicacion de lo que hace este paso
+              <p class="text-sm">
+                Navegá por nuestras opciones de viajes. Encontrá paquetes que incluyen vuelo, hotel y más. Podés elegir el que más se adapte a vos.
               </p>
             </div>
           </div>
 
-          <div class="step3">
-            <div class="number">3</div>
+          <div class="step3 flex gap-4 w-full">
+            <div class="number bg-dark-blue text-white rounded-xl text-5xl font-bold grid place-items-center aspect-square w-20">3</div>
 
             <div class="info">
-              <h2>Paso 3</h2>
+              <h2 class="text-xl font-semibold mb-2">Armá tu carrito</h2>
 
-              <p>
-                Explicacion de lo que hace este paso
+              <p class="text-sm">
+                Agregá los paquetes que te interesen a tu carrito. Podés revisarlos, eliminarlos o modificarlos antes de confirmar la compra.
               </p>
             </div>
           </div>
 
-          <div class="step4">
-            <div class="number">4</div>
+          <div class="step4 flex gap-4 w-full">
+            <div class="number bg-dark-blue text-white rounded-xl text-5xl font-bold grid place-items-center aspect-square w-20">4</div>
 
             <div class="info">
-              <h2>Paso 4</h2>
+              <h2 class="text-xl font-semibold mb-2">Confirmá tu compra</h2>
 
-              <p>
-                Explicacion de lo que hace este paso
+              <p class="text-sm">
+                Completá el proceso de compra y recibí un correo con el detalle de tu reserva. ¡Listo! Nosotros nos encargamos del resto.
               </p>
             </div>
           </div>
@@ -165,7 +167,6 @@
   </main>
   
   <footer class="bg-gray-900 max-w-full w-full text-white px-16 py-6 snap-start">
-
     <div class="max-w-7xl w-full m-auto grid gap-3">
       <div class="nombre-empresa">
         <h1 class="text-2xl font-bold">
