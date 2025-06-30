@@ -49,7 +49,7 @@
     </div>
   </header>
   
-  <main class="font-manrope">
+  <main>
     <section id="hero" class="z-10 relative w-full max-h-[550px] h-svh bg-[url(/src/assets/hero.webp)] bg-cover">
       <div class="background-image bg-black/25 backdrop-blur max-h-[550px] h-svh w-full grid place-content-center">
         <div class="max-w-5xl w-full text-center">
@@ -164,20 +164,38 @@
     </section>
   </main>
   
-  <footer>
-    <h1>Benteveo Air</h1>
+  <footer class="bg-gray-900 max-w-full w-full text-white px-16 py-6 snap-start">
 
-    <ul>
-      <li><a href="">Nosotros</a></li>
-      <li><a href="">Tu viaje</a></li>
-      <li><a href="">Politica y privacidad</a></li>
-    </ul>
-
-    <div>
-      <p>
-        ©2025 Benteveo Air. Todos los derechos reservados
-      </p>
+    <div class="max-w-7xl w-full m-auto grid gap-3">
+      <div class="nombre-empresa">
+        <h1 class="text-2xl font-bold">
+          Benteveo Air
+        </h1>
+      </div>
+  
+      <nav class="nav-footer">
+        <ul class="text-sm flex items-center gap-8 uppercase tracking-widest">
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Politica de privacidad</a></li>
+        </ul>
+      </nav>
+  
+      <div class="text-xs flex items-center justify-between mt-4">
+        <span>
+          ©2025 Benteveo Air. Todos los derechos reservados.
+        </span>
+        
+        <nav class="social-media">
+          <ul class="flex items-center gap-8 tracking-widest">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
+
   </footer>
 
   <script src="src/app.js"></script>
