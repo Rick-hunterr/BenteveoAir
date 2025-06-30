@@ -6,6 +6,7 @@
     - Orden
     - DetalleOrden
     - Servicio
+    - Ubicacion
 
     // TABLAS DE RELACIÓN
     - Usuario <-> DetalleOrden (muchos a muchos)
