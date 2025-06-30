@@ -2,27 +2,41 @@
   "name": "proyecto-olimpiada",
   "version": "1.0.0",
   "description": "Proyecto BenteveoAir para la Olimpiada de Programación",
-  "main": "src/app.js",
-  "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+  "homepage": "https://github.com/Rick-hunterr/BenteveoAir#readme",
+  "bugs": {
+    "url": "https://github.com/Rick-hunterr/BenteveoAir/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Rick-hunterr/BenteveoAir.git"
   },
-  "bugs": {
-    "url": "https://github.com/Rick-hunterr/BenteveoAir/issues"
-  },
-  "homepage": "https://github.com/Rick-hunterr/BenteveoAir#readme",
-  "author": "Pablo Santellán",
   "license": "ISC",
+  "author": {
+    "name": "Pablo Santellán"
+  },
   "type": "commonjs",
+  "main": "./lib/index.js",
+  "files": [
+    "./bin/*",
+    "./lib/*"
+  ],
+  "scripts": {
+    "start": "node src/index.ts",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "lint": "tslint -c tslint.json src/**/*.ts",
+    "prepublish": "npm run build"
+  },
   "dependencies": {
     "express": "^4.21.2",
-    "pg": "^8.16.2"
+    "pg": "^8.16.2",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
-  }
+    "@types/node": "^24.0.5",
+    "nodemon": "^3.1.10",
+    "tslint": "^5.20.1",
+    "typescript": "^5.8.3"
+  },
+  "typings": "./lib/index.d.ts"
 }
