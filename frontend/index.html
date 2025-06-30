@@ -8,7 +8,7 @@
 </head>
 <body>
   
-  <header class="z-100 w-full shadow-md flex justify-center items-center text-sm font-manrope font-medium text-default-dark">
+  <header class="z-100 w-full shadow-md flex justify-center items-center text-sm font-medium text-default-dark">
     <div class="container w-full max-w-7xl py-3 px-5 flex justify-between items-center">
       <div class="flex items-center gap-24">
         <div class="logo flex items-center gap-4">
@@ -54,11 +54,11 @@
     </div>
   </header>
   
-  <main>
+  <main class="font-manrope">
     <section id="hero" class="z-10 relative w-full max-h-[550px] h-svh bg-[url(/src/assets/hero.webp)] bg-cover">
       <div class="background-image bg-black/25 backdrop-blur max-h-[550px] h-svh w-full grid place-content-center">
         <div class="max-w-5xl w-full text-center">
-          <h1 class="text-7xl text-dark-blue font-bold capitalize font-manrope mb-5">
+          <h1 class="text-7xl text-dark-blue font-bold capitalize mb-5">
             Benteveo Air
           </h1>
   
@@ -67,41 +67,47 @@
           </p>
         </div>
   
-        <div class="instant-travel absolute -bottom-5 left-1/2 rounded-b-2xl -translate-x-1/2 bg-white w-2xl border border-black/40 py-6 px-3 flex justify-around items-end">
+        <div class="instant-travel absolute -bottom-5 left-1/2 rounded-b-2xl -translate-x-1/2 bg-white max-w-3xl w-full border border-black/40 py-8 flex justify-around items-end">
           <div>
             <span class="text-gray-800">¿Algun destino en mente?</span>
             <input class="w-full bg-white text-sm mt-2 py-2 px-3 border rounded border-black/50" id="viaje" placeholder="Buenos Aires, Argentina" type="text">
           </div>
   
-          <div>
-            <button class="bg-amber-400 text-white font-bold py-2 px-4 cursor-pointer rounded-md hover:bg-amber-400/80">Buscar vuelo</button>
-          </div>
+          <a class="bg-amber-400 text-white font-bold py-2 px-4 cursor-pointer rounded-md hover:bg-amber-400/80">
+            Buscar vuelo
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="flight-assistence">
-      <div class="container">
-        <article>
-          <h2>
-            Quiere viajar, pero no sabes a donde?</h2>
+    <section id="flight-assistence" class="h-svh max-h-[550px] w-full grid place-items-center">
+      <div class="container max-w-8xl flex justify-around">
+        <article class="shadow-2xl rounded-2xl max-w-[600px] min-h-[400px] grid place-content-center bg-gradient-to-br from-blue-900 to-blue-600 text-white py-18 px-10">
+          <h2 class="text-4xl font-bold">
+            ¿Quiere viajar, pero no sabes a donde?
+          </h2>
           
-          <p>
+          <p class="mt-4 mb-8">
             Revisa nuestro catalogo de lugares que puedes visitar
           </p>
   
-          <button>Viajes disponibles</button>
+          <a href="#" class="w-fit bg-white text-lg text-blue-950 font-bold py-2 px-4 cursor-pointer hover:bg-blue-100">
+            Viajes disponibles
+          </a>
         </article>
-  
-        <article>
-          <h2>
-            Quiere viajar, pero no sabes a donde?</h2>
+
+        <article class="shadow-2xl rounded-2xl max-w-[600px] min-h-[400px] grid place-content-center bg-gradient-to-br from-amber-500 to-amber-300 text-default-dark py-18 px-10">
+          <h2 class="text-4xl font-bold">
+            ¿Necesitas ayuda con tu reservacion?
+          </h2>
           
-          <p>
-            Revisa nuestro catalogo de lugares que puedes visitar
+          <p class="mt-4 mb-8">
+            Si no sabes como realizar tu reservacion, comunicate con nosotros.
           </p>
   
-          <button>Viajes disponibles</button>
+          <a href="#" class="w-fit bg-white text-lg text-default-dark font-bold py-2 px-4 cursor-pointer hover:bg-blue-100">
+            Te ayudamos
+          </a>
         </article>
       </div>
     </section>
