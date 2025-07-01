@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <title>Benteveo Air</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-<your-integrity-hash>" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="z-100 w-full shadow-md flex justify-center items-center text-sm font-medium text-default-dark font-manrope">
+        <div class="container w-full max-w-7xl py-3 px-5 flex justify-between items-center">
+            <div class="flex items-center gap-24">
+                <div class="logo flex items-center gap-4">
+                <a href="#">
+                    <img class="max-w-8 object-contain cursor-pointer" src="src/assets/logo.png" alt="BS-logo" draggable="false">
+                </a>
+
+                <a href="#" class="text-xl text-dark-blue tracking-tighter cursor-pointer">
+                    Benteveo Air 
+                </a>
+                </div>
+
+                <div>
+                <ul class="flex gap-12">
+                    <li><a class="cursor-pointer hover:text-default-dark/80" href="index.html">Inicio</a></li>
+                    <li><a class="cursor-pointer hover:text-default-dark/80" href="paquete.html">Paquetes</a></li>
+                    <li><a class="cursor-pointer hover:text-default-dark/80" href="#about-us">Nosotros</a></li>
+                </ul>
+                </div>
+            </div>
+
+            <div>
+                <div class="flex gap-10">
+                <div class="flex gap-2">
+                    <button class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">Registrarse</button>
+                    <button class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">Iniciar sesion</button>
+                </div>
+                
+                <button class="relative cursor-pointer">
+                    <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" >
+                    <path d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z"></path>
+                    </svg>
+
+                    <span id="counter" class="opacity-0 absolute text-amber-600 -bottom-1 -right-1">2</span>
+                </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col items-center justify-center mb-5">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="z-10 relative w-full max-h-[550px] h-svh bg-[url(/src/assets/paquete.jpg)] bg-center bg-no-repeat bg-cover">
+            <div class="background-image bg-black/40 backdrop-blur max-h-[550px] h-svh w-full grid place-content-center">
+                <div class="max-w-5xl w-full text-center">
+                    <h1 class="text-7xl text-white font-bold capitalize mb-5">
+                        PAQUETES TURISTICOS
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paquetes -->
+        <section class="w-full max-w-6xl mx-auto py-10 grid grid-cols-3 gap-8">
+            
+            <!-- Paquete Tierra del fuego -->
+            <div class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+                <img src="src/assets/Tierra-fuego.jpg" alt="Tierra del fuego" class="h-80 w-full object-cover bg-gray-200 transition-transform- relative brightness-75">
+                <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-44 rounded-xl text-white group-hover:scale-125 transition-transform">
+                    <span>Córdoba</span>
+                    <hr class="border-t-2 w-32 border-white m-auto">
+                    <span>Tierra del Fuego</span>
+                </div>
+                <div class="absolute -top-4 left-0 bg-cyan-200 px-2 rounded-xs font-semibold">
+                    Paquete nacional
+                </div>
+                <div class="flex gap-2 z-10">
+                    <span class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ml-2">Ida y vuelta</span>
+                    <span class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ">5 días</span>
+                    <span class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 mr-3">Hotel Cap Polonio</span>
+                </div>
+                <div class="p-6 flex flex-col flex-1 overflow-hidden">
+                    <h2 class="text-2xl font-bold mb-2 text-gray-900">Aventura en Tierra del Fuego</h3>
+                    <p class="text-gray-700 mb-10 flex-1 text-sm">
+                        <span class="bg-emerald-700 text-white px-3 rounded-md">4</span>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                    </p>
+                    <hr class="w-[150%] -ml-[25%] border-gray-300">
+                    <span class="text-emerald-950 bg-emerald-100 w-32 px-1.5 rounded-md -mt-3">Ahorrás $51.000</span>
+                    <p class="flex flex-col text-sm text-gray-600 ">Precio final por persona <span class="line-through">$800.000</span></p>
+                    <span class="text-black font-semibold text-xl mb-2">$749.000 ARS</span>
+                    <button class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">Agregar al carrito</button>
+                    <p class="text-xs text-gray-400 mt-1">Incluye impuestos, tasas y cargos</p>
+                </div>
+            </div>
+            
+            <!-- Paquete Buenos Aires -->
+            <div class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+                <img src="src/assets/BS.jpeg" alt="Buenos Aires" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
+                <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-44 rounded-xl text-white group-hover:scale-125 transition-transform">
+                    <span>Córdoba</span>
+                    <hr class="border-t-2 w-32 border-white m-auto">
+                    <span>Buenos Aires</span>
+                </div>
+                <div class="absolute -top-4 left-0 bg-cyan-200 px-2 rounded-xs font-semibold">
+                    Paquete nacional
+                </div>
+                <div class="flex gap-2 z-10">
+                    <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
+                    <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">6 días</span>
+                    <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Metropolitano SUPARA</span>
+                </div>
+                <div class="p-6 flex flex-col flex-1 overflow-hidden">
+                    <h2 class="text-2xl font-bold mb-2 text-gray-900">Aventura en Buenos Aires</h3>
+                    <p class="text-gray-700 mb-10 flex-1 text-sm">
+                        <span class="bg-emerald-700 text-white px-3 rounded-md">4,6</span>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star-half text-amber-400"></i>
+                    </p>
+                    <hr class="w-[150%] -ml-[25%] border-gray-300">
+                    <span class="text-emerald-950 bg-emerald-100 w-32 px-1.5 rounded-md -mt-3">Ahorrás $45.000</span>
+                    <p class="flex flex-col text-sm text-gray-600 ">Precio final por persona <span class="line-through">$935.000</span></p>
+                    <span class="text-black font-semibold text-xl mb-2">$890.000 ARS</span>
+                    <button class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">Agregar al carrito</button>
+                    <p class="text-xs text-gray-400 mt-1">No vas a pagar Percepción RG5617</p>
+                </div>
+            </div>
+
+            <!-- Paquete Jujuy -->
+            <div class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+                <img src="src/assets/cerro.jpg" alt="Jujuy" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
+                <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-44 rounded-xl text-white group-hover:scale-125 transition-transform">
+                    <span>Córdoba</span>
+                    <hr class="border-t-2 w-32 border-white m-auto">
+                    <span>Jujuy</span>
+                </div>
+                <div class="flex gap-2 z-10">
+                    <span class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ml-2">Ida y vuelta</span>
+                    <span class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ">10 días</span>
+                    <span class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 mr-3">Hotel Altos de la Viña</span>
+                </div>
+                <div class="absolute -top-4 left-0 bg-cyan-200 px-2 rounded-xs font-semibold">
+                    Paquete nacional
+                </div>
+                <div class="p-6 flex flex-col flex-1 overflow-hidden">
+                    <h2 class="text-2xl font-bold mb-2 text-gray-900">Aventura en jujuy - Los 7 colores</h3>
+                    <p class="text-gray-700 mb-10 flex-1 text-sm">
+                        <span class="bg-emerald-700 text-white px-3 rounded-md">4,5</span>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star-half text-amber-400"></i>
+                    </p>
+                    <hr class="w-[150%] -ml-[25%] border-gray-300">
+                    <span class="text-emerald-950 bg-emerald-100 w-36 px-1.5 rounded-md -mt-3">Ahorrás $150.000</span>
+                    <p class="flex flex-col text-sm text-gray-600 ">Precio final por persona <span class="line-through">$1.150.000</span></p>
+                    <span class="text-black font-semibold text-xl mb-2">$1.000.000 ARS</span>
+                    <button class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">Agregar al carrito</button>
+                    <p class="text-xs text-gray-400 mt-1">Incluye impuestos, tasas y cargos</p>
+                </div>
+            </div>
+
+            <!-- Paquete Espeaña - Barcelona -->
+            <div class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+                <img src="src/assets/barca.jpeg" alt="Jujuy" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
+                <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-48 rounded-xl text-white group-hover:scale-125 transition-transform">
+                    <span>Argentina - Córdoba</span>
+                    <hr class="border-t-2 w-32 border-white m-auto">
+                    <span>España - Barcelona</span>
+                </div>
+                <div class="flex gap-2 z-10">
+                    <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
+                    <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">7 días</span>
+                    <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Ibis Barcelona Centro</span>
+                </div>
+                <div class="absolute -top-4 left-0 bg-emerald-300 px-2 rounded-xs font-semibold">
+                    Paquete Internacional
+                </div>
+                <div class="p-6 flex flex-col flex-1 overflow-hidden">
+                    <h2 class="text-2xl font-bold mb-2 text-gray-900">Aventura en España - Barcelona</h3>
+                    <p class="text-gray-700 mb-10 flex-1 text-sm">
+                        <span class="bg-emerald-700 text-white px-3 rounded-md">4,4</span>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star-half text-amber-400"></i>
+                    </p>
+                    <hr class="w-[150%] -ml-[25%] border-gray-300">
+                    <span class="text-emerald-950 bg-emerald-100 w-36 px-1.5 rounded-md -mt-3">Ahorrás $200.000</span>
+                    <p class="flex flex-col text-sm text-gray-600 ">Precio final por persona <span class="line-through">$2.350.000</span></p>
+                    <span class="text-black font-semibold text-xl mb-2">$2.150.000 ARS</span>
+                    <button class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">Agregar al carrito</button>
+                    <p class="text-xs text-gray-400 mt-1">No vas a pagar Percepción RG5617</p>
+                </div>
+            </div>
+
+            <!-- Paquete Francia - Paris -->
+            <div class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+                <img src="src/assets/ei.jpg" alt="Jujuy" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
+                <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-48 rounded-xl text-white group-hover:scale-125 transition-transform">
+                    <span>Argentina - Córdoba</span>
+                    <hr class="border-t-2 w-32 border-white m-auto">
+                    <span>Francia - Paris</span>
+                </div>
+                <div class="flex gap-2 z-10">
+                    <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
+                    <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">5 días</span>
+                    <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel The People Paris Marais</span>
+                </div>
+                <div class="absolute -top-4 left-0 bg-emerald-300 px-2 rounded-xs font-semibold">
+                    Paquete Internacional
+                </div>
+                <div class="p-6 flex flex-col flex-1 overflow-hidden">
+                    <h2 class="text-2xl font-bold mb-2 text-gray-900">Aventura en Francia - Paris</h3>
+                    <p class="text-gray-700 mb-10 flex-1 text-sm">
+                        <span class="bg-emerald-700 text-white px-3 rounded-md">4,1</span>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                    </p>
+                    <hr class="w-[150%] -ml-[25%] border-gray-300">
+                    <span class="text-emerald-950 bg-emerald-100 w-36 px-1.5 rounded-md -mt-3">Ahorrás $150.000</span>
+                    <p class="flex flex-col text-sm text-gray-600 ">Precio final por persona <span class="line-through">$2.050.000</span></p>
+                    <span class="text-black font-semibold text-xl mb-2">$1.900.000 ARS</span>
+                    <button class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">Agregar al carrito</button>
+                    <p class="text-xs text-gray-400 mt-1">No vas a pagar Percepción RG5617</p>
+                </div>
+            </div>
+            
+            <!-- Paquete Alemania - Baviera -->
+            <div class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+                <img src="src/assets/ale.jpg" alt="Jujuy" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
+                <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-48 rounded-xl text-white group-hover:scale-125 transition-transform">
+                    <span>Argentina - Córdoba</span>
+                    <hr class="border-t-2 w-32 border-white m-auto">
+                    <span>Francia - Paris</span>
+                </div>
+                <div class="flex gap-2 z-10">
+                    <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
+                    <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">6 días</span>
+                    <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Villa Ludwig</span>
+                </div>
+                <div class="absolute -top-4 left-0 bg-emerald-300 px-2 rounded-xs font-semibold">
+                    Paquete Internacional
+                </div>
+                <div class="p-6 flex flex-col flex-1 overflow-hidden">
+                    <h2 class="text-2xl font-bold mb-2 text-gray-900">Aventura en Alemania - Paris</h3>
+                    <p class="text-gray-700 mb-10 flex-1 text-sm">
+                        <span class="bg-emerald-700 text-white px-3 rounded-md">4,8</span>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                    </p>
+                    <hr class="w-[150%] -ml-[25%] border-gray-300">
+                    <span class="text-emerald-950 bg-emerald-100 w-36 px-1.5 rounded-md -mt-3">Ahorrás $200.000</span>
+                    <p class="flex flex-col text-sm text-gray-600 ">Precio final por persona <span class="line-through">$2.400.000</span></p>
+                    <span class="text-black font-semibold text-xl mb-2">$2.200.000 ARS</span>
+                    <button class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">Agregar al carrito</button>
+                    <p class="text-xs text-gray-400 mt-1">Incluye impuestos, tasas y cargos</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 max-w-full w-full text-white px-16 py-6 snap-start bottom-0">
+        <div class="max-w-7xl w-full m-auto grid gap-3">
+            <div class="nombre-empresa">
+                <h1 class="text-2xl font-bold">
+                Benteveo Air
+                </h1>
+            </div>
+        
+            <nav class="nav-footer">
+                <ul class="text-sm flex items-center gap-8 uppercase tracking-widest">
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Politica de privacidad</a></li>
+                </ul>
+            </nav>
+        
+            <div class="text-xs flex items-center justify-between mt-4">
+                <span>
+                ©2025 Benteveo Air. Todos los derechos reservados.
+                </span>
+                
+                <nav class="social-media">
+                <ul class="flex items-center gap-8 tracking-widest">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+                </nav>
+            </div>
+        </div>
+     </footer>
+</body>
+</html>
