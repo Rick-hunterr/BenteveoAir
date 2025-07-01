@@ -76,7 +76,7 @@ Para gestionar mis viajes de forma sencilla desde la web y recibir confirmación
 
 El proyecto fue planificado con una duración de 8 días, iniciando el 27 de junio de 2025 y finalizando el 4 de julio de 2025.
 
-![BenteveoAir](Diagrama_de_Gantt_Proyecto_BenteveoAir.png)
+![BenteveoAir](Diagrama_de_Gantt_proyecto_BenteveoAir.jpg)
 
 ---
 
