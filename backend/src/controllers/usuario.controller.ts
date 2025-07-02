@@ -6,23 +6,69 @@ import { Ubicacion } from "../models/Ubicacion"
 const repo = AppDataSource.getRepository(Usuario)
 const repoUbicacion = AppDataSource.getRepository(Ubicacion)
 
-export const obtenerUsuarios = async (req: Request, res: Response) => {
+export async function obtenerUsuarios(req: Request, res: Response) {
   try {
     const usuarios = await repo.find({ relations: ["ubicacion"] })
-    res.json(usuarios)
+    res.status(200).json(usuarios)
   } catch (error) {
+    console.error("ERROR al obtener usuarios:", error)
     res.status(500).json({ error: "Error al obtener usuarios" })
   }
 }
 
-export const crearUsuario = async (req: Request, res: Response) => {
+export async function crearUsuario(req: Request, res: Response) {
   try {
-    const ubicacion = await repoUbicacion.save(req.body.ubicacion)
-    const usuario = repo.create({ ...req.body, ubicacion })
+    const ubicacionData = req.body.ubicacion
+
+    let ubicacion = null
+    if (ubicacionData) {
+      // Si la ubicación viene con id, intentamos buscarla
+      if (ubicacionData.id) {
+        ubicacion = await repoUbicacion.findOneBy({ id: ubicacionData.id })
+        if (!ubicacion) {
+          res.status(400).send("Ubicación no encontrada")
+          return
+        }
+      } else {
+        // Si no tiene id, creamos la ubicación nueva
+        ubicacion = repoUbicacion.create(ubicacionData)
+        await repoUbicacion.save(ubicacion)
+      }
+    }
+
+    const usuarioData = { ...req.body }
+    delete usuarioData.ubicacion
+
+    const usuario = repo.create({ ...usuarioData, ubicacion })
     const resultado = await repo.save(usuario)
+
     res.status(201).json(resultado)
   } catch (error) {
-    console.error("ERROR al crear usuario:", error);
+    console.error("ERROR al crear usuario:", error)
     res.status(400).json({ error: "Error al crear usuario" })
+  }
+}
+
+export async function eliminarUsuario(req: Request, res: Response) {
+  const { id } = req.params
+
+  if (isNaN(Number(id))) {
+    res.status(400).send("ID inválido")
+    return
+  }
+
+  try {
+    const usuario = await repo.findOneBy({ id: Number(id) })
+
+    if (!usuario) {
+      res.status(404).send("Usuario no encontrado")
+      return
+    }
+
+    await repo.remove(usuario)
+    res.status(204).send()
+  } catch (error) {
+    console.error("ERROR al eliminar usuario:", error)
+    res.status(500).send("Error al eliminar usuario")
   }
 }

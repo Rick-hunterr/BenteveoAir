@@ -1,9 +1,11 @@
 import { Router } from "express"
-import { obtenerUsuarios, crearUsuario } from "../controllers/usuario.controller"
+import { obtenerUsuarios, crearUsuario, eliminarUsuario } from "../controllers/usuario.controller"
 
 const router = Router()
 
 router.get("/", obtenerUsuarios)
 router.post("/", crearUsuario)
+router.delete("/:id", eliminarUsuario)
 
 export default router
+
