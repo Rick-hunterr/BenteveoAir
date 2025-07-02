@@ -1,65 +1,98 @@
-/* Modales */
-  const modalWrapper = document.getElementById('inicioWrapper');
-  const modal = document.getElementById('inicio');
-  const openModal = document.getElementById('openInicio');
-  const closeModal = document.getElementById('closeInicio');
-  const volverI = document.getElementById('volver-I');
-  const volverR = document.getElementById('volver-R');
+const modalWrapper = document.getElementById('inicioWrapper');
+const modal = document.getElementById('inicio');
+const openModal = document.getElementById('openInicio');
+const closeModal = document.getElementById('closeInicio');
+const volverI = document.getElementById('volver-I');
+const volverR = document.getElementById('volver-R');
 
-  openModal.addEventListener('click', () => {
-    modalWrapper.classList.remove('hidden');
-    modal.showModal();
-  });
+openModal.addEventListener('click', () => {
+  modalWrapper.classList.remove('hidden');
+  modal.showModal();
+});
 
-  volverR.addEventListener('click', (e) => {
-    e.preventDefault();
+volverR.addEventListener('click', (e) => {
+  e.preventDefault();
+  modal.close();
+  modalWrapper.classList.add('hidden');
+  registroWrapper.classList.remove('hidden');
+  registro.showModal();
+});
+
+closeModal.addEventListener('click', () => {
+  modal.close();
+  modalWrapper.classList.add('hidden');
+});
+
+modalWrapper.addEventListener('click', (e) => {
+  if (e.target === modalWrapper) {
     modal.close();
-    modalWrapper.classList.add('hidden');
-    registroWrapper.classList.remove('hidden');
-    registro.showModal();
-  });
+  }
+});
 
-  closeModal.addEventListener('click', () => {
-    modal.close();
-    modalWrapper.classList.add('hidden');
-  });
+modal.addEventListener('click', (e) => {
+  e.stopPropagation();
+});
 
-  modalWrapper.addEventListener('click', (e) => {
-    if (e.target === modalWrapper) {
-      modal.close();
-    }
-  });
+/* Modal Registro */
+const registroWrapper = document.getElementById('registroWrapper');
+const registro = document.getElementById('registro');
+const openRegistro = document.getElementById('openRegistro');
+const closeRegistro = document.getElementById('closeRegistro');
 
-  modal.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
+openRegistro.addEventListener('click', () => {
+  registroWrapper.classList.remove('hidden');
+  registro.showModal();
+});
 
-  /* Modal Registro */
-  const registroWrapper = document.getElementById('registroWrapper');
-  const registro = document.getElementById('registro');
-  const openRegistro = document.getElementById('openRegistro');
-  const closeRegistro = document.getElementById('closeRegistro');
+closeRegistro.addEventListener('click', () => {
+  registro.close();
+  registroWrapper.classList.add('hidden');
+});
 
-  openRegistro.addEventListener('click', () => {
-    registroWrapper.classList.remove('hidden');
-    registro.showModal();
-  });
+volverI.addEventListener('click', (e) => {
+  e.preventDefault();
+  registro.close();
+  registroWrapper.classList.add('hidden');
+  modalWrapper.classList.remove('hidden');
+  modal.showModal();
+});
 
-  closeRegistro.addEventListener('click', () => {
+registroWrapper.addEventListener('click', (e) => {
+  if (e.target === registroWrapper) {
     registro.close();
-    registroWrapper.classList.add('hidden');
-  });
+  }
+});
 
-  volverI.addEventListener('click', (e) => {
-    e.preventDefault();
-    registro.close();
-    registroWrapper.classList.add('hidden');
-    modalWrapper.classList.remove('hidden');
-    modal.showModal();
-  });
+/* Mostrar/ocultar contraseña - Inicio de sesión */
+const passwordLogin = document.getElementById("password-login");
+const mostrarLogin = document.getElementById("mostrar-login");
+const ocultarLogin = document.getElementById("ocultar-login");
 
-  registroWrapper.addEventListener('click', (e) => {
-    if (e.target === registroWrapper) {
-      registro.close();
-    }
-  });
+mostrarLogin.addEventListener("click", () => {
+  passwordLogin.type = "text";
+  mostrarLogin.classList.add("hidden");
+  ocultarLogin.classList.remove("hidden");
+});
+
+ocultarLogin.addEventListener("click", () => {
+  passwordLogin.type = "password";
+  ocultarLogin.classList.add("hidden");
+  mostrarLogin.classList.remove("hidden");
+});
+
+/* Mostrar/ocultar contraseña - Registro */
+const passwordRegister = document.getElementById("password-register");
+const mostrarRegister = document.getElementById("mostrar-register");
+const ocultarRegister = document.getElementById("ocultar-register");
+
+mostrarRegister.addEventListener("click", () => {
+  passwordRegister.type = "text";
+  mostrarRegister.classList.add("hidden");
+  ocultarRegister.classList.remove("hidden");
+});
+
+ocultarRegister.addEventListener("click", () => {
+  passwordRegister.type = "password";
+  ocultarRegister.classList.add("hidden");
+  mostrarRegister.classList.remove("hidden");
+});
