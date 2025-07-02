@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { AppDataSource } from "../db"
+import { AppDataSource } from "../config/db"
 import { Usuario } from "../models/Usuario"
 import { Ubicacion } from "../models/Ubicacion"
 
@@ -22,7 +22,7 @@ export async function crearUsuario(req: Request, res: Response) {
 
     let ubicacion = null
     if (ubicacionData) {
-      // Si la ubicación viene con id, intentamos buscarla
+
       if (ubicacionData.id) {
         ubicacion = await repoUbicacion.findOneBy({ id: ubicacionData.id })
         if (!ubicacion) {
@@ -30,7 +30,7 @@ export async function crearUsuario(req: Request, res: Response) {
           return
         }
       } else {
-        // Si no tiene id, creamos la ubicación nueva
+
         ubicacion = repoUbicacion.create(ubicacionData)
         await repoUbicacion.save(ubicacion)
       }

@@ -1,6 +1,6 @@
 import { DataSource } from "typeorm"
-import { Usuario } from "./models/Usuario"
-import { Ubicacion } from "./models/Ubicacion"
+import { Usuario } from "../models/Usuario"
+import { Ubicacion } from "../models/Ubicacion"
 import * as dotenv from "dotenv"
 
 dotenv.config()
