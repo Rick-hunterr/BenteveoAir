@@ -37,3 +37,24 @@ export async function crearProducto(req: Request, res: Response) {
         res.status(400).json({ error: "Error al crear producto" })
     }
 }
+
+export async function eliminarProducto(req: Request, res: Response) {
+    const { id } = req.params
+
+    if (isNaN(Number(id))) {
+        res.status(400).send("ID inválido")
+        return  
+    }
+    try {
+        const producto = await repo.findOneBy({ id: Number(id) })
+        if (!producto) {
+            res.status(404).send("Producto no encontrado")
+            return
+        }
+        await repo.remove(producto)
+        res.status(204).send()
+    } catch (error) {
+        console.error("Error al eliminar producto:", error)
+        res.status(500).json({ error: "Error al eliminar producto" })
+    }
+}
