@@ -30,3 +30,25 @@ export async function crearOrden(req: Request, res: Response) {
         res.status(400).json({ error: "Error al crear orden" });
     }
 }
+
+export async function eliminarOrden(req: Request, res: Response) {
+    const { id } = req.params;
+
+    if (isNaN(Number(id))) {
+        res.status(400).send("ID inválido");
+        return;
+    }
+
+    try {
+        const orden = await repoOrden.findOneBy({ id: Number(id) });
+        if (!orden) {
+            res.status(404).send("Orden no encontrada");
+            return;
+        }
+        await repoOrden.remove(orden);
+        res.status(204).send();
+    } catch (error) {
+        console.error("Error al eliminar orden:", error);
+        res.status(500).json({ error: "Error al eliminar orden" });
+    }
+}
