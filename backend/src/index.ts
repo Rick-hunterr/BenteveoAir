@@ -1,16 +1,12 @@
-import "reflect-metadata";
-import app from "./app";
-import { AppDataSource } from "./db";
+import "reflect-metadata"
+import { AppDataSource } from "./db"
+import app from "./app"
 
-async function main() {
-  try {
-    await AppDataSource.initialize();
-    console.log("Database connected");
-    app.listen(3000);
-    console.log("Server", 3000);
-  } catch (error) {
-    console.log("Database not connected");
-  }
-}
-
-main();
+AppDataSource.initialize()
+  .then(() => {
+    console.log("Base de datos conectada")
+    app.listen(3000, () => {
+      console.log("Servidor corriendo en http://localhost:3000")
+    })
+  })
+  .catch((err) => console.error(err))

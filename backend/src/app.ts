@@ -1,10 +1,14 @@
-import express from "express";
-import morgan from "morgan";
-import cors from "cors";
+import express from "express"
+import cors from "cors"
+import usuarioRoutes from "./routes/usuario.routes";
+import ubicacionRoutes from "./routes/ubicacion.routes"
 
-const app = express();
+const app = express()
 
-app.use(morgan("dev"));
-app.use(cors());
+app.use(cors())
+app.use(express.json())
 
-export default app;
+app.use("/usuarios", usuarioRoutes);
+app.use("/ubicaciones", ubicacionRoutes)
+
+export default app
