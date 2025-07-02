@@ -22,6 +22,7 @@ export const crearUsuario = async (req: Request, res: Response) => {
     const resultado = await repo.save(usuario)
     res.status(201).json(resultado)
   } catch (error) {
+    console.error("ERROR al crear usuario:", error);
     res.status(400).json({ error: "Error al crear usuario" })
   }
 }
