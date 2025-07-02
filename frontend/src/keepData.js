@@ -5,7 +5,7 @@ const saveData = () => {
   let store = localStorage.getItem("packages");
 
   for (const package of packages) {
-    const btnAdd = package.querySelector("#add-to-cart");
+    const btnAdd = package.querySelector(".add-to-cart");
 
     btnAdd.addEventListener("click", () => {
       if (store) {
