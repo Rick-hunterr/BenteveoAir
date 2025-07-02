@@ -67,7 +67,7 @@
     </section>
   
     <section class="w-full max-w-6xl mx-auto py-24 grid grid-cols-3 gap-8">
-      <div class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+      <div id="package" class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
         <img src="src/assets/Tierra-fuego.jpg" alt="Tierra del fuego" class="h-80 w-full object-cover bg-gray-200 transition-transform- relative brightness-75">
         
         <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-44 rounded-xl text-white group-hover:scale-125 transition-transform">
@@ -81,15 +81,13 @@
         </div>
         
         <div class="flex gap-2 z-10">
-          <span class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ml-2">Ida y vuelta</span>
-          <span class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ">5 días</span>
-          <span class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 mr-3">Hotel Cap Polonio</span>
+          <span id="flight-type" class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ml-2">Ida y vuelta</span>
+          <span id="flight-duration" class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ">5 días</span>
+          <span id="hotel-name" class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 mr-3">Hotel Cap Polonio</span>
         </div>
         
         <div class="p-6 flex flex-col flex-1 overflow-hidden">
-          <h2 class="text-2xl font-bold mb-2 text-gray-900">
-            Aventura en Tierra del Fuego
-          </h2>
+          <h2 id="package-name" class="text-2xl font-bold mb-2 text-gray-900">Aventura en Tierra del Fuego</h2>
           
           <p class="text-gray-700 mb-10 flex-1 text-sm">
             <span class="bg-emerald-700 text-white px-3 rounded-md">4</span>
@@ -111,10 +109,10 @@
           </p>
   
           <span class="text-black font-semibold text-xl mb-2">
-            $749.000 ARS
+            $<span id="package-price">749.000</span> ARS
           </span>
           
-          <button class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
+          <button id="add-to-cart" class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
             Agregar al carrito
           </button>
           
@@ -122,7 +120,7 @@
         </div>
       </div>
       
-      <div class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+      <div id="package" class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
         <img src="src/assets/BS.jpeg" alt="Buenos Aires" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
         
         <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-44 rounded-xl text-white group-hover:scale-125 transition-transform">
@@ -136,49 +134,47 @@
         </div>
         
         <div class="flex gap-2 z-10">
-          <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
-          <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">6 días</span>
-          <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Metropolitano SUPARA</span>
+          <span id="flight-type" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
+          <span id="flight-duration" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">6 días</span>
+          <span id="hotel-name" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Metropolitano SUPARA</span>
         </div>
         
         <div class="p-6 flex flex-col flex-1 overflow-hidden">
-            <h2 class="text-2xl font-bold mb-2 text-gray-900">
-              Aventura en Buenos Aires
-            </h2>
-            
-            <p class="text-gray-700 mb-10 flex-1 text-sm">
-              <span class="bg-emerald-700 text-white px-3 rounded-md">4,6</span>
-              <i class="fa-solid fa-star text-amber-400"></i>
-              <i class="fa-solid fa-star text-amber-400"></i>
-              <i class="fa-solid fa-star text-amber-400"></i>
-              <i class="fa-solid fa-star text-amber-400"></i>
-              <i class="fa-solid fa-star-half text-amber-400"></i>
-            </p>
-            
-            <hr class="w-[150%] -ml-[25%] border-gray-300">
-            
-            <span class="text-emerald-950 bg-emerald-100 w-32 px-1.5 rounded-md -mt-3 max-w-full">
-              Ahorrás $45.000
-            </span>
-            
-            <p class="flex flex-col text-sm text-gray-600 ">
-              Precio final por persona
-              <span class="line-through">$935.000</span>
-            </p>
-
-            <span class="text-black font-semibold text-xl mb-2">
-              $890.000 ARS
-            </span>
-            
-            <button class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
-              Agregar al carrito
-            </button>
-            
-            <p class="text-xs text-gray-400 mt-1">No vas a pagar Percepción RG5617</p>
+          <h2 id="package-name" class="text-2xl font-bold mb-2 text-gray-900">Aventura en Buenos Aires</h2>
+          
+          <p class="text-gray-700 mb-10 flex-1 text-sm">
+            <span class="bg-emerald-700 text-white px-3 rounded-md">4,6</span>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star-half text-amber-400"></i>
+          </p>
+          
+          <hr class="w-[150%] -ml-[25%] border-gray-300">
+          
+          <span class="text-emerald-950 bg-emerald-100 w-32 px-1.5 rounded-md -mt-3 max-w-full">
+            Ahorrás $45.000
+          </span>
+          
+          <p class="flex flex-col text-sm text-gray-600 ">
+            Precio final por persona
+            <span class="line-through">$935.000</span>
+          </p>
+  
+          <span class="text-black font-semibold text-xl mb-2">
+            $<span id="package-price">890.000</span> ARS
+          </span>
+          
+          <button id="add-to-cart" class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
+            Agregar al carrito
+          </button>
+          
+          <p class="text-xs text-gray-400 mt-1">No vas a pagar Percepción RG5617</p>
         </div>
       </div>
   
-      <div class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+      <div id="package" class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
         <img src="src/assets/cerro.jpg" alt="Jujuy" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
         
         <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-44 rounded-xl text-white group-hover:scale-125 transition-transform">
@@ -188,9 +184,9 @@
         </div>
         
         <div class="flex gap-2 z-10">
-          <span class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ml-2">Ida y vuelta</span>
-          <span class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ">10 días</span>
-          <span class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 mr-3">Hotel Altos de la Viña</span>
+          <span id="flight-type" class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ml-2">Ida y vuelta</span>
+          <span id="flight-duration" class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ">10 días</span>
+          <span id="hotel-name" class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 mr-3">Hotel Altos de la Viña</span>
         </div>
         
         <div class="absolute -top-4 left-0 bg-cyan-200 px-2 rounded-xs font-semibold">
@@ -198,9 +194,7 @@
         </div>
         
         <div class="p-6 flex flex-col flex-1 overflow-hidden">
-          <h2 class="text-2xl font-bold mb-2 text-gray-900">
-            Aventura en jujuy - Los 7 colores
-          </h2>
+          <h2 id="package-name" class="text-2xl font-bold mb-2 text-gray-900">Aventura en jujuy - Los 7 colores</h2>
           
           <p class="text-gray-700 mb-10 flex-1 text-sm">
             <span class="bg-emerald-700 text-white px-3 rounded-md">4,5</span>
@@ -223,10 +217,10 @@
           </p>
           
           <span class="text-black font-semibold text-xl mb-2">
-            $1.000.000 ARS
+            $<span id="package-price">1.000.000</span> ARS
           </span>
           
-          <button class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
+          <button id="add-to-cart" class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
             Agregar al carrito
           </button>
           
@@ -234,7 +228,7 @@
         </div>
       </div>
   
-      <div class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+      <div id="package" class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
         <img src="src/assets/barca.jpeg" alt="Jujuy" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
         
         <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-48 rounded-xl text-white group-hover:scale-125 transition-transform">
@@ -244,9 +238,9 @@
         </div>
         
         <div class="flex gap-2 z-10">
-          <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
-          <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">7 días</span>
-          <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Ibis Barcelona Centro</span>
+          <span id="flight-type" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
+          <span id="flight-duration" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">7 días</span>
+          <span id="hotel-name" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Ibis Barcelona Centro</span>
         </div>
         
         <div class="absolute -top-4 left-0 bg-emerald-300 px-2 rounded-xs font-semibold">
@@ -254,9 +248,7 @@
         </div>
         
         <div class="p-6 flex flex-col flex-1 overflow-hidden">
-          <h2 class="text-2xl font-bold mb-2 text-gray-900">
-            Aventura en España - Barcelona
-          </h2>
+          <h2 id="package-name" class="text-2xl font-bold mb-2 text-gray-900">Aventura en España - Barcelona</h2>
           
           <p class="text-gray-700 mb-10 flex-1 text-sm">
             <span class="bg-emerald-700 text-white px-3 rounded-md">4,4</span>
@@ -279,10 +271,10 @@
           </p>
 
           <span class="text-black font-semibold text-xl mb-2">
-            $2.150.000 ARS
+            $<span id="package-price">2.150.000</span> ARS
           </span>
           
-          <button class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
+          <button id="add-to-cart" class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
             Agregar al carrito
           </button>
           
@@ -290,7 +282,7 @@
         </div>  
       </div>
       
-      <div class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+      <div id="package" class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
         <img src="src/assets/ei.jpg" alt="Jujuy" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
         
         <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-48 rounded-xl text-white group-hover:scale-125 transition-transform">
@@ -300,9 +292,9 @@
         </div>
         
         <div class="flex gap-2 z-10">
-          <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
-          <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">5 días</span>
-          <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel The People Paris Marais</span>
+          <span id="flight-type" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
+          <span id="flight-duration" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">5 días</span>
+          <span id="hotel-name" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel The People Paris Marais</span>
         </div>
         
         <div class="absolute -top-4 left-0 bg-emerald-300 px-2 rounded-xs font-semibold">
@@ -310,9 +302,7 @@
         </div>
         
         <div class="p-6 flex flex-col flex-1 overflow-hidden">
-          <h2 class="text-2xl font-bold mb-2 text-gray-900">
-            Aventura en Francia - Paris
-          </h2>
+          <h2 id="package-name" class="text-2xl font-bold mb-2 text-gray-900">Aventura en Francia - Paris</h2>
           
           <p class="text-gray-700 mb-10 flex-1 text-sm">
               <span class="bg-emerald-700 text-white px-3 rounded-md">4,1</span>
@@ -334,10 +324,10 @@
           </p>
           
           <span class="text-black font-semibold text-xl mb-2">
-            $1.900.000 ARS
+            $<span id="package-price">1.900.000</span> ARS
           </span>
           
-          <button class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
+          <button id="add-to-cart" class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
             Agregar al carrito
           </button>
           
@@ -345,7 +335,7 @@
         </div>  
       </div>
       
-      <div class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+      <div id="package" class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
         <img src="src/assets/ale.jpg" alt="Jujuy" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
         
         <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-48 rounded-xl text-white group-hover:scale-125 transition-transform">
@@ -355,9 +345,9 @@
         </div>
         
         <div class="flex gap-2 z-10">
-          <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
-          <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">6 días</span>
-          <span class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Villa Ludwig</span>
+          <span id="flight-type" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
+          <span id="flight-duration" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">6 días</span>
+          <span id="hotel-name" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Villa Ludwig</span>
         </div>
         
         <div class="absolute -top-4 left-0 bg-emerald-300 px-2 rounded-xs font-semibold">
@@ -365,9 +355,7 @@
         </div>
         
         <div class="p-6 flex flex-col flex-1 overflow-hidden">
-          <h2 class="text-2xl font-bold mb-2 text-gray-900">
-            Aventura en Alemania - Paris
-          </h2>
+          <h2 id="package-name" class="text-2xl font-bold mb-2 text-gray-900">Aventura en Alemania - Paris</h2>
 
           <p class="text-gray-700 mb-10 flex-1 text-sm">
             <span class="bg-emerald-700 text-white px-3 rounded-md">4,8</span>
@@ -390,10 +378,10 @@
           </p>
           
           <span class="text-black font-semibold text-xl mb-2">
-            $2.200.000 ARS
+            $<span id="package-price">2.200.000</span> ARS
           </span>
           
-          <button class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
+          <button id="add-to-cart" class="bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
             Agregar al carrito
           </button>
           
@@ -525,5 +513,6 @@
   </footer>
 
   <script src="src/app.js"></script>
+  <script src="src/keepInfo.js"></script>
 </body>
 </html>
