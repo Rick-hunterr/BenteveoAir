@@ -1,32 +1,51 @@
+
 CREATE DATABASE bd_benteveoair;
 
 
--- Tabla Servicios: servicios que ofrece la aerolínea
+
+CREATE TABLE Ubicacion (
+    id SERIAL PRIMARY KEY,
+    ciudad VARCHAR(100) NOT NULL,
+    pais VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Destino_Vuelo (
+    id SERIAL PRIMARY KEY,
+    origen_id INTEGER REFERENCES Ubicacion(id) ON DELETE SET NULL,
+    destino_id INTEGER REFERENCES Ubicacion(id) ON DELETE SET NULL
+);
+
 CREATE TABLE Servicio (
     id SERIAL PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
+    nombre VARCHAR(100) NOT NULL UNIQUE,
     descripcion TEXT
 );
 
--- Tabla Productos: productos vinculados a servicios
 CREATE TABLE Producto (
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     descripcion TEXT,
-    precio NUMERIC(10,2) NOT NULL,
-    servicio_id INTEGER REFERENCES Servicio(id) ON DELETE SET NULL
+    viaje TEXT,
+    fecha DATE,
+    imagen TEXT,
+    hotel TEXT,
+    descuento REAL,
+    calificacion REAL,
+    precio NUMERIC(10,2) NOT NULL CHECK (precio >= 0),
+    servicio_id INTEGER REFERENCES Servicio(id) ON DELETE SET NULL,
+    destino_vuelo_id INTEGER REFERENCES Destino_Vuelo(id) ON DELETE SET NULL
 );
 
--- Tabla Usuarios: clientes o empleados
+
 CREATE TABLE Usuario (
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(150) NOT NULL UNIQUE,
     contraseña VARCHAR(255) NOT NULL,
-    rol_id INTEGER REFERENCES Rol(id) ON DELETE SET NULL
+    rol VARCHAR(50) NOT NULL,
+    ubicacion_id INTEGER REFERENCES Ubicacion(id) ON DELETE SET NULL
 );
 
--- Tabla Orden: pedidos realizados por usuarios
 CREATE TABLE Orden (
     id SERIAL PRIMARY KEY,
     usuario_id INTEGER REFERENCES Usuario(id) ON DELETE CASCADE,
@@ -34,11 +53,17 @@ CREATE TABLE Orden (
     estado VARCHAR(50) NOT NULL
 );
 
--- Tabla DetalleOrden: detalle de productos por orden
-CREATE TABLE DetalleOrden (
+CREATE TABLE Detalle_Orden (
     id SERIAL PRIMARY KEY,
     orden_id INTEGER REFERENCES Orden(id) ON DELETE CASCADE,
     producto_id INTEGER REFERENCES Producto(id) ON DELETE SET NULL,
-    cantidad INTEGER NOT NULL,
-    precio NUMERIC(10,2) NOT NULL
+    cantidad INTEGER NOT NULL CHECK (cantidad > 0),
+    precio NUMERIC(10,2) NOT NULL CHECK (precio >= 0)
 );
+
+
+
+
+
+
+
