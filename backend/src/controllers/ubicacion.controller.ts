@@ -18,3 +18,13 @@ export const crearUbicacion = async (req: Request, res: Response) => {
     res.status(400).json({ error: "Error al crear ubicación" })
   }
 }
+
+export const eliminarUbicacion = async (req: Request, res: Response) => {
+  const { id } = req.params
+  try {
+    await repo.delete(id)
+    res.sendStatus(204)
+  } catch (error) {
+    res.status(400).json({ error: "Error al eliminar ubicación" })
+  }
+}
