@@ -5,6 +5,7 @@ import ubicacionRoutes from "../routes/ubicacion.routes"
 import productoRoutes from "../routes/producto.routes"
 import destinoVueloRoutes from "../routes/destinoVuelo.routes"
 import servicioRoutes from "../routes/servicio.routes";
+import ordenRoutes from "../routes/orden.routes";
 
 const app = express()
 
@@ -16,6 +17,7 @@ app.use("/ubicaciones", ubicacionRoutes)
 app.use("/productos", productoRoutes)
 app.use("/api/destinos", destinoVueloRoutes)
 app.use("/servicios", servicioRoutes)
+app.use("/ordenes", ordenRoutes)
 
 
 export default app
