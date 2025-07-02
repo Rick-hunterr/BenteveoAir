@@ -150,7 +150,7 @@ git revert ID_commit
 
 ==================================================================
 
-🛠 Flujo de trabajo en equipo con Git y GitHub
+Flujo de trabajo en equipo con Git y GitHub
 ==============================================
 
 1. Clonar el repositorio (solo la primera vez)
@@ -213,3 +213,20 @@ git push origin main
 Recomendacion clave:
 - Siempre hacé `git pull --rebase` antes de hacer `git push`.
 
+
+
+
+
+Palabras clave recomendadas para mensajes de commit:
+
+- **feat**: Para agregar una nueva funcionalidad o característica.
+- **fix**: Para corregir un error o bug.
+- **docs**: Cambios relacionados solo con documentación.
+- **style**: Cambios que no afectan la lógica, solo formato, espacios, estilo de código, etc.
+- **refactor**: Cambios en el código que no agregan funcionalidad ni corrigen bugs, solo mejoran estructura o legibilidad.
+- **perf**: Cambios para mejorar el rendimiento.
+- **test**: Agregar o corregir tests.
+- **chore**: Cambios en tareas auxiliares, scripts, configuración, etc., que no afectan código fuente ni tests.
+- **build**: Cambios que afectan el sistema de build o dependencias.
+- **ci**: Cambios en configuración o scripts de integración continua.
+- **revert**: Revertir un commit anterior.
