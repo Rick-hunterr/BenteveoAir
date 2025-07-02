@@ -58,3 +58,45 @@ export async function eliminarProducto(req: Request, res: Response) {
         res.status(500).json({ error: "Error al eliminar producto" })
     }
 }
+
+export async function actualizarProducto(req: Request, res: Response) {
+    const { id } = req.params
+
+    if (isNaN(Number(id))) {
+        res.status(400).send("ID inválido")
+        return
+    }
+
+    try {
+        const producto = await repo.findOneBy({ id: Number(id) })
+
+        if (!producto) {
+            res.status(404).send("Producto no encontrado")
+            return
+        }
+
+        const { servicioId, destinoVueloId, ...data } = req.body
+
+        if (servicioId) {
+            const servicio = await repoServicio.findOneBy({ id: servicioId })
+            if (servicio) {
+                producto.servicio = servicio
+            }
+        }
+
+        if (destinoVueloId) {
+            const destinoVuelo = await repoDestino.findOneBy({ id: destinoVueloId })
+            if (destinoVuelo) {
+                producto.destinoVuelo = destinoVuelo
+            }
+        }
+
+        Object.assign(producto, data)
+
+        const resultado = await repo.save(producto)
+        res.json(resultado)
+    } catch (error) {
+        console.error("Error al actualizar producto:", error)
+        res.status(400).json({ error: "Error al actualizar producto" })
+    }
+}
