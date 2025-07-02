@@ -19,6 +19,24 @@ export class Producto {
     @Column({ type: "text", nullable: true })
     descripcion?: string
 
+    @Column({ type: "text", nullable: true })
+    duracion!: string
+
+    @Column({ type: "date", nullable: true })
+    fecha?: Date
+
+    @Column({ type: "text", nullable: true })
+    imagen?: string
+
+    @Column({ type: "text", nullable: true})
+    hotel!: string
+
+    @Column({ type: "real", nullable: true })
+    descuento?: number
+
+    @Column({ type: "real", nullable: true })
+    calificacion?: number
+
     @Column({ type: "numeric", precision: 10, scale: 2 })
     precio!: number
 

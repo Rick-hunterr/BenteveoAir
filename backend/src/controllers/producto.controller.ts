@@ -12,7 +12,6 @@ export async function obtenerProductos(req: Request, res: Response) {
     try {
         const { precioMin, precioMax, servicioNombre, destinoId } = req.query
 
-        // Empezamos un QueryBuilder para más flexibilidad
         const query = repo.createQueryBuilder("producto")
             .leftJoinAndSelect("producto.servicio", "servicio")
             .leftJoinAndSelect("producto.destinoVuelo", "destinoVuelo")
@@ -69,25 +68,60 @@ export async function obtenerProductoPorId(req: Request, res: Response) {
 
 
 export async function crearProducto(req: Request, res: Response) {
+    const nombre = req.body.nombre
+    const descripcion = req.body.descripcion
+    const duracion = req.body.duracion
+    const fecha = req.body.fecha
+    const imagen = req.body.imagen
+    const hotel = req.body.hotel
+    const descuento = req.body.descuento
+    const calificacion = req.body.calificacion
+    const precio = req.body.precio
+    const servicioId = req.body.servicioId
+    const destinoVueloId = req.body.destinoVueloId
+
     try {
-        const { servicioId, destinoVueloId, ...data } = req.body
+        let servicio = null
+        if (servicioId) {
+            servicio = await repoServicio.findOneBy({ id: servicioId })
+            if (!servicio) {
+                res.status(400).json({ error: "Servicio no encontrado" })
+                return
+            }
+        }
 
-        const servicio = await repoServicio.findOneBy({ id: servicioId })
-        const destinoVuelo = await repoDestino.findOneBy({ id: destinoVueloId })
+        let destinoVuelo = null
+        if (destinoVueloId) {
+            destinoVuelo = await repoDestino.findOneBy({ id: destinoVueloId })
+            if (!destinoVuelo) {
+                res.status(400).json({ error: "Destino de vuelo no encontrado" })
+                return
+            }
+        }
 
-        const producto = repo.create({
-            ...data,
-            servicio,
-            destinoVuelo,
+        const nuevoProducto = repo.create({
+            nombre: nombre,
+            descripcion: descripcion,
+            duracion: duracion,
+            fecha: fecha,
+            imagen: imagen,
+            hotel: hotel,
+            descuento: descuento,
+            calificacion: calificacion,
+            precio: precio,
+            servicio: servicio,
+            destinoVuelo: destinoVuelo
         })
 
-        const resultado = await repo.save(producto)
+        const resultado = await repo.save(nuevoProducto)
         res.status(201).json(resultado)
+
     } catch (error) {
         console.error("Error al crear producto:", error)
-        res.status(400).json({ error: "Error al crear producto" })
+        res.status(500).json({ error: "Error al crear producto", details: error })
     }
 }
+
 
 export async function eliminarProducto(req: Request, res: Response) {
     const { id } = req.params
