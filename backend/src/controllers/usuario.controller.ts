@@ -72,3 +72,39 @@ export async function eliminarUsuario(req: Request, res: Response) {
     res.status(500).send("Error al eliminar usuario")
   }
 }
+
+export async function actualizarUsuario(req: Request, res: Response) {
+  const { id } = req.params
+
+  if (isNaN(Number(id))) {
+    res.status(400).send("ID inválido")
+    return
+  }
+
+  try {
+    const usuario = await repo.findOneBy({ id: Number(id) })
+
+    if (!usuario) {
+      res.status(404).send("Usuario no encontrado")
+      return
+    }
+
+    const updatedData = req.body
+    if (updatedData.ubicacion) {
+      const ubicacion = await repoUbicacion.findOneBy({ id: updatedData.ubicacion.id })
+      if (!ubicacion) {
+        res.status(400).send("Ubicación no encontrada")
+        return
+      }
+      updatedData.ubicacion = ubicacion
+    }
+
+    Object.assign(usuario, updatedData)
+    const resultado = await repo.save(usuario)
+
+    res.status(200).json(resultado)
+  } catch (error) {
+    console.error("ERROR al actualizar usuario:", error)
+    res.status(500).send("Error al actualizar usuario")
+  }
+}
