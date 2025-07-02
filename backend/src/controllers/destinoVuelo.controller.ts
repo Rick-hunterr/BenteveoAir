@@ -36,3 +36,26 @@ export async function crearDestinoVuelo(req: Request, res: Response) {
         res.status(400).json({ error: "Error al crear destino de vuelo" });
     }
 }
+
+export async function eliminarDestinoVuelo(req: Request, res: Response) {
+    const { id } = req.params;
+
+    if (isNaN(Number(id))) {
+        res.status(400).send("ID inválido");
+        return;
+    }
+
+    try {
+        const destino = await repo.findOneBy({ id: Number(id) });
+        if (!destino) {
+            res.status(404).send("Destino de vuelo no encontrado");
+            return;
+        }
+
+        await repo.remove(destino);
+        res.status(204).send();
+    } catch (error) {
+        console.error("Error al eliminar destino de vuelo:", error);
+        res.status(500).json({ error: "Error al eliminar destino de vuelo" });
+    }
+}
