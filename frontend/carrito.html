@@ -65,44 +65,11 @@
   </header>
 
   <main class="flex-1 grid place-items-center py-20">
-    <div
-      class="cart max-w-6xl w-full max-h-[800px] h-full bg-gray-100 shadow-md border border-black/20 py-10 px-15 grid grid-cols-3 gap-15">
-      <div class="col-span-2 packages  w-full overflow-auto pr-2">
-        <div
-          class="package h-fit my-3 bg-white flex justify-between items-end border border-black/10 shadow-md py-4 px-8">
-          <div>
-            <div id="charact" class="flex gap-2 text-xs text-white z-10">
-              <span class="bg-gray-900 rounded-2xl px-3">Ida y vuelta</span>
-              <span class="bg-gray-900 rounded-2xl px-3">5 días</span>
-              <span class="bg-gray-900 rounded-2xl px-3">Hotel Cap Polonio</span>
-            </div>
-
-            <div id="info">
-              <h2 class="text-2xl font-bold mb-2 text-gray-900">
-                Aventura en Tierra del Fuego
-              </h2>
-
-              <p class="text-black">
-                <span class="font-semibold ">$749.000</span> ARS
-              </p>
-            </div>
-          </div>
-
-          <button
-            class="border-2 border-red-600/50 font-bold rounded-md py-1 px-2 bg-red-600/70 text-white text-sm cursor-pointer hover:scale-105 hover:bg-red-600 transition-transform flex">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M17 6V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H2v2h2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8h2V6zM9 4h6v2H9zM6 20V8h12v12z">
-              </path>
-              <path d="M9 10h2v8H9zM13 10h2v8h-2z"></path>
-            </svg>
-            Eliminar
-          </button>
-        </div>
+    <div class="cart max-w-6xl w-full max-h-[800px] h-full bg-gray-100 shadow-md border border-black/20 py-10 px-15 grid grid-cols-3 gap-15">
+      <div id="packages-record" class="col-span-2 w-full overflow-auto pr-2">
       </div>
 
-      <div
-        class="bg-white w-full px-8 py-4 h-fit border border-t-4 border-t-green-buy rounded-2xl border-black/10 shadow-md overflow-hidden">
+      <div class="history">
         <h1 class="text-sm font-bold mb-2">
           Historial de compra
         </h1>
@@ -111,30 +78,23 @@
 
         <div class="py-4">
           <p class="mb-2">
-            Productos: <span class="font-bold">1</span>
+            Productos: <span id="product-counter" class="font-bold">0</span>
           </p>
 
-          <ul class="grid gap-2">
-            <li>
-              Aventura en tierra del fuego
-              <span class="font-semibold">$749000</span>
-            </li>
+          <ul id="history" class="grid gap-2">
           </ul>
         </div>
 
-
         <p class="text-xl font-medium mb-4">
-          Total: <span class="text-2xl font-semibold">$749.000</span>
+          Total: $<span id="total-price" class="text-2xl font-semibold">0</span>
         </p>
 
         <div class="grid gap-3 text-start w-full">
-          <button
-            class="bg-emerald-700 text-white p-2 rounded-lg font-semibold cursor-pointer hover:bg-emerald-800 transition-colors">
+          <button id="buy-cart" class="bg-emerald-700 text-white p-2 rounded-lg font-semibold cursor-pointer hover:bg-emerald-800 transition-colors">
             Confirmar compra
           </button>
 
-          <button
-            class="bg-red-500 text-white p-2 rounded-lg font-semibold cursor-pointer hover:bg-red-600 transition-colors">
+          <button id="empty-cart" class="bg-red-500 text-white p-2 rounded-lg font-semibold cursor-pointer hover:bg-red-600 transition-colors">
             Vaciar carrito
           </button>
         </div>
@@ -318,10 +278,10 @@
         </nav>
       </div>
     </div>
-
   </footer>
 
   <script src="src/app.js"></script>
+  <script src="src/cart.js"></script>
 </body>
 
 </html>

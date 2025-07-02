@@ -5,6 +5,32 @@
   scroll-behavior: smooth;
 }
 
+@layer components {
+  .history {
+    @apply bg-white w-full px-8 py-4 h-fit border border-t-4 border-t-green-buy rounded-2xl border-black/10 shadow-md overflow-hidden;
+  }
+
+  .package {
+    @apply h-fit my-3 bg-white flex justify-between items-end border border-black/10 shadow-md py-4 px-8;
+  }
+
+  .tags {
+    @apply flex gap-2 text-xs text-white z-10;
+  }
+
+  .tag {
+    @apply bg-gray-900 rounded-2xl px-3;
+  }
+
+  .title {
+    @apply text-2xl font-bold mb-2 text-gray-900;
+  }
+
+  .delete {
+    @apply border-2 border-red-600/50 font-bold rounded-md py-1 px-2 bg-red-600/70 text-white text-sm cursor-pointer hover:scale-105 hover:bg-red-600 transition-transform flex;
+  }
+}
+
 @theme {
   --color-default-dark: #1c1c1c;
   --color-default-light: #ebebeb;
