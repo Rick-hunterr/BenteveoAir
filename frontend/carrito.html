@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/style.css">
+  <title>Benteveo Air</title>
+</head>
+<body class="flex flex-col min-h-svh">
+  
+  <header class="z-100 w-full shadow-md flex justify-center items-center text-sm font-medium text-default-dark font-manrope">
+    <div class="container w-full max-w-7xl py-3 px-5 flex justify-between items-center">
+      <div class="flex items-center gap-24">
+        <div class="logo flex items-center gap-4">
+          <a href="#">
+            <img class="max-w-8 object-contain cursor-pointer" src="src/assets/logo.png" alt="BS-logo" draggable="false">
+          </a>
+
+          <a href="#" class="text-xl text-dark-blue tracking-tighter cursor-pointer">
+            Benteveo Air 
+          </a>
+        </div>
+
+        <div>
+          <ul class="flex gap-12">
+            <li><a class="cursor-pointer hover:text-default-dark/80" href="#home">Inicio</a></li>
+            <li><a class="cursor-pointer hover:text-default-dark/80" href="paquete.html">Paquetes</a></li>
+            <li><a class="cursor-pointer hover:text-default-dark/80" href="#about-us">Nosotros</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex gap-10">
+          <div class="flex gap-2">
+            <button class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">Registrarse</button>
+            <button class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">Iniciar sesion</button>
+          </div>
+          
+          <a href="" class="relative cursor-pointer">
+            <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" >
+              <path d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z"></path>
+            </svg>
+
+            <span id="counter" class="opacity-0 absolute text-amber-600 -bottom-1 -right-1">2</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 grid place-items-center py-20">
+    <div class="cart max-w-6xl w-full max-h-[800px] h-full bg-gray-100 shadow-md border border-black/20 py-10 px-15 grid grid-cols-3 gap-15">
+      <div class="col-span-2 packages  w-full overflow-auto pr-2">
+        <div class="package h-fit my-3 bg-white flex justify-between items-end border border-black/10 shadow-md py-4 px-8">
+          <div>
+            <div id="charact" class="flex gap-2 text-xs text-white z-10">
+              <span class="bg-gray-900 rounded-2xl px-3">Ida y vuelta</span>
+              <span class="bg-gray-900 rounded-2xl px-3">5 días</span>
+              <span class="bg-gray-900 rounded-2xl px-3">Hotel Cap Polonio</span>
+            </div>
+            
+            <div id="info">
+              <h2 class="text-2xl font-bold mb-2 text-gray-900">
+                Aventura en Tierra del Fuego
+              </h2>
+      
+              <p class="text-black">
+                <span class="font-semibold ">$749.000</span> ARS           
+              </p>
+            </div>
+          </div>
+          
+          <button class="border-2 border-red-600/50 font-bold rounded-md py-1 px-2 bg-red-600/70 text-white text-sm cursor-pointer hover:scale-105 hover:bg-red-600 transition-transform flex">
+            <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" >
+              <path d="M17 6V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H2v2h2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8h2V6zM9 4h6v2H9zM6 20V8h12v12z"></path><path d="M9 10h2v8H9zM13 10h2v8h-2z"></path>
+            </svg>
+            Eliminar
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white w-full px-8 py-4 h-fit border border-t-4 border-t-green-buy rounded-2xl border-black/10 shadow-md overflow-hidden">
+        <h1 class="text-sm font-bold mb-2">
+          Historial de compra
+        </h1>
+
+        <hr class=" w-[150%] -ml-[25%] border-gray-300">
+
+        <div class="py-4">
+          <p class="mb-2">
+            Productos: <span class="font-bold">1</span>
+          </p>
+          
+          <ul class="grid gap-2">
+            <li>
+              Aventura en tierra del fuego
+              <span class="font-semibold">$749000</span>
+            </li>
+          </ul>
+        </div>
+
+
+        <p class="text-xl font-medium mb-4">
+          Total: <span class="text-2xl font-semibold">$749.000</span>
+        </p>
+
+        <div class="grid gap-3 text-start w-full">
+          <button class="bg-emerald-700 text-white p-2 rounded-lg font-semibold cursor-pointer hover:bg-emerald-800 transition-colors">
+            Confirmar compra
+          </button>
+
+          <button class="bg-red-500 text-white p-2 rounded-lg font-semibold cursor-pointer hover:bg-red-600 transition-colors">
+            Vaciar carrito
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-900 max-w-full w-full text-white px-16 py-6 snap-start">
+    <div class="max-w-7xl w-full m-auto grid gap-3">
+      <div class="nombre-empresa">
+        <h1 class="text-2xl font-bold">
+          Benteveo Air
+        </h1>
+      </div>
+  
+      <nav class="nav-footer">
+        <ul class="text-sm flex items-center gap-8 uppercase tracking-widest">
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Politica de privacidad</a></li>
+        </ul>
+      </nav>
+  
+      <div class="text-xs flex items-center justify-between mt-4">
+        <span>
+          ©2025 Benteveo Air. Todos los derechos reservados.
+        </span>
+        
+        <nav class="social-media">
+          <ul class="flex items-center gap-8 tracking-widest">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+</html>
