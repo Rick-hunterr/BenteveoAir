@@ -10,12 +10,63 @@ const repoDestino = AppDataSource.getRepository(DestinoVuelo)
 
 export async function obtenerProductos(req: Request, res: Response) {
     try {
-        const productos = await repo.find({ relations: ["servicio", "destinoVuelo"] })
+        const { precioMin, precioMax, servicioNombre, destinoId } = req.query
+
+        // Empezamos un QueryBuilder para más flexibilidad
+        const query = repo.createQueryBuilder("producto")
+            .leftJoinAndSelect("producto.servicio", "servicio")
+            .leftJoinAndSelect("producto.destinoVuelo", "destinoVuelo")
+
+        if (precioMin) {
+            query.andWhere("producto.precio >= :precioMin", { precioMin: Number(precioMin) })
+        }
+
+        if (precioMax) {
+            query.andWhere("producto.precio <= :precioMax", { precioMax: Number(precioMax) })
+        }
+
+        if (servicioNombre) {
+            query.andWhere("servicio.nombre = :servicioNombre", { servicioNombre: String(servicioNombre) })
+        }
+
+        if (destinoId) {
+            query.andWhere("destinoVuelo.id = :destinoId", { destinoId: Number(destinoId) })
+        }
+
+        const productos = await query.getMany()
         res.json(productos)
     } catch (error) {
+        console.error("Error al obtener productos:", error)
         res.status(500).json({ error: "Error al obtener productos" })
     }
 }
+
+export async function obtenerProductoPorId(req: Request, res: Response) {
+    const { id } = req.params
+
+    if (isNaN(Number(id))) {
+        res.status(400).send("ID inválido")
+        return
+    }
+
+    try {
+        const producto = await repo.findOne({
+            where: { id: Number(id) },
+            relations: ["servicio", "destinoVuelo"],
+        })
+
+        if (!producto) {
+            res.status(404).send("Producto no encontrado")
+            return
+        }
+
+        res.json(producto)
+    } catch (error) {
+        console.error("Error al obtener producto por ID:", error)
+        res.status(500).json({ error: "Error al obtener producto" })
+    }
+}
+
 
 export async function crearProducto(req: Request, res: Response) {
     try {
@@ -43,7 +94,7 @@ export async function eliminarProducto(req: Request, res: Response) {
 
     if (isNaN(Number(id))) {
         res.status(400).send("ID inválido")
-        return  
+        return
     }
     try {
         const producto = await repo.findOneBy({ id: Number(id) })
@@ -100,3 +151,4 @@ export async function actualizarProducto(req: Request, res: Response) {
         res.status(400).json({ error: "Error al actualizar producto" })
     }
 }
+
