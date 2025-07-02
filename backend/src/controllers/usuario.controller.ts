@@ -2,6 +2,8 @@ import { Request, Response } from "express"
 import { AppDataSource } from "../config/db"
 import { Usuario } from "../models/Usuario"
 import { Ubicacion } from "../models/Ubicacion"
+import * as bcrypt from "bcrypt"
+import * as jwt from "jsonwebtoken"
 
 const repo = AppDataSource.getRepository(Usuario)
 const repoUbicacion = AppDataSource.getRepository(Ubicacion)
@@ -17,35 +19,102 @@ export async function obtenerUsuarios(req: Request, res: Response) {
 }
 
 export async function crearUsuario(req: Request, res: Response) {
+  const nombre = req.body.nombre
+  const email = req.body.email
+  const contraseña = req.body.contraseña
+  const rol = req.body.rol
+  const ubicacion = req.body.ubicacion
+
+  // Validaciones
+  if (!nombre || !email || !contraseña || !rol) {
+    res.status(400).json({ 
+      error: "Nombre, email, contraseña y rol son requeridos" 
+    })
+    return
+  }
+
+  if (contraseña.length < 4) {
+    res.status(400).json({ 
+      error: "La contraseña debe tener al menos 4 caracteres" 
+    })
+    return
+  }
+
   try {
-    const ubicacionData = req.body.ubicacion
+    // Verifico si ya existe un usuario con ese email
+    const usuarioExistente = await repo.findOne({ where: { email } })
+    if (usuarioExistente) {
+      res.status(400).json({ error: "El email ya está en uso" })
+      return
+    }
 
-    let ubicacion = null
-    if (ubicacionData) {
+    // Hasheo la contraseña
+    const hashedContraseña = await bcrypt.hash(contraseña, 10)
 
-      if (ubicacionData.id) {
-        ubicacion = await repoUbicacion.findOneBy({ id: ubicacionData.id })
-        if (!ubicacion) {
-          res.status(400).send("Ubicación no encontrada")
-          return
-        }
-      } else {
-
-        ubicacion = repoUbicacion.create(ubicacionData)
-        await repoUbicacion.save(ubicacion)
+    // Manejo la ubicación si viene en el body
+    let ubicacionEntity = null
+    if (ubicacion) {
+      ubicacionEntity = await repoUbicacion.findOneBy({ id: ubicacion.id })
+      if (!ubicacionEntity) {
+        res.status(400).json({ error: "Ubicación no encontrada" })
+        return
       }
     }
 
-    const usuarioData = { ...req.body }
-    delete usuarioData.ubicacion
+    // Creo el nuevo usuario incluyendo el nombre
+    const nuevoUsuario = repo.create({
+      nombre: nombre,
+      email: email,
+      contraseña: hashedContraseña,
+      rol: rol,
+      ubicacion: ubicacionEntity,
+    })
 
-    const usuario = repo.create({ ...usuarioData, ubicacion })
-    const resultado = await repo.save(usuario)
-
+    const resultado = await repo.save(nuevoUsuario)
     res.status(201).json(resultado)
   } catch (error) {
     console.error("ERROR al crear usuario:", error)
-    res.status(400).json({ error: "Error al crear usuario" })
+    res.status(500).json({ 
+      error: "Error al crear usuario", 
+      details: (error as any).message 
+    })
+  }
+}
+
+
+export async function loginUsuario(req: Request, res: Response) {
+  const { email, contraseña } = req.body
+
+  if (!email || !contraseña) {
+    res.status(400).json({ error: "Email y contraseña son requeridos" })
+    return
+  }
+
+  try {
+    const usuario = await repo.findOne({ where: { email } })
+
+    if (!usuario) {
+      res.status(401).json({ error: "Credenciales inválidas" })
+      return
+    }
+
+    const esValido = await bcrypt.compare(contraseña, usuario.contraseña)
+
+    if (!esValido) {
+      res.status(401).json({ error: "Credenciales inválidas" })
+      return
+    }
+
+    const token = jwt.sign(
+      { id: usuario.id, email: usuario.email, rol: usuario.rol },
+      process.env.JWT_SECRET || "secretKey",
+      { expiresIn: "1h" }
+    )
+
+    res.json({ token })
+  } catch (error) {
+    console.error("ERROR en loginUsuario:", error)
+    res.status(500).json({ error: "Error en el servidor" })
   }
 }
 
@@ -74,15 +143,15 @@ export async function eliminarUsuario(req: Request, res: Response) {
 }
 
 export async function actualizarUsuario(req: Request, res: Response) {
-  const { id } = req.params
+  const id = parseInt(req.params.id)
 
-  if (isNaN(Number(id))) {
+  if (isNaN(id)) {
     res.status(400).send("ID inválido")
     return
   }
 
   try {
-    const usuario = await repo.findOneBy({ id: Number(id) })
+    const usuario = await repo.findOneBy({ id })
 
     if (!usuario) {
       res.status(404).send("Usuario no encontrado")
@@ -90,6 +159,7 @@ export async function actualizarUsuario(req: Request, res: Response) {
     }
 
     const updatedData = req.body
+
     if (updatedData.ubicacion) {
       const ubicacion = await repoUbicacion.findOneBy({ id: updatedData.ubicacion.id })
       if (!ubicacion) {
@@ -99,10 +169,19 @@ export async function actualizarUsuario(req: Request, res: Response) {
       updatedData.ubicacion = ubicacion
     }
 
-    Object.assign(usuario, updatedData)
-    const resultado = await repo.save(usuario)
+    if (updatedData.contraseña) {
+      if (updatedData.contraseña.length < 4) {
+        res.status(400).json({ error: "La contraseña debe tener al menos 4 caracteres" })
+        return
+      }
+      updatedData.contraseña = await bcrypt.hash(updatedData.contraseña, 10)
+    }
 
+    Object.assign(usuario, updatedData)
+
+    const resultado = await repo.save(usuario)
     res.status(200).json(resultado)
+
   } catch (error) {
     console.error("ERROR al actualizar usuario:", error)
     res.status(500).send("Error al actualizar usuario")
