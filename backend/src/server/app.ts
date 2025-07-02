@@ -4,6 +4,7 @@ import usuarioRoutes from "../routes/usuario.routes";
 import ubicacionRoutes from "../routes/ubicacion.routes"
 import productoRoutes from "../routes/producto.routes"
 import destinoVueloRoutes from "../routes/destinoVuelo.routes"
+import servicioRoutes from "../routes/servicio.routes";
 
 const app = express()
 
@@ -14,6 +15,7 @@ app.use("/usuarios", usuarioRoutes);
 app.use("/ubicaciones", ubicacionRoutes)
 app.use("/productos", productoRoutes)
 app.use("/api/destinos", destinoVueloRoutes)
+app.use("/servicios", servicioRoutes)
 
 
 export default app
