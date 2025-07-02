@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="src/style.css">
   <title>Benteveo Air</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-your-integrity-hash>" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha384-your-integrity-hash>" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body class="flex flex-col min-h-svh">
-  
-  <header class="z-100 w-full shadow-md flex justify-center items-center text-sm font-medium text-default-dark font-manrope">
+
+  <header
+    class="z-100 w-full shadow-md flex justify-center items-center text-sm font-medium text-default-dark font-manrope">
     <div class="container w-full max-w-7xl py-3 px-5 flex justify-between items-center">
       <div class="flex items-center gap-24">
         <div class="logo flex items-center gap-4">
           <a href="#">
-            <img class="max-w-8 object-contain cursor-pointer" src="src/assets/logo.png" alt="BS-logo" draggable="false">
+            <img class="max-w-8 object-contain cursor-pointer" src="src/assets/logo.png" alt="BS-logo"
+              draggable="false">
           </a>
 
           <a href="#" class="text-xl text-dark-blue tracking-tighter cursor-pointer">
-            Benteveo Air 
+            Benteveo Air
           </a>
         </div>
 
@@ -34,18 +39,22 @@
       <div>
         <div class="flex gap-10">
           <div class="flex gap-2">
-            <button id="openRegistro" class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">
+            <button id="openRegistro"
+              class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">
               Registrarse
             </button>
 
-            <button id="openInicio" class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">
+            <button id="openInicio"
+              class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">
               Iniciar sesion
             </button>
           </div>
-          
+
           <a href="" class="relative cursor-pointer">
-            <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" >
-              <path d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z"></path>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z">
+              </path>
             </svg>
 
             <span id="counter" class="opacity-0 absolute text-amber-600 -bottom-1 -right-1">2</span>
@@ -56,37 +65,44 @@
   </header>
 
   <main class="flex-1 grid place-items-center py-20">
-    <div class="cart max-w-6xl w-full max-h-[800px] h-full bg-gray-100 shadow-md border border-black/20 py-10 px-15 grid grid-cols-3 gap-15">
+    <div
+      class="cart max-w-6xl w-full max-h-[800px] h-full bg-gray-100 shadow-md border border-black/20 py-10 px-15 grid grid-cols-3 gap-15">
       <div class="col-span-2 packages  w-full overflow-auto pr-2">
-        <div class="package h-fit my-3 bg-white flex justify-between items-end border border-black/10 shadow-md py-4 px-8">
+        <div
+          class="package h-fit my-3 bg-white flex justify-between items-end border border-black/10 shadow-md py-4 px-8">
           <div>
             <div id="charact" class="flex gap-2 text-xs text-white z-10">
               <span class="bg-gray-900 rounded-2xl px-3">Ida y vuelta</span>
               <span class="bg-gray-900 rounded-2xl px-3">5 días</span>
               <span class="bg-gray-900 rounded-2xl px-3">Hotel Cap Polonio</span>
             </div>
-            
+
             <div id="info">
               <h2 class="text-2xl font-bold mb-2 text-gray-900">
                 Aventura en Tierra del Fuego
               </h2>
-      
+
               <p class="text-black">
-                <span class="font-semibold ">$749.000</span> ARS           
+                <span class="font-semibold ">$749.000</span> ARS
               </p>
             </div>
           </div>
-          
-          <button class="border-2 border-red-600/50 font-bold rounded-md py-1 px-2 bg-red-600/70 text-white text-sm cursor-pointer hover:scale-105 hover:bg-red-600 transition-transform flex">
-            <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" >
-              <path d="M17 6V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H2v2h2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8h2V6zM9 4h6v2H9zM6 20V8h12v12z"></path><path d="M9 10h2v8H9zM13 10h2v8h-2z"></path>
+
+          <button
+            class="border-2 border-red-600/50 font-bold rounded-md py-1 px-2 bg-red-600/70 text-white text-sm cursor-pointer hover:scale-105 hover:bg-red-600 transition-transform flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17 6V4c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H2v2h2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8h2V6zM9 4h6v2H9zM6 20V8h12v12z">
+              </path>
+              <path d="M9 10h2v8H9zM13 10h2v8h-2z"></path>
             </svg>
             Eliminar
           </button>
         </div>
       </div>
 
-      <div class="bg-white w-full px-8 py-4 h-fit border border-t-4 border-t-green-buy rounded-2xl border-black/10 shadow-md overflow-hidden">
+      <div
+        class="bg-white w-full px-8 py-4 h-fit border border-t-4 border-t-green-buy rounded-2xl border-black/10 shadow-md overflow-hidden">
         <h1 class="text-sm font-bold mb-2">
           Historial de compra
         </h1>
@@ -97,7 +113,7 @@
           <p class="mb-2">
             Productos: <span class="font-bold">1</span>
           </p>
-          
+
           <ul class="grid gap-2">
             <li>
               Aventura en tierra del fuego
@@ -112,11 +128,13 @@
         </p>
 
         <div class="grid gap-3 text-start w-full">
-          <button class="bg-emerald-700 text-white p-2 rounded-lg font-semibold cursor-pointer hover:bg-emerald-800 transition-colors">
+          <button
+            class="bg-emerald-700 text-white p-2 rounded-lg font-semibold cursor-pointer hover:bg-emerald-800 transition-colors">
             Confirmar compra
           </button>
 
-          <button class="bg-red-500 text-white p-2 rounded-lg font-semibold cursor-pointer hover:bg-red-600 transition-colors">
+          <button
+            class="bg-red-500 text-white p-2 rounded-lg font-semibold cursor-pointer hover:bg-red-600 transition-colors">
             Vaciar carrito
           </button>
         </div>
@@ -125,132 +143,150 @@
   </main>
 
   <!-- Modal Inicio de sesion -->
-    <div id="inicioWrapper" class="hidden">
-      <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
-  
-        <dialog id="inicio" class="rounded-lg p-6 shadow-lg w-96 m-auto bg-gray-100 flex flex-col overflow-visible border-0">
-              
-  
-          <img src="src/assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
-  
-          <button id="closeInicio" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
+  <div id="inicioWrapper" class="hidden">
+    <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
+
+      <dialog id="inicio"
+        class="rounded-lg p-6 shadow-lg w-96 m-auto bg-gray-100 flex flex-col overflow-visible border-0">
+
+
+        <img src="src/assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2"
+          alt="Foto de perfil">
+
+        <button id="closeInicio"
+          class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
           ✕
-          </button>
-  
-          <h2 class="text-center mt-12 text-2xl">Iniciar Sesion</h2>
-  
-          <form method="dialog" class="mt-4">
+        </button>
 
-            <!-- Input de usuario -->
-            <div class="mb-4 flex items-center">
-              <div class="bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
-                <i class="fa-solid fa-user"></i>
-              </div>
+        <h2 class="text-center mt-12 text-2xl">Iniciar Sesion</h2>
 
-                <input type="email" id="email-login" class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Correo electrónico / Usuario">
+        <form method="dialog" class="mt-4">
+
+          <!-- Input de usuario -->
+          <div class="mb-4 flex items-center">
+            <div class="bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
+              <i class="fa-solid fa-user"></i>
             </div>
 
-            <!-- Campo de contraseña -->
-            <div class="mb-4 flex items-center relative">
-              <div class="bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
-                <i class="fa-solid fa-lock"></i>
-              </div>
+            <input type="email" id="email-login"
+              class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Correo electrónico / Usuario">
+          </div>
 
-              <input type="password" id="password-login" class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Contraseña">
-
-              <div id="mostrar-login" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
-                <i class="fa-solid fa-eye"></i>
-              </div>
-
-              <div id="ocultar-login" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hidden">
-                <i class="fa-solid fa-eye-slash"></i>
-              </div>
+          <!-- Campo de contraseña -->
+          <div class="mb-4 flex items-center relative">
+            <div class="bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
+              <i class="fa-solid fa-lock"></i>
             </div>
-  
-            <p class="mb-3">
-              No tenes una cuenta?    
-              <a href="" id="volver-R" class="text-gray-700 underline">
-                Registrate
-              </a>
-            </p>
-  
-            <div class="flex justify-center">
-              <button type="submit" class="cursor-pointer px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
-                Iniciar sesión
-              </button>
+
+            <input type="password" id="password-login"
+              class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Contraseña">
+
+            <div id="mostrar-login" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
+              <i class="fa-solid fa-eye"></i>
             </div>
-          </form>
-        </dialog>
-      </div>
+
+            <div id="ocultar-login"
+              class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hidden">
+              <i class="fa-solid fa-eye-slash"></i>
+            </div>
+          </div>
+
+          <p class="mb-3">
+            No tenes una cuenta?
+            <a href="" id="volver-R" class="text-gray-700 underline">
+              Registrate
+            </a>
+          </p>
+
+          <div class="flex justify-center">
+            <button type="submit" class="cursor-pointer px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
+              Iniciar sesión
+            </button>
+          </div>
+        </form>
+      </dialog>
     </div>
+  </div>
 
-    <!-- Modal Registro -->
-     <div id="registroWrapper" class="hidden">
-       <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
-   
-         <dialog id="registro" class="rounded-lg p-6 shadow-lg w-96 m-auto bg-gray-100 flex flex-col overflow-visible border-0">
-               
-           <img src="src/assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
-   
-           <button id="closeRegistro" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
-             ✕
-           </button>
-   
-           <h2 class="text-center mt-12 text-2xl">Registrarse</h2>
-   
-           <form method="dialog" class="mt-4">
+  <!-- Modal Registro -->
+  <div id="registroWrapper" class="hidden">
+    <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
 
-            <!-- Input de usuario -->
-             <div class="mb-4 flex items-center">
-              <div class=" bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
-                <i class="fa-solid fa-user"></i>
-              </div>
+      <dialog id="registro"
+        class="rounded-lg p-6 shadow-lg w-96 m-auto bg-gray-100 flex flex-col overflow-visible border-0">
 
-               <input type="text" id="user-register" class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Nombre de usuario">
-             </div>
+        <img src="src/assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2"
+          alt="Foto de perfil">
 
-             <!-- Campo de correo -->
-             <div class="mb-4 flex items-center">
-              <div class=" bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
-                <i class="fa-solid fa-envelope"></i>
-              </div>
+        <button id="closeRegistro"
+          class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
+          ✕
+        </button>
 
-               <input type="email" id="email-register" class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Correo electrónico">
-             </div>
+        <h2 class="text-center mt-12 text-2xl">Registrarse</h2>
 
-            <!-- Campo de contraseña -->
-            <div class="mb-4 flex items-center relative">
-              <div class="bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
-                <i class="fa-solid fa-lock"></i>
-              </div>
+        <form method="dialog" class="mt-4">
 
-              <input type="password" id="password-register" class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Contraseña">
-
-              <div id="mostrar-register" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
-                <i class="fa-solid fa-eye"></i>
-              </div>
-
-              <div id="ocultar-register" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hidden">
-                <i class="fa-solid fa-eye-slash"></i>
-              </div>
+          <!-- Input de usuario -->
+          <div class="mb-4 flex items-center">
+            <div class=" bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
+              <i class="fa-solid fa-user"></i>
             </div>
-   
-             <p class="mb-3">
-               Ya tenes una cuenta? 
-               <a href="" id="volver-I" class="text-gray-700 underline">
-                 Inicia sesion
-               </a>
-             </p>
-   
-             <div class="flex justify-center">
-               <button type="submit" class="cursor-pointer px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
-                 Registrarse
-               </button>
-             </div>
-           </form>
-         </dialog>
-       </div>
-     </div>
+
+            <input type="text" id="user-register"
+              class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Nombre de usuario">
+          </div>
+
+          <!-- Campo de correo -->
+          <div class="mb-4 flex items-center">
+            <div class=" bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <input type="email" id="email-register"
+              class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Correo electrónico">
+          </div>
+
+          <!-- Campo de contraseña -->
+          <div class="mb-4 flex items-center relative">
+            <div class="bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
+              <i class="fa-solid fa-lock"></i>
+            </div>
+
+            <input type="password" id="password-register"
+              class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Contraseña">
+
+            <div id="mostrar-register" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+
+            <div id="ocultar-register"
+              class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hidden">
+              <i class="fa-solid fa-eye-slash"></i>
+            </div>
+          </div>
+
+          <p class="mb-3">
+            Ya tenes una cuenta?
+            <a href="" id="volver-I" class="text-gray-700 underline">
+              Inicia sesion
+            </a>
+          </p>
+
+          <div class="flex justify-center">
+            <button type="submit" class="cursor-pointer px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
+              Registrarse
+            </button>
+          </div>
+        </form>
+      </dialog>
+    </div>
+  </div>
 
   <footer class="bg-gray-900 max-w-full w-full text-white px-16 py-6 snap-start">
     <div class="max-w-7xl w-full m-auto grid gap-3">
@@ -259,7 +295,7 @@
           Benteveo Air
         </h1>
       </div>
-  
+
       <nav class="nav-footer">
         <ul class="text-sm flex items-center gap-8 uppercase tracking-widest">
           <li><a href="#">Nosotros</a></li>
@@ -267,12 +303,12 @@
           <li><a href="#">Politica de privacidad</a></li>
         </ul>
       </nav>
-  
+
       <div class="text-xs flex items-center justify-between mt-4">
         <span>
           ©2025 Benteveo Air. Todos los derechos reservados.
         </span>
-        
+
         <nav class="social-media">
           <ul class="flex items-center gap-8 tracking-widest">
             <li><a href="#">Instagram</a></li>
@@ -287,4 +323,5 @@
 
   <script src="src/app.js"></script>
 </body>
+
 </html>
