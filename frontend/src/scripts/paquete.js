@@ -1,8 +1,8 @@
 //=========================================================================
-//======================== MODAL DE DATOSPAQUETES ==============================
+//======================== MODAL DE INFOPAQUETES ==============================
 //=========================================================================
 
-const datosPaquetes = {
+const infoPaquetes = {
   Buenos: {
     ubicacion: "Buenos Aires - ciudad de Buenos Aires",
     duracion: 6
@@ -30,7 +30,7 @@ const datosPaquetes = {
 };
 
 function abrirModal(destino) {
-  const paquete = datosPaquetes[destino];
+  const paquete = infoPaquetes[destino];
   if (!paquete) return;
 
   ubicacionDestino.value = paquete.ubicacion;
