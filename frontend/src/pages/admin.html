@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Benteveo Air</title>
 </head>
 <body>
@@ -11,20 +11,20 @@
       <div class="container w-full max-w-7xl py-3 px-5 flex justify-between items-center">
         <div class="flex items-center gap-24">
           <div class="logo flex items-center gap-4">
-            <a href="#">
-              <img class="max-w-8 object-contain cursor-pointer" src="src/assets/logo.png" alt="BS-logo" draggable="false">
+            <a href="../../index.html">
+              <img class="max-w-8 object-contain cursor-pointer" src="../assets/logo.png" alt="BS-logo" draggable="false">
             </a>
     
-            <a href="#" class="text-xl text-dark-blue tracking-tighter cursor-pointer">
+            <a href="../../index.html" class="text-xl text-dark-blue tracking-tighter cursor-pointer">
               Benteveo Air 
             </a>
           </div>
           
           <div>
             <ul class="flex gap-12">
-                <li><a class="cursor-pointer hover:text-default-dark/80" href="index.html">Inicio</a></li>
-                <li><a class="cursor-pointer hover:text-default-dark/80" href="paquete.html">Paquetes</a></li>
-                <li><a class="cursor-pointer hover:text-default-dark/80" href="#about-us">Nosotros</a></li>
+                <li><a class="cursor-pointer hover:text-default-dark/80" href="../../index.html">Inicio</a></li>
+                <li><a class="cursor-pointer hover:text-default-dark/80" href="./paquete.html">Paquetes</a></li>
+                <li><a class="cursor-pointer hover:text-default-dark/80" href="./ayuda.html">Ayuda</a></li>
             </ul>
           </div>
         </div>
@@ -33,7 +33,7 @@
         <div class="flex gap-2">
 
           <button id="openPerfil" class=" text-white rounded-xl py-1 px-3 cursor-pointer">
-            <img src="src/assets/perfil.png" alt="" class="w-8 h-8">
+            <img src="../assets/perfil.png" alt="" class="w-8 h-8">
           </button>
 
         </div>
@@ -105,7 +105,7 @@
       <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
         <dialog id="perfilModal" class="rounded-lg m-auto p-6 shadow-lg w-96 bg-gray-100 flex flex-col overflow-visible border-0">
 
-          <img src="src/assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
+          <img src="../assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
 
           <button id="closePerfil" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
             ✕
@@ -128,7 +128,7 @@
       <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
         <dialog id="cambiarUsuarioModal" class="rounded-lg m-auto p-6 shadow-lg w-96 bg-gray-100 flex flex-col overflow-visible border-0">
 
-          <img src="src/assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
+          <img src="../assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
 
           <button id="closeCambiarUsuario" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
             ✕
@@ -149,6 +149,6 @@
       </div>
     </div>
 
-    <script src="src/JS/admin.js"></script>
+    <script src="../scripts/admin.js"></script>
   </body>
 </html>
