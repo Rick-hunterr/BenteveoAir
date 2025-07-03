@@ -7,6 +7,10 @@ const closeModal = document.getElementById('closeInicio');
 const volverI = document.getElementById('volver-I');
 const volverR = document.getElementById('volver-R');
 
+const cerrarModal = document.getElementById("cerrarModal")
+const confirmarPaquete =  document.getElementById("confirmarPaquete");
+const modal1 = document.getElementById("modalPaquete");
+
 openModal.addEventListener('click', () => {
   modalWrapper.classList.remove('hidden');
   modal.showModal();
@@ -100,12 +104,7 @@ ocultarRegister.addEventListener("click", () => {
   mostrarRegister.classList.remove("hidden");
 });
 
-const modal1 = document.getElementById("modalPaquete");
-const cerrarModal = document.getElementById("cerrarModal");
-const fechaInicio = document.getElementById("fechaInicio");
-const fechaFin = document.getElementById("fechaFin");
-const ubicacionDestino = document.getElementById("ubicacionDestino");
-
+// Información de los paquetes
 const paquetes = {
   Buenos: {
     ubicacion: "Buenos Aires - ciudad de Buenos Aires",
@@ -141,6 +140,7 @@ function abrirModal(destino) {
   fechaInicio.value = "";
   fechaFin.textContent = "-";
 
+  // Actualiza el cálculo de fecha según el destino
   fechaInicio.onchange = () => {
     const inicio = new Date(fechaInicio.value);
     if (!isNaN(inicio)) {
@@ -155,16 +155,35 @@ function abrirModal(destino) {
   modal1.classList.remove("hidden");
 }
 
-cerrarModal.addEventListener("click", () => {
-  modal1.classList.add("hidden");
-});
 
+if (cerrarModal) {
+  cerrarModal.addEventListener("click", () => {
+    modal1.classList.add("hidden");
+  });
+}
+
+// Ejemplo: botones para abrir la modal
 document.getElementById("add-to-cart").addEventListener("click", () => abrirModal("Tierra"));
 document.getElementById("add-to-cart-Buenos").addEventListener("click", () => abrirModal("Buenos"));
 document.getElementById("add-to-cart-Jujuy").addEventListener("click", () => abrirModal("Jujuy"));
 document.getElementById("add-to-cart-Espana").addEventListener("click", () => abrirModal("Barcelona"));
 document.getElementById("add-to-cart-Francia").addEventListener("click", () => abrirModal("Paris"));
 document.getElementById("add-to-cart-Alemania").addEventListener("click", () => abrirModal("baviera"));
+
+
+
+//=========================================================================
+//=============== modal de confirmación cargar paquete ====================
+//=========================================================================
+if (confirmarPaquete) {
+  confirmarPaquete.addEventListener("click", () => {
+    modal1.classList.add("hidden");
+});
+}
+
+
+
+
 
 //=========================================================================
 //=============GUARDAR DATOS DEL FORMULARIO EN LA BASE DE DATOS===========

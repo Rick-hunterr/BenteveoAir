@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/style.css">
-    <title>Benteveo Air</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-your-integrity-hash>" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/style.css">
+  <title>Benteveo Air</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body class="flex flex-col min-h-screen">
-  
-  <header class="z-100 w-full shadow-md flex justify-center items-center text-sm font-medium text-default-dark font-manrope">
+
+  <header
+    class="z-100 w-full shadow-md flex justify-center items-center text-sm font-medium text-default-dark font-manrope">
     <div class="container w-full max-w-7xl py-3 px-5 flex justify-between items-center">
       <div class="flex items-center gap-24">
         <div class="logo flex items-center gap-4">
           <a href="./index.html">
-            <img class="max-w-8 object-contain cursor-pointer" src="src/assets/logo.png" alt="BS-logo" draggable="false">
+            <img class="max-w-8 object-contain cursor-pointer" src="src/assets/logo.png" alt="BS-logo"
+              draggable="false">
           </a>
-  
+
           <a href="./index.html" class="text-xl text-dark-blue tracking-tighter cursor-pointer">
-            Benteveo Air 
+            Benteveo Air
           </a>
         </div>
-        
+
         <div>
           <ul class="flex gap-12">
-              <li><a class="cursor-pointer hover:text-default-dark/80" href="index.html">Inicio</a></li>
-              <li><a class="cursor-pointer hover:text-default-dark/80" href="paquete.html">Paquetes</a></li>
-              <li><a class="cursor-pointer hover:text-default-dark/80" href="#about-us">Nosotros</a></li>
+            <li><a class="cursor-pointer hover:text-default-dark/80" href="index.html">Inicio</a></li>
+            <li><a class="cursor-pointer hover:text-default-dark/80" href="paquete.html">Paquetes</a></li>
+            <li><a class="cursor-pointer hover:text-default-dark/80" href="#about-us">Nosotros</a></li>
           </ul>
         </div>
       </div>
-  
+
       <div>
         <div class="flex gap-10">
           <div class="flex gap-2">
-            <button id="openRegistro" class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">
+            <button id="openRegistro"
+              class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">
               Registrarse
             </button>
-            
-            <button id="openInicio" class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">
+
+            <button id="openInicio"
+              class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">
               Iniciar sesion
             </button>
           </div>
-        
+
           <a href="./carrito.html" class="relative cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" >
-              <path d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z"></path>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z">
+              </path>
             </svg>
-  
+
             <span id="counter" class="opacity-0 absolute text-amber-600 -bottom-1 -right-1">2</span>
           </a>
         </div>
@@ -56,39 +64,44 @@
   </header>
 
   <main class="flex-1">
-    <section id="hero" class="z-10 relative w-full max-h-[550px] h-svh bg-[url(/src/assets/paquete.jpg)] bg-center bg-no-repeat bg-cover">
+    <section id="hero"
+      class="z-10 relative w-full max-h-[550px] h-svh bg-[url(/src/assets/paquete.jpg)] bg-center bg-no-repeat bg-cover">
       <div class="background-image bg-black/40 backdrop-blur max-h-[550px] h-svh w-full grid place-content-center">
         <div class="max-w-5xl w-full text-center">
           <h1 class="text-7xl text-white font-bold capitalize mb-5">
-              PAQUETES TURISTICOS
+            PAQUETES TURISTICOS
           </h1>
         </div>
       </div>
     </section>
-  
+
     <section class="w-full max-w-6xl mx-auto py-24 grid grid-cols-3 gap-8">
-      <div id="package" class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
-        <img src="src/assets/Tierra-fuego.jpg" alt="Tierra del fuego" class="h-80 w-full object-cover bg-gray-200 transition-transform- relative brightness-75">
-        
-        <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-44 rounded-xl text-white group-hover:scale-125 transition-transform">
+      <div id="package"
+        class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+        <img src="src/assets/Tierra-fuego.jpg" alt="Tierra del fuego"
+          class="h-80 w-full object-cover bg-gray-200 transition-transform- relative brightness-75">
+
+        <div
+          class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-44 rounded-xl text-white group-hover:scale-125 transition-transform">
           <span>Córdoba</span>
           <hr class="border-t-2 w-32 border-white m-auto">
           <span>Tierra del Fuego</span>
         </div>
-        
+
         <div class="absolute -top-4 left-0 bg-cyan-200 px-2 rounded-xs font-semibold">
           Paquete nacional
         </div>
-        
+
         <div class="flex gap-2 z-10">
           <span id="flight-type" class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ml-2">Ida y vuelta</span>
           <span id="flight-duration" class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ">5 días</span>
-          <span id="hotel-name" class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 mr-3">Hotel Cap Polonio</span>
+          <span id="hotel-name" class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 mr-3">Hotel Cap
+            Polonio</span>
         </div>
-        
+
         <div class="p-6 flex flex-col flex-1 overflow-hidden">
           <h2 id="package-name" class="text-2xl font-bold mb-2 text-gray-900">Aventura en Tierra del Fuego</h2>
-          
+
           <p class="text-gray-700 mb-10 flex-1 text-sm">
             <span class="bg-emerald-700 text-white px-3 rounded-md">4</span>
             <i class="fa-solid fa-star text-amber-400"></i>
@@ -96,52 +109,57 @@
             <i class="fa-solid fa-star text-amber-400"></i>
             <i class="fa-solid fa-star text-amber-400"></i>
           </p>
-          
+
           <hr class="w-[150%] -ml-[25%] border-gray-300">
-          
+
           <span class="text-emerald-950 bg-emerald-100 w-32 px-1.5 rounded-md -mt-3 max-w-full">
             Ahorrás $51.000
           </span>
-  
+
           <p class="flex flex-col text-sm text-gray-600 ">
-            Precio final por persona 
+            Precio final por persona
             <span class="line-through">$800.000</span>
           </p>
-  
+
           <span class="text-black font-semibold text-xl mb-2">
             $<span id="package-price">749.000</span> ARS
           </span>
-          
-          <button id="add-to-cart" class="add-to-cart bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
+
+          <button id="add-to-cart"
+            class="add-to-cart bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
             Agregar al carrito
           </button>
-          
+
           <p class="text-xs text-gray-400 mt-1">Incluye impuestos, tasas y cargos</p>
         </div>
       </div>
 
-      <div id="package" class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
-        <img src="src/assets/BS.jpeg" alt="Buenos Aires" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
-        
-        <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-44 rounded-xl text-white group-hover:scale-125 transition-transform">
+      <div id="package"
+        class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+        <img src="src/assets/BS.jpeg" alt="Buenos Aires"
+          class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
+
+        <div
+          class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-44 rounded-xl text-white group-hover:scale-125 transition-transform">
           <span>Córdoba</span>
           <hr class="border-t-2 w-32 border-white m-auto">
           <span>Buenos Aires</span>
         </div>
-        
+
         <div class="absolute -top-4 left-0 bg-cyan-200 px-2 rounded-xs font-semibold">
           Paquete nacional
         </div>
-        
+
         <div class="flex gap-2 z-10">
           <span id="flight-type" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
           <span id="flight-duration" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">6 días</span>
-          <span id="hotel-name" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Metropolitano SUPARA</span>
+          <span id="hotel-name" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Metropolitano
+            SUPARA</span>
         </div>
-        
+
         <div class="p-6 flex flex-col flex-1 overflow-hidden">
           <h2 id="package-name" class="text-2xl font-bold mb-2 text-gray-900">Aventura en Buenos Aires</h2>
-          
+
           <p class="text-gray-700 mb-10 flex-1 text-sm">
             <span class="bg-emerald-700 text-white px-3 rounded-md">4,6</span>
             <i class="fa-solid fa-star text-amber-400"></i>
@@ -150,52 +168,57 @@
             <i class="fa-solid fa-star text-amber-400"></i>
             <i class="fa-solid fa-star-half text-amber-400"></i>
           </p>
-          
+
           <hr class="w-[150%] -ml-[25%] border-gray-300">
-          
+
           <span class="text-emerald-950 bg-emerald-100 w-32 px-1.5 rounded-md -mt-3 max-w-full">
             Ahorrás $45.000
           </span>
-          
+
           <p class="flex flex-col text-sm text-gray-600 ">
             Precio final por persona
             <span class="line-through">$935.000</span>
           </p>
-          
+
           <span class="text-black font-semibold text-xl mb-2">
             $<span id="package-price">890.000</span> ARS
           </span>
-          
-          <button id="add-to-cart-Buenos" class="add-to-cart bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
+
+          <button id="add-to-cart-Buenos"
+            class="add-to-cart bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
             Agregar al carrito
           </button>
-          
+
           <p class="text-xs text-gray-400 mt-1">No vas a pagar Percepción RG5617</p>
         </div>
       </div>
-      
-      <div id="package" class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
-        <img src="src/assets/cerro.jpg" alt="Jujuy" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
-        
-        <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-44 rounded-xl text-white group-hover:scale-125 transition-transform">
+
+      <div id="package"
+        class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+        <img src="src/assets/cerro.jpg" alt="Jujuy"
+          class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
+
+        <div
+          class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-44 rounded-xl text-white group-hover:scale-125 transition-transform">
           <span>Córdoba</span>
           <hr class="border-t-2 w-32 border-white m-auto">
           <span>Jujuy</span>
         </div>
-        
+
         <div class="flex gap-2 z-10">
           <span id="flight-type" class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ml-2">Ida y vuelta</span>
           <span id="flight-duration" class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 ">10 días</span>
-          <span id="hotel-name" class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 mr-3">Hotel Altos de la Viña</span>
+          <span id="hotel-name" class="bg-gray-900 text-white text-sm -mt-3 rounded-2xl px-3 mr-3">Hotel Altos de la
+            Viña</span>
         </div>
-        
+
         <div class="absolute -top-4 left-0 bg-cyan-200 px-2 rounded-xs font-semibold">
           Paquete nacional
         </div>
-        
+
         <div class="p-6 flex flex-col flex-1 overflow-hidden">
           <h2 id="package-name" class="text-2xl font-bold mb-2 text-gray-900">Aventura en jujuy - Los 7 colores</h2>
-          
+
           <p class="text-gray-700 mb-10 flex-1 text-sm">
             <span class="bg-emerald-700 text-white px-3 rounded-md">4,5</span>
             <i class="fa-solid fa-star text-amber-400"></i>
@@ -204,52 +227,57 @@
             <i class="fa-solid fa-star text-amber-400"></i>
             <i class="fa-solid fa-star-half text-amber-400"></i>
           </p>
-          
+
           <hr class="w-[150%] -ml-[25%] border-gray-300">
-          
+
           <span class="text-emerald-950 bg-emerald-100 w-36 px-1.5 rounded-md -mt-3 max-w-full">
             Ahorrás $150.000
           </span>
-          
+
           <p class="flex flex-col text-sm text-gray-600 ">
             Precio final por persona
             <span class="line-through">$1.150.000</span>
           </p>
-          
+
           <span class="text-black font-semibold text-xl mb-2">
             $<span id="package-price">1.000.000</span> ARS
           </span>
-          
-          <button id="add-to-cart-Jujuy" class="add-to-cart bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
+
+          <button id="add-to-cart-Jujuy"
+            class="add-to-cart bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
             Agregar al carrito
           </button>
-          
+
           <p class="text-xs text-gray-400 mt-1">Incluye impuestos, tasas y cargos</p>
         </div>
       </div>
-      
-      <div id="package" class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
-        <img src="src/assets/barca.jpeg" alt="Jujuy" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
-        
-        <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-48 rounded-xl text-white group-hover:scale-125 transition-transform">
+
+      <div id="package"
+        class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+        <img src="src/assets/barca.jpeg" alt="Jujuy"
+          class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
+
+        <div
+          class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-48 rounded-xl text-white group-hover:scale-125 transition-transform">
           <span>Argentina - Córdoba</span>
           <hr class="border-t-2 w-32 border-white m-auto">
           <span>España - Barcelona</span>
         </div>
-        
+
         <div class="flex gap-2 z-10">
           <span id="flight-type" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
           <span id="flight-duration" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">7 días</span>
-          <span id="hotel-name" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Ibis Barcelona Centro</span>
+          <span id="hotel-name" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Ibis Barcelona
+            Centro</span>
         </div>
-        
+
         <div class="absolute -top-4 left-0 bg-emerald-300 px-2 rounded-xs font-semibold">
           Paquete Internacional
         </div>
-        
+
         <div class="p-6 flex flex-col flex-1 overflow-hidden">
           <h2 id="package-name" class="text-2xl font-bold mb-2 text-gray-900">Aventura en España - Barcelona</h2>
-          
+
           <p class="text-gray-700 mb-10 flex-1 text-sm">
             <span class="bg-emerald-700 text-white px-3 rounded-md">4,4</span>
             <i class="fa-solid fa-star text-amber-400"></i>
@@ -258,52 +286,57 @@
             <i class="fa-solid fa-star text-amber-400"></i>
             <i class="fa-solid fa-star-half text-amber-400"></i>
           </p>
-          
+
           <hr class="w-[150%] -ml-[25%] border-gray-300">
-          
+
           <span class="text-emerald-950 bg-emerald-100 w-36 px-1.5 rounded-md -mt-3 max-w-full">
             Ahorrás $200.000
           </span>
-          
+
           <p class="flex flex-col text-sm text-gray-600 ">
             Precio final por persona
             <span class="line-through">$2.350.000</span>
           </p>
-          
+
           <span class="text-black font-semibold text-xl mb-2">
             $<span id="package-price">2.150.000</span> ARS
           </span>
-          
-          <button id="add-to-cart-Espana" class="add-to-cart bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
+
+          <button id="add-to-cart-Espana"
+            class="add-to-cart bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
             Agregar al carrito
           </button>
-          
+
           <p class="text-xs text-gray-400 mt-1">No vas a pagar Percepción RG5617</p>
-        </div>  
+        </div>
       </div>
-      
-      <div id="package" class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
-        <img src="src/assets/ei.jpg" alt="Jujuy" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
-        
-        <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-48 rounded-xl text-white group-hover:scale-125 transition-transform">
+
+      <div id="package"
+        class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+        <img src="src/assets/ei.jpg" alt="Jujuy"
+          class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
+
+        <div
+          class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-48 rounded-xl text-white group-hover:scale-125 transition-transform">
           <span>Argentina - Córdoba</span>
           <hr class="border-t-2 w-32 border-white m-auto">
           <span>Francia - Paris</span>
         </div>
-        
+
         <div class="flex gap-2 z-10">
           <span id="flight-type" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
           <span id="flight-duration" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">5 días</span>
-          <span id="hotel-name" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel The People Paris Marais</span>
+          <span id="hotel-name" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel The People
+            Paris Marais</span>
         </div>
-        
+
         <div class="absolute -top-4 left-0 bg-emerald-300 px-2 rounded-xs font-semibold">
           Paquete Internacional
         </div>
-        
+
         <div class="p-6 flex flex-col flex-1 overflow-hidden">
           <h2 id="package-name" class="text-2xl font-bold mb-2 text-gray-900">Aventura en Francia - Paris</h2>
-          
+
           <p class="text-gray-700 mb-10 flex-1 text-sm">
             <span class="bg-emerald-700 text-white px-3 rounded-md">4,1</span>
             <i class="fa-solid fa-star text-amber-400"></i>
@@ -311,52 +344,57 @@
             <i class="fa-solid fa-star text-amber-400"></i>
             <i class="fa-solid fa-star text-amber-400"></i>
           </p>
-          
+
           <hr class="w-[150%] -ml-[25%] border-gray-300">
-          
+
           <span class="text-emerald-950 bg-emerald-100 w-36 px-1.5 rounded-md -mt-3 max-w-full">
             Ahorrás $150.000
           </span>
-          
+
           <p class="flex flex-col text-sm text-gray-600 ">
             Precio final por persona
             <span class="line-through">$2.050.000</span>
           </p>
-          
+
           <span class="text-black font-semibold text-xl mb-2">
             $<span id="package-price">1.900.000</span> ARS
           </span>
-          
-          <button id="add-to-cart-Francia" class="add-to-cart bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
+
+          <button id="add-to-cart-Francia"
+            class="add-to-cart bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
             Agregar al carrito
           </button>
-          
+
           <p class="text-xs text-gray-400 mt-1">No vas a pagar Percepción RG5617</p>
-        </div>  
+        </div>
       </div>
-      
-      <div id="package" class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
-        <img src="src/assets/ale.jpg" alt="Jujuy" class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
-        
-        <div class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-48 rounded-xl text-white group-hover:scale-125 transition-transform">
+
+      <div id="package"
+        class="bg-white rounded-xl shadow-lg flex flex-col relative group hover:scale-105 transition-transform">
+        <img src="src/assets/ale.jpg" alt="Jujuy"
+          class="h-80 w-full object-cover bg-gray-200 transition-transform relative brightness-75">
+
+        <div
+          class="absolute left-1/2 top-40 -translate-x-1/2 -translate-y-1/2 flex flex-col p-4 text-center bg-black/20 w-48 rounded-xl text-white group-hover:scale-125 transition-transform">
           <span>Argentina - Córdoba</span>
           <hr class="border-t-2 w-32 border-white m-auto">
           <span>Alemania - Baviera</span>
         </div>
-        
+
         <div class="flex gap-2 z-10">
           <span id="flight-type" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ml-2">Ida y vuelta</span>
           <span id="flight-duration" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 ">6 días</span>
-          <span id="hotel-name" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Villa Ludwig</span>
+          <span id="hotel-name" class="bg-gray-900 text-white text-xs -mt-2 rounded-2xl px-3 mr-3">Hotel Villa
+            Ludwig</span>
         </div>
-        
+
         <div class="absolute -top-4 left-0 bg-emerald-300 px-2 rounded-xs font-semibold">
           Paquete Internacional
         </div>
-        
+
         <div class="p-6 flex flex-col flex-1 overflow-hidden">
           <h2 id="package-name" class="text-2xl font-bold mb-2 text-gray-900">Aventura en Alemania - Baviera</h2>
-          
+
           <p class="text-gray-700 mb-10 flex-1 text-sm">
             <span class="bg-emerald-700 text-white px-3 rounded-md">4,8</span>
             <i class="fa-solid fa-star text-amber-400"></i>
@@ -365,28 +403,29 @@
             <i class="fa-solid fa-star text-amber-400"></i>
             <i class="fa-solid fa-star text-amber-400"></i>
           </p>
-          
+
           <hr class="w-[150%] -ml-[25%] border-gray-300">
-          
+
           <span class="text-emerald-950 bg-emerald-100 w-36 px-1.5 rounded-md -mt-3 max-w-full">
             Ahorrás $200.000
           </span>
-          
+
           <p class="flex flex-col text-sm text-gray-600 ">
             Precio final por persona
             <span class="line-through">$2.400.000</span>
           </p>
-          
+
           <span class="text-black font-semibold text-xl mb-2">
             $<span id="package-price">2.200.000</span> ARS
           </span>
-          
-          <button id="add-to-cart-Alemania" class="add-to-cart bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
+
+          <button id="add-to-cart-Alemania"
+            class="add-to-cart bg-emerald-500 text-white rounded-lg py-2 px-4 hover:bg-emerald-600 transition">
             Agregar al carrito
           </button>
-          
+
           <p class="text-xs text-gray-400 mt-1">Incluye impuestos, tasas y cargos</p>
-        </div>  
+        </div>
       </div>
     </section>
   </main>
@@ -395,13 +434,15 @@
   <div id="modalPaquete" class="hidden">
     <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-100">
       <div class="bg-white rounded-lg p-6 w-full max-w-md relative">
-        <button id="cerrarModal" class="absolute top-2 right-2 text-gray-600 hover:text-black text-xl font-bold">&times;</button>
+        <button id="cerrarModal"
+          class="absolute top-2 right-2 text-gray-600 hover:text-black text-xl font-bold">&times;</button>
         <h2 class="text-xl font-bold mb-4 text-center">Confirmar paquete</h2>
 
         <label class="block text-sm font-medium text-gray-700 mb-1">Fecha de salida:</label>
         <input type="date" id="fechaInicio" class="w-full mb-4 p-2 border rounded-md">
 
-        <p class="text-sm text-gray-600 mb-4">Fecha de regreso estimada: <span id="fechaFin" class="font-semibold">-</span></p>
+        <p class="text-sm text-gray-600 mb-4">Fecha de regreso estimada: <span id="fechaFin"
+            class="font-semibold">-</span></p>
 
         <label class="block text-sm font-medium text-gray-700 mb-1">Ubicación:</label>
         <input type="text" id="ubicacionDestino" class="w-full mb-4 p-2 border rounded-md" readonly>
@@ -409,140 +450,159 @@
         <label class="block text-sm font-medium text-gray-700 mb-1">Cantidad de pasajes:</label>
         <input type="number" id="cantidadPasajes" value="1" min="1" class="w-full mb-6 p-2 border rounded-md">
 
-        <button id="confirmarPaquete" class="w-full bg-emerald-500 text-white py-2 rounded-md hover:bg-emerald-600 transition">
+        <button id="confirmarPaquete"
+          class="w-full bg-emerald-500 text-white py-2 rounded-md hover:bg-emerald-600 transition">
           Confirmar paquete
         </button>
       </div>
     </div>
   </div>
-  
+
   <!-- Modal Inicio de sesion -->
-    <div id="inicioWrapper" class="hidden">
-      <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
-  
-        <dialog id="inicio" class="rounded-lg p-6 shadow-lg w-96 m-auto bg-gray-100 flex flex-col overflow-visible border-0">
-              
-  
-          <img src="src/assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
-  
-          <button id="closeInicio" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
+  <div id="inicioWrapper" class="hidden">
+    <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
+
+      <dialog id="inicio"
+        class="rounded-lg p-6 shadow-lg w-96 m-auto bg-gray-100 flex flex-col overflow-visible border-0">
+
+
+        <img src="src/assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2"
+          alt="Foto de perfil">
+
+        <button id="closeInicio"
+          class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
           ✕
-          </button>
-  
-          <h2 class="text-center mt-12 text-2xl">Iniciar Sesion</h2>
-  
-          <form method="dialog" class="mt-4">
+        </button>
 
-            <!-- Input de usuario -->
-            <div class="mb-4 flex items-center">
-              <div class="bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
-                <i class="fa-solid fa-user"></i>
-              </div>
+        <h2 class="text-center mt-12 text-2xl">Iniciar Sesion</h2>
 
-                <input type="email" id="email-login" class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Correo electrónico / Usuario">
+        <form method="dialog" class="mt-4">
+
+          <!-- Input de usuario -->
+          <div class="mb-4 flex items-center">
+            <div class="bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
+              <i class="fa-solid fa-user"></i>
             </div>
 
-            <!-- Campo de contraseña -->
-            <div class="mb-4 flex items-center relative">
-              <div class="bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
-                <i class="fa-solid fa-lock"></i>
-              </div>
+            <input type="email" id="email-login"
+              class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Correo electrónico / Usuario">
+          </div>
 
-              <input type="password" id="password-login" class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Contraseña">
-
-              <div id="mostrar-login" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
-                <i class="fa-solid fa-eye"></i>
-              </div>
-
-              <div id="ocultar-login" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hidden">
-                <i class="fa-solid fa-eye-slash"></i>
-              </div>
+          <!-- Campo de contraseña -->
+          <div class="mb-4 flex items-center relative">
+            <div class="bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
+              <i class="fa-solid fa-lock"></i>
             </div>
-  
-            <p class="mb-3">
-              No tenes una cuenta?    
-              <a href="" id="volver-R" class="text-gray-700 underline">
-                Registrate
-              </a>
-            </p>
-  
-            <div class="flex justify-center">
-              <button type="submit" class="cursor-pointer px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
-                Iniciar sesión
-              </button>
+
+            <input type="password" id="password-login"
+              class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Contraseña">
+
+            <div id="mostrar-login" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
+              <i class="fa-solid fa-eye"></i>
             </div>
-          </form>
-        </dialog>
-      </div>
+
+            <div id="ocultar-login"
+              class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hidden">
+              <i class="fa-solid fa-eye-slash"></i>
+            </div>
+          </div>
+
+          <p class="mb-3">
+            No tenes una cuenta?
+            <a href="" id="volver-R" class="text-gray-700 underline">
+              Registrate
+            </a>
+          </p>
+
+          <div class="flex justify-center">
+            <button type="submit" class="cursor-pointer px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
+              Iniciar sesión
+            </button>
+          </div>
+        </form>
+      </dialog>
     </div>
+  </div>
 
-    <!-- Modal Registro -->
-     <div id="registroWrapper" class="hidden">
-       <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
-   
-         <dialog id="registro" class="rounded-lg p-6 shadow-lg w-96 m-auto bg-gray-100 flex flex-col overflow-visible border-0">
-               
-           <img src="src/assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
-   
-           <button id="closeRegistro" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
-             ✕
-           </button>
-   
-           <h2 class="text-center mt-12 text-2xl">Registrarse</h2>
-   
-           <form method="dialog" class="mt-4">
+  <!-- Modal Registro -->
+  <div id="registroWrapper" class="hidden">
+    <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
 
-            <!-- Input de usuario -->
-             <div class="mb-4 flex items-center">
-              <div class=" bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
-                <i class="fa-solid fa-user"></i>
-              </div>
+      <dialog id="registro"
+        class="rounded-lg p-6 shadow-lg w-96 m-auto bg-gray-100 flex flex-col overflow-visible border-0">
 
-               <input type="text" id="user-register" class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Nombre de usuario">
-             </div>
+        <img src="src/assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2"
+          alt="Foto de perfil">
 
-             <!-- Campo de correo -->
-             <div class="mb-4 flex items-center">
-              <div class=" bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
-                <i class="fa-solid fa-envelope"></i>
-              </div>
+        <button id="closeRegistro"
+          class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
+          ✕
+        </button>
 
-               <input type="email" id="email-register" class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Correo electrónico">
-             </div>
+        <h2 class="text-center mt-12 text-2xl">Registrarse</h2>
 
-            <!-- Campo de contraseña -->
-            <div class="mb-4 flex items-center relative">
-              <div class="bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
-                <i class="fa-solid fa-lock"></i>
-              </div>
+        <form method="dialog" class="mt-4">
 
-              <input type="password" id="password-register" class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Contraseña">
-
-              <div id="mostrar-register" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
-                <i class="fa-solid fa-eye"></i>
-              </div>
-
-              <div id="ocultar-register" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hidden">
-                <i class="fa-solid fa-eye-slash"></i>
-              </div>
+          <!-- Input de usuario -->
+          <div class="mb-4 flex items-center">
+            <div class=" bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
+              <i class="fa-solid fa-user"></i>
             </div>
-   
-             <p class="mb-3">
-               Ya tenes una cuenta? 
-               <a href="" id="volver-I" class="text-gray-700 underline">
-                 Inicia sesion
-               </a>
-             </p>
-   
-             <div class="flex justify-center">
-               <button type="submit" class="cursor-pointer px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
-                 Registrarse
-               </button>
-             </div>
-           </form>
-         </dialog>
-       </div>
-     </div>
+
+            <input type="text" id="user-register"
+              class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Nombre de usuario">
+          </div>
+
+          <!-- Campo de correo -->
+          <div class="mb-4 flex items-center">
+            <div class=" bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <input type="email" id="email-register"
+              class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Correo electrónico">
+          </div>
+
+          <!-- Campo de contraseña -->
+          <div class="mb-4 flex items-center relative">
+            <div class="bg-gray-300 w-10 h-10 text-gray-500 flex items-center justify-center">
+              <i class="fa-solid fa-lock"></i>
+            </div>
+
+            <input type="password" id="password-register"
+              class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Contraseña">
+
+            <div id="mostrar-register" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+
+            <div id="ocultar-register"
+              class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hidden">
+              <i class="fa-solid fa-eye-slash"></i>
+            </div>
+          </div>
+
+          <p class="mb-3">
+            Ya tenes una cuenta?
+            <a href="" id="volver-I" class="text-gray-700 underline">
+              Inicia sesion
+            </a>
+          </p>
+
+          <div class="flex justify-center">
+            <button type="submit" class="cursor-pointer px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
+              Registrarse
+            </button>
+          </div>
+        </form>
+      </dialog>
+    </div>
+  </div>
 
   <footer class="bg-gray-900 max-w-full w-full text-white px-16 py-6 snap-start bottom-0">
     <div class="max-w-7xl w-full m-auto grid gap-3">
@@ -551,7 +611,7 @@
           Benteveo Air
         </h1>
       </div>
-  
+
       <nav class="nav-footer">
         <ul class="text-sm flex items-center gap-8 uppercase tracking-widest">
           <li><a href="#">Nosotros</a></li>
@@ -559,12 +619,12 @@
           <li><a href="#">Politica de privacidad</a></li>
         </ul>
       </nav>
-  
+
       <div class="text-xs flex items-center justify-between mt-4">
         <span>
           ©2025 Benteveo Air. Todos los derechos reservados.
         </span>
-        
+
         <nav class="social-media">
           <ul class="flex items-center gap-8 tracking-widest">
             <li><a href="#">Instagram</a></li>
@@ -579,4 +639,5 @@
   <script src="src/app.js"></script>
   <script src="src/keepData.js"></script>
 </body>
+
 </html>

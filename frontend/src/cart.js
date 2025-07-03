@@ -1,4 +1,6 @@
 const loadPackages = () => {
+  const API_URL = 'http://localhost:3000';
+  
   const packagesRecord = document.getElementById("packages-record");
   const emptyCartBtn = document.getElementById("empty-cart");
   const buyCartBtn = document.getElementById("buy-cart");
@@ -152,3 +154,81 @@ const loadPackages = () => {
 };
 
 loadPackages();
+
+
+
+//=========================================================================
+//==================Funcion Carrito conectada a la bd======================
+//=========================================================================
+
+const buyCartBtn = document.getElementById("buy-cart");
+
+console.log("hola: ",buyCartBtn)
+
+const packagesRecord = document.getElementById("packages-record");
+const history = document.getElementById("history");
+const totalEl = document.getElementById("total-price");
+const productCounter = document.getElementById("product-counter");
+
+let packagesStore = JSON.parse(localStorage.getItem("packages")) || [];
+
+let precio_total = packagesStore.reduce((total, packageItem) => {
+  return total + (packageItem.precio || packageItem.price || 0);
+}, 0);
+  
+buyCartBtn.addEventListener("click", async () => {
+
+  console.log("hola")
+  if (totalEl) totalEl.textContent = precio_total.toFixed(2);
+  if (productCounter) productCounter.textContent = packagesStore.length;
+
+
+      // LOG PARA VERIFICAR LOS DATOS QUE SE ENVIARÁN
+      console.log(JSON.parse(localStorage.getItem("packages")));
+
+      console.log("Enviando orden al backend con los siguientes datos:");
+      console.log("Usuario ID:", 10);
+      console.log("Fecha:", new Date().toISOString().split("T")[0]);
+      console.log("Productos en carrito:", packagesStore);
+      console.log("Total:", precio_total.toFixed(2));
+
+  if (precio_total > 0 && packagesStore.length > 0) {
+    try {
+      const token = localStorage.getItem("token");
+
+
+      const resp = await fetch(`${API_URL}/ordenes`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(token ? { Authorization: `Bearer ${token}` } : {})
+        },
+        body: JSON.stringify({
+          fecha: new Date().toISOString().split("T")[0],
+          estado: "pendiente",
+          usuario: 10
+        })
+      });
+
+      const data = await resp.json();
+
+      if (!resp.ok) {
+        alert(data.error || "Error al realizar la compra");
+        return;
+      }
+
+      alert("¡Compra realizada con éxito!");
+      localStorage.removeItem("packages");
+      packagesRecord.innerHTML = "";
+      history.innerHTML = "";
+      totalEl.textContent = 0;
+      productCounter.textContent = 0;
+      precio_total = 0;
+      packagesStore = [];
+
+    } catch (err) {
+      console.error("Error al comprar:", err);
+      alert("No se pudo conectar al servidor");
+    }
+  }
+});
