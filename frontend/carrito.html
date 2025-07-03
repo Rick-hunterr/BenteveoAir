@@ -59,13 +59,31 @@
 
             <span id="counter" class="opacity-0 absolute text-amber-600 -bottom-1 -right-1">2</span>
           </a>
+          <!-- Usuario logueado -->
+          <div class="relative">
+            <button id="userMenuBtn"
+              class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600">
+              U
+            </button>
+
+            <!-- Dropdown -->
+            <div id="userDropdown"
+              class="hidden absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-xl py-2 text-sm z-50">
+              <p class="px-4 py-2 text-gray-700">Usuario</p>
+              <button id="logoutBtn" class="w-full text-left px-4 py-2 hover:bg-gray-100 text-red-500">
+                Cerrar sesión
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </header>
 
   <main class="flex-1 grid place-items-center py-20">
-    <div class="cart max-w-6xl w-full max-h-[800px] h-full bg-gray-100 shadow-md border border-black/20 py-10 px-15 grid grid-cols-3 gap-15">
+    <div
+      class="cart max-w-6xl w-full max-h-[800px] h-full bg-gray-100 shadow-md border border-black/20 py-10 px-15 grid grid-cols-3 gap-15">
       <div id="packages-record" class="col-span-2 w-full overflow-auto pr-2">
       </div>
 
@@ -90,11 +108,13 @@
         </p>
 
         <div class="grid gap-3 text-start w-full">
-          <button id="buy-cart" class="bg-emerald-700 text-white p-2 rounded-lg font-semibold cursor-pointer hover:bg-emerald-800 transition-colors">
+          <button id="buy-cart"
+            class="bg-emerald-700 text-white p-2 rounded-lg font-semibold cursor-pointer hover:bg-emerald-800 transition-colors">
             Confirmar compra
           </button>
 
-          <button id="empty-cart" class="bg-red-500 text-white p-2 rounded-lg font-semibold cursor-pointer hover:bg-red-600 transition-colors">
+          <button id="empty-cart"
+            class="bg-red-500 text-white p-2 rounded-lg font-semibold cursor-pointer hover:bg-red-600 transition-colors">
             Vaciar carrito
           </button>
         </div>

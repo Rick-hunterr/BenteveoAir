@@ -1,6 +1,6 @@
 const loadPackages = () => {
   const API_URL = 'http://localhost:3000';
-  
+
   const packagesRecord = document.getElementById("packages-record");
   const emptyCartBtn = document.getElementById("empty-cart");
   const buyCartBtn = document.getElementById("buy-cart");
@@ -162,9 +162,6 @@ loadPackages();
 //=========================================================================
 
 const buyCartBtn = document.getElementById("buy-cart");
-
-console.log("hola: ",buyCartBtn)
-
 const packagesRecord = document.getElementById("packages-record");
 const history = document.getElementById("history");
 const totalEl = document.getElementById("total-price");
@@ -178,19 +175,8 @@ let precio_total = packagesStore.reduce((total, packageItem) => {
   
 buyCartBtn.addEventListener("click", async () => {
 
-  console.log("hola")
   if (totalEl) totalEl.textContent = precio_total.toFixed(2);
   if (productCounter) productCounter.textContent = packagesStore.length;
-
-
-      // LOG PARA VERIFICAR LOS DATOS QUE SE ENVIARÁN
-      console.log(JSON.parse(localStorage.getItem("packages")));
-
-      console.log("Enviando orden al backend con los siguientes datos:");
-      console.log("Usuario ID:", 10);
-      console.log("Fecha:", new Date().toISOString().split("T")[0]);
-      console.log("Productos en carrito:", packagesStore);
-      console.log("Total:", precio_total.toFixed(2));
 
   if (precio_total > 0 && packagesStore.length > 0) {
     try {

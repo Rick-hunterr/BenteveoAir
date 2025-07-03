@@ -141,6 +141,7 @@ ocultarRegister.addEventListener("click", () => {
 });
 
 
+
 //=========================================================================
 //=============== modal de confirmación cargar paquete ====================
 //=========================================================================
@@ -201,6 +202,34 @@ if (formLogin) {
       console.error("Fetch login:", err);
       alert("No se pudo conectar al servidor");
     }
+  });
+}
+
+//=========================================================================
+//============================== CERRAR SESIÓN ==========================
+//=========================================================================
+const userMenuBtn = document.getElementById("userMenuBtn");
+const userDropdown = document.getElementById("userDropdown");
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (userMenuBtn && userDropdown) {
+  userMenuBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    userDropdown.classList.toggle("hidden");
+  });
+
+  window.addEventListener("click", (e) => {
+    if (!userMenuBtn.contains(e.target) && !userDropdown.contains(e.target)) {
+      userDropdown.classList.add("hidden");
+    }
+  });
+}
+
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("token");
+    alert("Sesión cerrada");
+    location.reload(); 
   });
 }
 
