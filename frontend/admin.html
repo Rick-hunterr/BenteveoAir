@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <title>Benteveo Air</title>
+</head>
+<body>
+    <header class="z-100 w-full shadow-md flex justify-center items-center text-sm font-medium text-default-dark font-manrope">
+      <div class="container w-full max-w-7xl py-3 px-5 flex justify-between items-center">
+        <div class="flex items-center gap-24">
+          <div class="logo flex items-center gap-4">
+            <a href="#">
+              <img class="max-w-8 object-contain cursor-pointer" src="src/assets/logo.png" alt="BS-logo" draggable="false">
+            </a>
+    
+            <a href="#" class="text-xl text-dark-blue tracking-tighter cursor-pointer">
+              Benteveo Air 
+            </a>
+          </div>
+          
+          <div>
+            <ul class="flex gap-12">
+                <li><a class="cursor-pointer hover:text-default-dark/80" href="index.html">Inicio</a></li>
+                <li><a class="cursor-pointer hover:text-default-dark/80" href="paquete.html">Paquetes</a></li>
+                <li><a class="cursor-pointer hover:text-default-dark/80" href="#about-us">Nosotros</a></li>
+            </ul>
+          </div>
+        </div>
+
+      <div class="flex justify-center gap-5">
+        <div class="flex gap-2">
+
+          <button id="openPerfil" class=" text-white rounded-xl py-1 px-3 cursor-pointer">
+            <img src="src/assets/perfil.png" alt="" class="w-8 h-8">
+          </button>
+
+        </div>
+
+        <div>
+          <div class="flex justify-center items-center gap-10">
+          
+            <a href="./carrito.html" class="relative cursor-pointer top-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" >
+                <path d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z"></path>
+              </svg>
+    
+              <span id="counter" class="opacity-0 absolute text-amber-600 -bottom-1 -right-1">2</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+  
+    <main class="flex justify-center items-center">
+      <table class="w-8xl max-w-full border border-gray-400 border-collapse rounded-lg mt-10">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="border border-gray-400 px-4 py-2">ID</th>
+            <th class="border border-gray-400 px-4 py-2">Usuario</th>
+            <th class="border border-gray-400 px-4 py-2">Correo</th>
+            <th class="border border-gray-400 px-4 py-2">Paquete</th>
+            <th class="border border-gray-400 px-4 py-2">Precio</th>
+            <th class="border border-gray-400 px-4 py-2">Fecha</th>
+            <th class="border border-gray-400 px-4 py-2">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="text-center">
+            <td class="border border-gray-400 px-4 py-2">1</td>
+            <td class="border border-gray-400 px-4 py-2">Carlos</td>
+            <td class="border border-gray-400 px-4 py-2">Carlos@gmail.com</td>
+            <td class="border border-gray-400 px-4 py-2">Tierra del Fuego</td>
+            <td class="border border-gray-400 px-4 py-2">$749000</td>
+            <td class="border border-gray-400 px-4 py-2"> 24/7/2025</td>
+            <td class="border border-gray-400 px-4 py-2">
+              <div class="flex gap-2 justify-center">
+                <button class="bg-yellow-200 text-black px-3 py-1 rounded cursor-pointer">Editar</button>
+                <button class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer">Cancelar</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="text-center">
+            <td class="border border-gray-400 px-4 py-2">2</td>
+            <td class="border border-gray-400 px-4 py-2">María</td>
+            <td class="border border-gray-400 px-4 py-2">Maria@gmail.com</td>
+            <td class="border border-gray-400 px-4 py-2">Bariloche Premium</td>
+            <td class="border border-gray-400 px-4 py-2">$659000</td>
+            <td class="border border-gray-400 px-4 py-2"> 8/8/2025</td>
+            <td class="border border-gray-400 px-4 py-2">
+              <div class="flex gap-2 justify-center">
+                <button class="bg-yellow-200 text-black px-3 py-1 rounded cursor-pointer">Editar</button>
+                <button class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer">Cancelar</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <!-- Modal User default -->
+    <div id="perfilWrapper" class="hidden">
+      <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
+        <dialog id="perfilModal" class="rounded-lg m-auto p-6 shadow-lg w-96 bg-gray-100 flex flex-col overflow-visible border-0">
+
+          <img src="src/assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
+
+          <button id="closePerfil" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
+            ✕
+          </button>
+
+          <h2 class="text-center mt-8 text-2xl font-semibold">Hola Carlos</h2>
+          <p class="text-center text-sm mt-2 text-gray-600">¿Querés cambiar el nombre de usuario?</p>
+
+          <div class="mt-4 text-center">
+            <a href="#" id="openCambiarUsuario" class="text-blue-600 underline hover:text-blue-800">
+              Cambiar nombre usuario
+            </a>
+          </div>
+        </dialog>
+      </div>
+    </div>
+
+    <!-- Modal "Cambiar usuario" -->
+    <div id="cambiarUsuarioWrapper" class="hidden">
+      <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
+        <dialog id="cambiarUsuarioModal" class="rounded-lg m-auto p-6 shadow-lg w-96 bg-gray-100 flex flex-col overflow-visible border-0">
+
+          <img src="src/assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
+
+          <button id="closeCambiarUsuario" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
+            ✕
+          </button>
+
+          <h2 class="text-center mt-8 text-2xl font-semibold">Cambiar usuario</h2>
+
+          <form method="dialog" class="mt-6">
+            <input type="text" placeholder="Nuevo nombre" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+            <div class="flex justify-center">
+              <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                Guardar cambios
+              </button>
+            </div>
+          </form>
+        </dialog>
+      </div>
+    </div>
+
+    <script src="src/JS/admin.js"></script>
+  </body>
+</html>

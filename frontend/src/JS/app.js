@@ -1,5 +1,9 @@
 const API_URL = 'http://localhost:3000';
 
+//=========================================================================
+//======================== Mostrar inicio de sesion =======================
+//=========================================================================
+
 const modalWrapper = document.getElementById('inicioWrapper');
 const modal = document.getElementById('inicio');
 const openModal = document.getElementById('openInicio');
@@ -39,7 +43,35 @@ modal.addEventListener('click', (e) => {
   e.stopPropagation();
 });
 
-/* Modal Registro */
+// Ejemplo de nombre admin
+
+document.querySelector("#inicioWrapper").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const username = document.querySelector("#email-login").value;
+  const password = document.querySelector("#password-login").value;
+
+  if (username === "Carlos" && password === "2123") {
+    localStorage.setItem("usuarioActual", JSON.stringify({
+      nombre: username,
+      rol: "admin"
+    }));
+
+    window.location.href = "admin.html";
+  } else {
+    localStorage.setItem("usuarioActual", JSON.stringify({
+      nombre: username,
+      rol: "usuario"
+    }));
+
+    window.location.href = "index.html";
+  }
+});
+
+//=========================================================================
+//======================== Mostrar registro ===============================
+//=========================================================================
+
 const registroWrapper = document.getElementById('registroWrapper');
 const registro = document.getElementById('registro');
 const openRegistro = document.getElementById('openRegistro');
@@ -70,7 +102,11 @@ registroWrapper.addEventListener('click', (e) => {
   }
 });
 
-/* Mostrar/ocultar contraseña - Inicio de sesión */
+//=========================================================================
+//======================== Mostrar/ocultar contraseña =====================
+//=========================================================================
+
+/* Inicio de sesión */
 const passwordLogin = document.getElementById("password-login");
 const mostrarLogin = document.getElementById("mostrar-login");
 const ocultarLogin = document.getElementById("ocultar-login");
@@ -87,7 +123,7 @@ ocultarLogin.addEventListener("click", () => {
   mostrarLogin.classList.remove("hidden");
 });
 
-/* Mostrar/ocultar contraseña - Registro */
+/* Registro */
 const passwordRegister = document.getElementById("password-register");
 const mostrarRegister = document.getElementById("mostrar-register");
 const ocultarRegister = document.getElementById("ocultar-register");
@@ -103,73 +139,6 @@ ocultarRegister.addEventListener("click", () => {
   ocultarRegister.classList.add("hidden");
   mostrarRegister.classList.remove("hidden");
 });
-
-// Información de los paquetes
-const paquetes = {
-  Buenos: {
-    ubicacion: "Buenos Aires - ciudad de Buenos Aires",
-    duracion: 6
-  },
-  Jujuy: {
-    ubicacion: "Jujuy - Los 7 colores",
-    duracion: 10
-  },
-  Tierra: {
-    ubicacion: "Tierra del Fuego - Ushuaia",
-    duracion: 5
-  },
-  Barcelona: {
-    ubicacion: "España - Barcelona",
-    duracion: 7
-  },
-  Paris: {
-    ubicacion: "Francia - Paris",
-    duracion: 5
-  },
-  baviera: {
-    ubicacion: "Alemania - Baviera",
-    duracion: 7
-  },
-};
-
-function abrirModal(destino) {
-  const paquete = paquetes[destino];
-  if (!paquete) return;
-
-  ubicacionDestino.value = paquete.ubicacion;
-  fechaInicio.value = "";
-  fechaFin.textContent = "-";
-
-  // Actualiza el cálculo de fecha según el destino
-  fechaInicio.onchange = () => {
-    const inicio = new Date(fechaInicio.value);
-    if (!isNaN(inicio)) {
-      const fin = new Date(inicio);
-      fin.setDate(fin.getDate() + paquete.duracion);
-      fechaFin.textContent = fin.toLocaleDateString('es-AR');
-    } else {
-      fechaFin.textContent = "-";
-    }
-  };
-
-  modal1.classList.remove("hidden");
-}
-
-
-if (cerrarModal) {
-  cerrarModal.addEventListener("click", () => {
-    modal1.classList.add("hidden");
-  });
-}
-
-// Ejemplo: botones para abrir la modal
-document.getElementById("add-to-cart").addEventListener("click", () => abrirModal("Tierra"));
-document.getElementById("add-to-cart-Buenos").addEventListener("click", () => abrirModal("Buenos"));
-document.getElementById("add-to-cart-Jujuy").addEventListener("click", () => abrirModal("Jujuy"));
-document.getElementById("add-to-cart-Espana").addEventListener("click", () => abrirModal("Barcelona"));
-document.getElementById("add-to-cart-Francia").addEventListener("click", () => abrirModal("Paris"));
-document.getElementById("add-to-cart-Alemania").addEventListener("click", () => abrirModal("baviera"));
-
 
 
 //=========================================================================
