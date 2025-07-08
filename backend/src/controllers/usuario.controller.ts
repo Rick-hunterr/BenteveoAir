@@ -25,7 +25,6 @@ export async function crearUsuario(req: Request, res: Response) {
   const rol = req.body.rol
   const ubicacion = req.body.ubicacion
 
-  // Validaciones
   if (!nombre || !email || !contraseña || !rol) {
     res.status(400).json({ 
       error: "Nombre, email, contraseña y rol son requeridos" 
@@ -41,17 +40,14 @@ export async function crearUsuario(req: Request, res: Response) {
   }
 
   try {
-    // Verifico si ya existe un usuario con ese email
     const usuarioExistente = await repo.findOne({ where: { email } })
     if (usuarioExistente) {
       res.status(400).json({ error: "El email ya está en uso" })
       return
     }
 
-    // Hasheo la contraseña
     const hashedContraseña = await bcrypt.hash(contraseña, 10)
 
-    // Manejo la ubicación si viene en el body
     let ubicacionEntity = null
     if (ubicacion) {
       ubicacionEntity = await repoUbicacion.findOneBy({ id: ubicacion.id })
@@ -61,7 +57,6 @@ export async function crearUsuario(req: Request, res: Response) {
       }
     }
 
-    // Creo el nuevo usuario incluyendo el nombre
     const nuevoUsuario = repo.create({
       nombre: nombre,
       email: email,
@@ -95,6 +90,11 @@ export async function loginUsuario(req: Request, res: Response) {
 
     if (!usuario) {
       res.status(401).json({ error: "Credenciales inválidas" })
+      return
+    }
+
+    if (!usuario.contraseña) {
+      res.status(500).json({ error: "El usuario no tiene contraseña registrada" })
       return
     }
 

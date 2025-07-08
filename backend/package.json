@@ -8,11 +8,11 @@
   "type": "commonjs",
   "main": "./lib/index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn src/index.ts",
+    "dev": "npx ts-node src/server/index.ts",
     "start": "node lib/index.js",
     "build": "tsc",
     "lint": "tslint -c tslint.json src/**/*.ts",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "dependencies": {
     "@types/cors": "^2.8.19",
