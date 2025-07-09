@@ -1,4 +1,4 @@
-const packages = document.querySelectorAll("#package");
+const packages = document.querySelectorAll(".packageCard");
 
 const saveData = () => {
   let emptyStore = [];
