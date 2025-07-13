@@ -45,8 +45,14 @@
   }
 
   /* CARRITO */
+  .cart {
+    @apply max-w-6xl w-full max-h-[800px] h-full bg-gray-100 shadow-md border border-black/20 py-10 px-15 grid grid-cols-3 gap-15;
+  }
   .history {
     @apply bg-white w-full px-8 py-4 h-fit border border-t-4 border-t-green-buy rounded-2xl border-black/10 shadow-md overflow-hidden;
+  }
+  .btn-history {
+    @apply text-white p-2 rounded-lg font-semibold cursor-pointer;
   }
   
   .package {
