@@ -17,7 +17,7 @@
     class="z-100 w-full shadow-md flex justify-center items-center text-sm font-medium text-default-dark font-manrope">
     <div class="container w-full max-w-7xl py-3 px-5 flex justify-between items-center">
       <div class="flex items-center gap-24">
-        <div class="logo flex items-center gap-2">
+        <div class="logo flex items-center gap-2 hover:scale-105 transition-transform">
           <a href="#home">
             <img class="max-w-10 object-contain cursor-pointer" src="src/assets/BenteveoAirIsotipo.png" alt="BS-isotipo"
               draggable="false">
@@ -30,24 +30,26 @@
 
         <div>
           <ul class="flex gap-12">
-            <li><a class="cursor-pointer hover:text-default-dark/80" href="#home">Inicio</a></li>
-            <li><a class="cursor-pointer hover:text-default-dark/80" href="src/pages/paquete.html">Paquetes</a></li>
-            <li><a class="cursor-pointer hover:text-default-dark/80" href="src/pages/ayuda.html">Ayuda</a></li>
+            <li><a class="cursor-pointer text-default-dark/85 hover:text-dark-blue transition-colors" href="#home">Inicio</a></li>
+            <li><a class="cursor-pointer text-default-dark/85 hover:text-dark-blue transition-colors" href="src/pages/paquete.html">Paquetes</a></li>
+            <li><a class="cursor-pointer text-default-dark/85 hover:text-dark-blue transition-colors" href="src/pages/ayuda.html">Ayuda</a></li>
           </ul>
         </div>
       </div>
 
       <div>
-        <div class="flex gap-10 items-center">
+        <div class="flex gap-7 items-center">
           <div class="flex gap-2">
             <button id="openRegistro"
-              class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">Registrarse</button>
+              class="bg-blue-50 border border-blue-500 text-blue-500 font-bold rounded-4xl py-2 px-4 cursor-pointer hover:bg-blue-500 hover:text-blue-100 transition-colors"> Registrarse
+            </button>
+
             <button id="openInicio"
-              class="bg-blue-500 text-white rounded-xl py-1 px-3 cursor-pointer hover:bg-blue-500/80">Iniciar
-              sesion</button>
+              class="bg-blue-50 border border-blue-500 text-blue-500 font-bold rounded-4xl py-2 px-4 cursor-pointer hover:bg-blue-500 hover:text-blue-100 transition-colors"> Iniciar sesion
+            </button>
           </div>
 
-          <a href="src/pages/carrito.html" class="relative cursor-pointer">
+          <a href="src/pages/carrito.html" class="relative cursor-pointer p-2 pr-2.5 rounded-full hover:bg-amber-500 hover:text-white transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z">
@@ -119,7 +121,8 @@
             Revisa nuestro catalogo de lugares que puedes visitar
           </p>
 
-          <a href="src/pages/paquete.html" class="w-fit bg-white text-lg text-blue-950 font-bold py-2 px-4 cursor-pointer hover:bg-blue-100">
+          <a href="src/pages/paquete.html"
+            class="w-fit bg-white text-lg text-blue-950 font-bold py-2 px-4 cursor-pointer hover:bg-blue-100">
             Viajes disponibles
           </a>
         </article>
@@ -134,7 +137,8 @@
             Si no sabes como realizar tu reservacion, comunicate con nosotros.
           </p>
 
-          <a href="src/pages/ayuda.html" class="w-fit bg-white text-lg font-bold py-2 px-4 cursor-pointer hover:bg-blue-100">
+          <a href="src/pages/ayuda.html"
+            class="w-fit bg-white text-lg font-bold py-2 px-4 cursor-pointer hover:bg-blue-100">
             Te ayudamos
           </a>
         </article>
@@ -148,8 +152,9 @@
         </h1>
 
         <div class="grid grid-cols-2 gap-8">
-          <div class="step-1 bg-white px-4 py-6 rounded-xl flex items-center gap-4 hover:scale-101 hover:shadow-lg hover:shadow-amber-500 transition-all">
-            <div 
+          <div
+            class="step-1 bg-white px-4 py-6 rounded-xl flex items-center gap-4 hover:scale-101 hover:shadow-lg hover:shadow-amber-500 transition-all">
+            <div
               class="bg-amber-300 text-dark-blue font-bold w-50 aspect-square flex items-center justify-center text-5xl shadow-sm">
               1
             </div>
@@ -160,13 +165,15 @@
               </h2>
 
               <p class="text-sm text-gray-800">
-                Para comenzar, creá tu cuenta o iniciá sesión. Esto te permitirá guardar tus paquetes turísticos y confirmar tus compras de forma segura.
+                Para comenzar, creá tu cuenta o iniciá sesión. Esto te permitirá guardar tus paquetes turísticos y
+                confirmar tus compras de forma segura.
               </p>
             </div>
           </div>
 
-          <div class="step-2 bg-white px-4 py-6 rounded-xl flex items-center gap-4 hover:scale-101 hover:shadow-lg hover:shadow-amber-500 transition-all">
-            <div 
+          <div
+            class="step-2 bg-white px-4 py-6 rounded-xl flex items-center gap-4 hover:scale-101 hover:shadow-lg hover:shadow-amber-500 transition-all">
+            <div
               class="bg-amber-300 text-dark-blue font-bold w-50 aspect-square flex items-center justify-center text-5xl shadow-sm">
               2
             </div>
@@ -183,8 +190,9 @@
             </div>
           </div>
 
-          <div class="step-3 bg-white px-4 py-6 rounded-xl flex items-center gap-4 hover:scale-101 hover:shadow-lg hover:shadow-amber-500 transition-all">
-            <div 
+          <div
+            class="step-3 bg-white px-4 py-6 rounded-xl flex items-center gap-4 hover:scale-101 hover:shadow-lg hover:shadow-amber-500 transition-all">
+            <div
               class="bg-amber-300 text-dark-blue font-bold w-50 aspect-square flex items-center justify-center text-5xl shadow-sm">
               3
             </div>
@@ -201,8 +209,9 @@
             </div>
           </div>
 
-          <div class="step-4 bg-white px-4 py-6 rounded-xl flex items-center gap-4 hover:scale-101 hover:shadow-lg hover:shadow-amber-500 transition-all">
-            <div 
+          <div
+            class="step-4 bg-white px-4 py-6 rounded-xl flex items-center gap-4 hover:scale-101 hover:shadow-lg hover:shadow-amber-500 transition-all">
+            <div
               class="bg-amber-300 text-dark-blue font-bold w-50 aspect-square flex items-center justify-center text-5xl shadow-sm">
               4
             </div>
