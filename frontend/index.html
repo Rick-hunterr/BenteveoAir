@@ -30,9 +30,9 @@
 
         <div>
           <ul class="flex gap-12">
-            <li><a class="cursor-pointer text-default-dark/85 hover:text-dark-blue transition-colors" href="#home">Inicio</a></li>
-            <li><a class="cursor-pointer text-default-dark/85 hover:text-dark-blue transition-colors" href="src/pages/paquete.html">Paquetes</a></li>
-            <li><a class="cursor-pointer text-default-dark/85 hover:text-dark-blue transition-colors" href="src/pages/ayuda.html">Ayuda</a></li>
+            <li><a class="link" href="#home">Inicio</a></li>
+            <li><a class="link" href="src/pages/paquete.html">Paquetes</a></li>
+            <li><a class="link" href="src/pages/ayuda.html">Ayuda</a></li>
           </ul>
         </div>
       </div>
@@ -41,15 +41,18 @@
         <div class="flex gap-7 items-center">
           <div class="flex gap-2">
             <button id="openRegistro"
-              class="bg-blue-50 border border-blue-500 text-blue-500 font-bold rounded-4xl py-2 px-4 cursor-pointer hover:bg-blue-500 hover:text-blue-100 transition-colors"> Registrarse
+              class="bg-blue-50 border border-blue-500 text-blue-500 font-bold rounded-4xl py-2 px-4 cursor-pointer hover:bg-blue-500 hover:text-blue-100 transition-colors">
+              Registrarse
             </button>
 
             <button id="openInicio"
-              class="bg-blue-50 border border-blue-500 text-blue-500 font-bold rounded-4xl py-2 px-4 cursor-pointer hover:bg-blue-500 hover:text-blue-100 transition-colors"> Iniciar sesion
+              class="bg-blue-50 border border-blue-500 text-blue-500 font-bold rounded-4xl py-2 px-4 cursor-pointer hover:bg-blue-500 hover:text-blue-100 transition-colors">
+              Iniciar sesion
             </button>
           </div>
 
-          <a href="src/pages/carrito.html" class="relative cursor-pointer p-2 pr-2.5 rounded-full hover:bg-amber-500 hover:text-white transition-colors">
+          <a href="src/pages/carrito.html"
+            class="relative cursor-pointer p-2 pr-2.5 rounded-full hover:bg-amber-500 hover:text-white transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z">
@@ -111,8 +114,7 @@
 
     <section id="flight-assistence" class="h-svh max-h-[550px] w-full grid place-items-center">
       <div class="container max-w-8xl flex justify-around">
-        <article
-          class="shadow-2xl rounded-2xl max-w-[600px] min-h-[400px] grid place-content-center bg-gradient-to-br from-blue-900 to-blue-600 text-white py-18 px-10">
+        <article class="help-card from-blue-900 to-blue-600 text-white py-18 px-10">
           <h2 class="text-4xl font-bold">
             ¿Quiere viajar, pero no sabes a donde?
           </h2>
@@ -127,8 +129,7 @@
           </a>
         </article>
 
-        <article
-          class="shadow-2xl rounded-2xl max-w-[600px] min-h-[400px] grid place-content-center bg-gradient-to-br from-amber-500 to-amber-300 py-18 px-10">
+        <article class="help-card from-amber-500 to-amber-300 py-18 px-10">
           <h2 class="text-4xl font-bold">
             ¿Necesitas ayuda con tu reservacion?
           </h2>
@@ -152,12 +153,8 @@
         </h1>
 
         <div class="grid grid-cols-2 gap-8">
-          <div
-            class="step-1 bg-white px-4 py-6 rounded-xl flex items-center gap-4 hover:scale-101 hover:shadow-lg hover:shadow-amber-500 transition-all">
-            <div
-              class="bg-amber-300 text-dark-blue font-bold w-50 aspect-square flex items-center justify-center text-5xl shadow-sm">
-              1
-            </div>
+          <div class="step-1 step-card">
+            <div class="step-box">1</div>
 
             <div>
               <h2 class="text-2xl font-bold mb-2">
@@ -171,12 +168,8 @@
             </div>
           </div>
 
-          <div
-            class="step-2 bg-white px-4 py-6 rounded-xl flex items-center gap-4 hover:scale-101 hover:shadow-lg hover:shadow-amber-500 transition-all">
-            <div
-              class="bg-amber-300 text-dark-blue font-bold w-50 aspect-square flex items-center justify-center text-5xl shadow-sm">
-              2
-            </div>
+          <div class="step-2 step-card">
+            <div class="step-box">2</div>
 
             <div>
               <h2 class="text-2xl font-bold mb-2">
@@ -190,12 +183,8 @@
             </div>
           </div>
 
-          <div
-            class="step-3 bg-white px-4 py-6 rounded-xl flex items-center gap-4 hover:scale-101 hover:shadow-lg hover:shadow-amber-500 transition-all">
-            <div
-              class="bg-amber-300 text-dark-blue font-bold w-50 aspect-square flex items-center justify-center text-5xl shadow-sm">
-              3
-            </div>
+          <div class="step-3 step-card">
+            <div class="step-box">3</div>
 
             <div>
               <h2 class="text-2xl font-bold mb-2">
@@ -209,12 +198,8 @@
             </div>
           </div>
 
-          <div
-            class="step-4 bg-white px-4 py-6 rounded-xl flex items-center gap-4 hover:scale-101 hover:shadow-lg hover:shadow-amber-500 transition-all">
-            <div
-              class="bg-amber-300 text-dark-blue font-bold w-50 aspect-square flex items-center justify-center text-5xl shadow-sm">
-              4
-            </div>
+          <div class="step-4 step-card">
+            <div class="step-box">4</div>
 
             <div>
               <h2 class="text-2xl font-bold mb-2">
