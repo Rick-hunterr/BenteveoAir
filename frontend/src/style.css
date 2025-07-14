@@ -20,7 +20,7 @@
   }
   
   .help-card {
-    @apply shadow-2xl rounded-2xl max-w-[600px] min-h-[400px] grid place-content-center bg-gradient-to-br;
+    @apply shadow-2xl rounded-2xl w-full flex flex-col justify-start bg-gradient-to-br;
   }
 
   .metric {
