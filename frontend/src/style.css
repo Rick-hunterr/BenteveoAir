@@ -23,6 +23,10 @@
     @apply shadow-2xl rounded-2xl max-w-[600px] min-h-[400px] grid place-content-center bg-gradient-to-br;
   }
 
+  .metric {
+    @apply opacity-0 backdrop-blur-2xl rounded shadow-md py-6 max-w-56 w-full hover:bg-black/50 transition-colors animate-fade-in-up-delay;
+  }
+
   /* PAGINA: PAQUETES */
   .filter-btn {
     @apply min-w-[132px] bg-black/75 text-white py-1 px-2 rounded cursor-pointer hover:bg-black/85 transition-colors duration-150;
@@ -84,4 +88,27 @@
   --font-open-sans: "Open Sans", sans-serif;
 
   --container-8xl: 1440px;
+
+  --animate-fade-in-up-delay: fadeInUp 0.8s ease forwards .35s;
+  --animate-fade-in-up: fadeInUp 0.8s ease forwards;
+  --animate-fade-in: fadeIn 0.8s ease forwards;
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: .75;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
