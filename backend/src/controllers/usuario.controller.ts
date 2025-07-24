@@ -187,3 +187,21 @@ export async function actualizarUsuario(req: Request, res: Response) {
     res.status(500).send("Error al actualizar usuario")
   }
 }
+
+
+export async function verificarRol(req: Request, res: Response) {
+  const rol = req.query.rol
+
+  if (!rol) {
+    res.status(400).json({ error: "Rol es requerido" })
+    return
+  }
+
+  try {
+    const usuarios = repo.find({ where: { rol: String(rol) } })
+    res.status(200).json(usuarios)
+  } catch (error) {
+    console.error("ERROR al verificar rol:", error)
+    res.status(500).json({ error: "Error al verificar rol" })
+  }
+}
