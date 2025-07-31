@@ -112,12 +112,38 @@ export async function loginUsuario(req: Request, res: Response) {
     )
 
     res.json({ token })
+
+
+    const rol = usuario.rol
+
+    if (!rol) {
+      verificarRol(req, res)
+    }    
+
   } catch (error) {
     console.error("ERROR en loginUsuario:", error)
     res.status(500).json({ error: "Error en el servidor" })
   }
 }
 
+
+export async function verificarRol(req: Request, res: Response) {
+  const authHeader = req.headers.authorization
+
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    res.status(401).json({ error: "Token no proporcionado" })
+    return
+  }
+
+  const token = authHeader.split(" ")[1]
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || "secretKey") as { rol: string }
+    res.status(200).json({ rol: decoded.rol })
+  } catch (error) {
+    res.status(401).json({ error: "Token inválido" })
+  }
+}
 export async function eliminarUsuario(req: Request, res: Response) {
   const { id } = req.params
 
@@ -188,20 +214,3 @@ export async function actualizarUsuario(req: Request, res: Response) {
   }
 }
 
-
-export async function verificarRol(req: Request, res: Response) {
-  const rol = req.query.rol
-
-  if (!rol) {
-    res.status(400).json({ error: "Rol es requerido" })
-    return
-  }
-
-  try {
-    const usuarios = repo.find({ where: { rol: String(rol) } })
-    res.status(200).json(usuarios)
-  } catch (error) {
-    console.error("ERROR al verificar rol:", error)
-    res.status(500).json({ error: "Error al verificar rol" })
-  }
-}

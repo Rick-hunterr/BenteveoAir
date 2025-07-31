@@ -8,7 +8,7 @@ router.post("/", crearUsuario)
 router.delete("/:id", eliminarUsuario)
 router.put("/:id", actualizarUsuario)
 router.post("/login", loginUsuario)
-router.get("/rol", verificarRol)
+router.get("/rol", (req, res) => verificarRol(req, res))
 
 export default router
 

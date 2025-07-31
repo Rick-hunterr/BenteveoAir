@@ -145,7 +145,10 @@ if (confirmarPaquete) {
 //=========================================================================
 
 
-inicio.addEventListener("submit", async (e) => {
+// Asegúrate de seleccionar el formulario de inicio de sesión correctamente
+const inicioForm = document.getElementById("inicio");
+
+inicioForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   try {
@@ -177,20 +180,49 @@ inicio.addEventListener("submit", async (e) => {
       // aca guardo el token y iria la logica para redirigir si es usuario o admin
       localStorage.setItem("token", data.token);
       console.log("Token guardado:", data.token);
-      alert("Login exitoso");
-      window.location.href = "index.html";
+
+      const rol = await verificarRol();
+      if (rol === "admin") {
+        alert("Login exitoso");
+        window.location.href = "admin.html";
+      } else if (rol === "cliente") {
+        alert("Login exitoso");
+        window.location.href = "index.html";
+      } else {
+        alert("Rol no reconocido");
+        return;
+      }
 
 
     } else {
       alert(data?.error || "Error al iniciar sesión");
     }
   } catch (error) {
-    console.error("Error en el login:", error);
-    alert("No se pudo conectar al servidor. Por favor, intenta más tarde.");
+    console.error("Error al iniciar sesión:", error);
+    alert("Error al iniciar sesión");
   }
 });
 
+//Funcion para verificar si el que esta iniciando es administrador o usuario
+async function verificarRol() {
+  const token = localStorage.getItem("token");
+  if (!token) return;
 
+  try {
+    console.log("Verificando rol del usuario, con token:", token );
+    const resp = await fetch(`${API_URL}/usuarios/rol`, {
+      headers: { "Authorization": `Bearer ${token}` }
+    });
+
+    if (!resp.ok) throw new Error("Error al verificar rol");
+
+    const data = await resp.json();
+    return data.rol;
+  } catch (error) {
+    console.error("Error al verificar rol:", error);
+    return null;
+  }
+}
 
 
 
@@ -269,24 +301,3 @@ registro.addEventListener("submit", async (e) => {
     alert("No se pudo conectar al servidor");
   }
 });
-
-
-//Funcion para verificar si el que esta iniciando es administrador o usuario
-async function verificarRol() {
-  const token = localStorage.getItem("token");
-  if (!token) return;
-
-  try {
-    const resp = await fetch(`${API_URL}/usuarios/rol`, {
-      headers: { "Authorization": `Bearer ${token}` }
-    });
-
-    if (!resp.ok) throw new Error("Error al verificar rol");
-
-    const data = await resp.json();
-    return data.rol;
-  } catch (error) {
-    console.error("Error al verificar rol:", error);
-    return null;
-  }
-}
