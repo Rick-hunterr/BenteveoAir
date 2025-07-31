@@ -53,3 +53,12 @@
     - Analista profesional
     - Diseñador gráfico
     - Programador (Desarrollador backend O Desarrollador frontend)
+
+
+    archivo .env:
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER="su usuario"
+DB_PASS="su clave"
+DB_NAME=bd_benteveoAir
+JWT_SECRET="su clave"
