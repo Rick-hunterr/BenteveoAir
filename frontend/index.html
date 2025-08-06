@@ -37,47 +37,45 @@
         </div>
       </div>
 
-      <div>
-        <div class="flex gap-7 items-center">
-          <div class="flex gap-2">
-            <button id="openRegistro"
-              class="bg-blue-50 border border-blue-500 text-blue-500 font-bold rounded-4xl py-2 px-4 cursor-pointer hover:bg-blue-500 hover:text-blue-100 transition-colors">
-              Registrarse
+      <div class="flex gap-7 items-center">
+        <div class="flex gap-2">
+          <button id="openRegistro"
+            class="bg-blue-50 border border-blue-500 text-blue-500 font-bold rounded-4xl py-2 px-4 cursor-pointer hover:bg-blue-500 hover:text-blue-100 transition-colors">
+            Registrarse
+          </button>
+
+          <button id="openInicio"
+            class="bg-blue-50 border border-blue-500 text-blue-500 font-bold rounded-4xl py-2 px-4 cursor-pointer hover:bg-blue-500 hover:text-blue-100 transition-colors">
+            Iniciar sesión
+          </button>
+        </div>
+
+        <a href="src/pages/carrito.html"
+          class="register-and-login relative cursor-pointer p-2 pr-2.5 rounded-full hover:bg-amber-500 hover:text-white transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z">
+            </path>
+          </svg>
+
+          <span id="notification" class="absolute text-xs font-bold text-amber-600 -bottom-0.5 right-0">0</span>
+        </a>
+
+        <!-- Usuario logueado -->
+        <div class="hidden relative" id="user-container">
+          <button id="userMenuBtn"
+            class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600">
+            U
+          </button>
+
+          <!-- Dropdown -->
+          <div id="userDropdown"
+            class="hidden absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-xl py-2 text-sm z-50">
+            <p class="px-4 py-2 text-gray-700">Usuario</p>
+
+            <button id="logoutBtn" class="w-full text-left px-4 py-2 hover:bg-gray-100 text-red-500">
+              Cerrar sesión
             </button>
-
-            <button id="openInicio"
-              class="bg-blue-50 border border-blue-500 text-blue-500 font-bold rounded-4xl py-2 px-4 cursor-pointer hover:bg-blue-500 hover:text-blue-100 transition-colors">
-              Iniciar sesión
-            </button>
-          </div>
-
-          <a href="src/pages/carrito.html"
-            class="relative cursor-pointer p-2 pr-2.5 rounded-full hover:bg-amber-500 hover:text-white transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z">
-              </path>
-            </svg>
-
-            <span id="counter" class="opacity-0 absolute text-amber-600 -bottom-1 -right-1">2</span>
-          </a>
-
-          <!-- Usuario logueado -->
-          <div class="hidden relative" id="user-container">
-            <button id="userMenuBtn"
-              class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600">
-              U
-            </button>
-
-            <!-- Dropdown -->
-            <div id="userDropdown"
-              class="hidden absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-xl py-2 text-sm z-50">
-              <p class="px-4 py-2 text-gray-700">Usuario</p>
-
-              <button id="logoutBtn" class="w-full text-left px-4 py-2 hover:bg-gray-100 text-red-500">
-                Cerrar sesión
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -593,6 +591,7 @@
 
   <script src="src/scripts/user.js"></script>
   <script src="src/scripts/app.js"></script>
+  <script src="src/scripts/notification.js"></script>
 </body>
 
 </html>
