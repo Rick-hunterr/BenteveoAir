@@ -1,54 +1,74 @@
 //============================================================================
-//========================= Modal user default ===============================
+//============================== MODALES ===================================
 //============================================================================
-const openPerfil = document.getElementById("openPerfil");
-const closePerfil = document.getElementById("closePerfil");
-const perfilWrapper = document.getElementById("perfilWrapper");
-const perfilModal = document.getElementById("perfilModal");
+const modalsContainer = document.getElementById("modalsContainer");
 
-openPerfil.addEventListener("click", () => {
-  perfilWrapper.classList.remove("hidden");
-  perfilModal.showModal();
-});
+//============================================================================
+//========================= MODAL DE USUARIO ===============================
+//============================================================================
+const userMenu_Btn = document.getElementById("userMenu_Btn");
+const perfilModal = document.getElementById("perfilModal");
+const closePerfil = document.getElementById("closePerfil");
+
+if (userMenu_Btn && modalsContainer) {
+  userMenu_Btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    modalsContainer.classList.remove("hidden");
+    perfilModal.showModal();
+  });
+
+  window.addEventListener("click", (e) => {
+    if (!userMenu_Btn.contains(e.target) && !modalsContainer.contains(e.target)){
+      perfilModal.close();
+      modalsContainer.classList.add("hidden");
+    }
+  });
+}
 
 closePerfil.addEventListener("click", () => {
   perfilModal.close();
-  perfilWrapper.classList.add("hidden");
-});
-
-perfilWrapper.addEventListener("click", (e) => {
-  if (e.target === perfilWrapper) {
-    perfilModal.close();
-    perfilWrapper.classList.add("hidden");
-  }
+  modalsContainer.classList.add("hidden");
 });
 
 
-//============================================================================
-//========================= Cambiar Usuario Modal ============================
-//============================================================================
-const openCambiarUsuario = document.getElementById("openCambiarUsuario");
-const closeCambiarUsuario = document.getElementById("closeCambiarUsuario");
-const cambiarUsuarioWrapper = document.getElementById("cambiarUsuarioWrapper");
-const cambiarUsuarioModal = document.getElementById("cambiarUsuarioModal");
 
-openCambiarUsuario.addEventListener("click", (e) => {
+//=========================================================================
+//============================== CERRAR SESIÓN ==========================
+//=========================================================================
+
+
+// if (logoutBtn) {
+//   logoutBtn.addEventListener("click", () => {
+//     localStorage.removeItem("token");
+//     alert("Sesión cerrada");
+//     location.reload();
+//   });
+// }
+
+
+
+// //============================================================================
+// //========================= CAMBIAR DATOS MODAL ============================
+// //============================================================================
+const cambiarDatosAdmin_Btn = document.getElementById("cambiarDatosAdmin_Btn");
+const datosAdmin_Modal = document.getElementById("datosAdmin_Modal");
+const cerrarDatosAdmin = document.getElementById("cerrarDatosAdmin");
+
+cambiarDatosAdmin_Btn.addEventListener("click", (e) => {
   e.preventDefault();
-  perfilModal.close();
-  perfilWrapper.classList.add("hidden");
+  // perfilModal.close();
 
-  cambiarUsuarioWrapper.classList.remove("hidden");
-  cambiarUsuarioModal.showModal();
+  datosAdmin_Modal.showModal();
 });
 
-closeCambiarUsuario.addEventListener("click", () => {
-  cambiarUsuarioModal.close();
-  cambiarUsuarioWrapper.classList.add("hidden");
+cerrarDatosAdmin.addEventListener("click", () => {
+  datosAdmin_Modal.close();
+  modalsContainer.classList.add("hidden");
 });
 
-cambiarUsuarioWrapper.addEventListener("click", (e) => {
-  if (e.target === cambiarUsuarioWrapper) {
-    cambiarUsuarioModal.close();
-    cambiarUsuarioWrapper.classList.add("hidden");
-  }
-});
+// modalsContainer.addEventListener("click", (e) => {
+//   if (e.target === modalsContainer) {
+//     datosAdmin_Modal.close();
+//     modalsContainer.classList.add("hidden");
+//   }
+// });

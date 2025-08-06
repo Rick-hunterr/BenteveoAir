@@ -1,154 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <title>Benteveo Air</title>
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
-</head>
-<body>
-    <header class="z-100 w-full shadow-md flex justify-center items-center text-sm font-medium text-default-dark font-manrope">
-      <div class="container w-full max-w-8xl py-2 px-5 flex justify-between items-center">
-        <div class="flex items-center gap-24">
-          <div class="logo flex items-center hover:scale-105 transition-transform">
-            <a href="../../index.html">
-              <img class="max-w-10 object-contain cursor-pointer" src="../assets/BenteveoAirIsotipo.png" alt="BS-isotipo" draggable="false">
-            </a>
-    
-            <a href="../../index.html" class="max-w-36 object-contain cursor-pointer">
-            <img src="../assets/BenteveoAirLogotipo.png" alt="bs-logotipo">
-            </a>
-          </div>
-          
-          <div>
-            <ul class="flex gap-12">
+  </head>
+  <body class="flex">
+    <article class="flex flex-col items-center gap-y-3 bg-white min-w-2xs w-xs h-screen sticky top-0 overflow-y-scroll shadow-md">
+      <div class="sticky top-0 w-full shadow-lg py-2 bg-white flex justify-center items-center hover:scale-105 transition-transform">
+        <a href="../../index.html">
+          <img class="max-w-10 object-contain cursor-pointer" src="../assets/BenteveoAirIsotipo.png" alt="BS-isotipo" draggable="false">
+        </a>
+        <a href="../../index.html" class="max-w-36 object-contain cursor-pointer">
+          <img src="../assets/BenteveoAirLogotipo.png" alt="bs-logotipo">
+        </a>
+      </div>
+      <div class="min-w-3xs text-center p-2 flex flex-col items-center gap-y-3 border border-gray-400 border-collapse rounded-lg">
+        <p class="w-full shadow-lg text-xl font-medium border-b border-gray-400">Filtros</p>
+        <button class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Todo</button>
+        <button class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Paquetes</button>
+        <button class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Usuarios</button>
+      </div>
+      <div class="min-w-3xs text-center p-2 flex flex-col items-center gap-y-3 border border-gray-400 border-collapse rounded-lg">
+        <p class="w-full shadow-lg text-xl font-medium border-b border-gray-400">Buscar</p>
+        <button class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Tabla</button>
+        <button class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Atributo</button>
+        <input type="text" placeholder="Por ejemplo: 'Carlos'" class="w-full px-4 py-2 rounded-md bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors"/>
+      </div>
+    </article>
+    <main class="w-full bg-gray-200 flex flex-col items-center">
+      <header class="z-100 w-full bg-white shadow-md flex justify-center items-center text-sm font-medium text-default-dark font-manrope">
+        <div class="container max-w-8xl py-2 px-5 flex justify-between items-center">
+          <div class="flex items-center gap-24">
+            <div>
+              <ul class="flex gap-12">
                 <li><a class="link p-2" href="../../index.html">Inicio</a></li>
                 <li><a class="link p-2" href="./paquete.html">Paquetes</a></li>
                 <li><a class="link p-2" href="./ayuda.html">Ayuda</a></li>
-            </ul>
-          </div>
-        </div>
-
-      <div class="flex justify-center gap-5">
-        <div class="flex gap-2">
-
-          <button id="openPerfil" class=" text-white rounded-xl py-1 px-3 cursor-pointer">
-            <img src="../assets/perfil.png" alt="" class="w-8 h-8">
-          </button>
-
-        </div>
-
-        <div>
-          <div class="flex justify-center items-center gap-10">
-            <a href="./carrito.html" class="relative cursor-pointer top-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" >
-                <path d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z"></path>
-              </svg>
-    
-              <span id="counter" class="opacity-0 absolute text-amber-600 -bottom-1 -right-1">2</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      </div>
-    </header>
-  
-    <main class="flex justify-center items-center">
-      <table class="w-8xl max-w-full border border-gray-400 border-collapse rounded-lg mt-10">
-        <thead class="bg-gray-100">
-          <tr>
-            <th class="border border-gray-400 px-4 py-2">ID</th>
-            <th class="border border-gray-400 px-4 py-2">Usuario</th>
-            <th class="border border-gray-400 px-4 py-2">Correo</th>
-            <th class="border border-gray-400 px-4 py-2">Paquete</th>
-            <th class="border border-gray-400 px-4 py-2">Precio</th>
-            <th class="border border-gray-400 px-4 py-2">Fecha</th>
-            <th class="border border-gray-400 px-4 py-2">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="text-center">
-            <td class="border border-gray-400 px-4 py-2">1</td>
-            <td class="border border-gray-400 px-4 py-2">Carlos</td>
-            <td class="border border-gray-400 px-4 py-2">Carlos@gmail.com</td>
-            <td class="border border-gray-400 px-4 py-2">Tierra del Fuego</td>
-            <td class="border border-gray-400 px-4 py-2">$749000</td>
-            <td class="border border-gray-400 px-4 py-2"> 24/7/2025</td>
-            <td class="border border-gray-400 px-4 py-2">
-              <div class="flex gap-2 justify-center">
-                <button class="bg-yellow-200 text-black px-3 py-1 rounded cursor-pointer">Editar</button>
-                <button class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer">Cancelar</button>
-              </div>
-            </td>
-          </tr>
-          <tr class="text-center">
-            <td class="border border-gray-400 px-4 py-2">2</td>
-            <td class="border border-gray-400 px-4 py-2">María</td>
-            <td class="border border-gray-400 px-4 py-2">Maria@gmail.com</td>
-            <td class="border border-gray-400 px-4 py-2">Bariloche Premium</td>
-            <td class="border border-gray-400 px-4 py-2">$659000</td>
-            <td class="border border-gray-400 px-4 py-2"> 8/8/2025</td>
-            <td class="border border-gray-400 px-4 py-2">
-              <div class="flex gap-2 justify-center">
-                <button class="bg-yellow-200 text-black px-3 py-1 rounded cursor-pointer">Editar</button>
-                <button class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer">Cancelar</button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </main>
-
-    <!-- Modal User default -->
-    <div id="perfilWrapper" class="hidden">
-      <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
-        <dialog id="perfilModal" class="rounded-lg m-auto p-6 shadow-lg w-96 bg-gray-100 flex flex-col overflow-visible border-0">
-
-          <img src="../assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
-
-          <button id="closePerfil" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
-            ✕
-          </button>
-
-          <h2 class="text-center mt-8 text-2xl font-semibold">Hola Carlos</h2>
-          <p class="text-center text-sm mt-2 text-gray-600">¿Querés cambiar el nombre de usuario?</p>
-
-          <div class="mt-4 text-center">
-            <a href="#" id="openCambiarUsuario" class="text-blue-600 underline hover:text-blue-800">
-              Cambiar nombre usuario
-            </a>
-          </div>
-        </dialog>
-      </div>
-    </div>
-
-    <!-- Modal "Cambiar usuario" -->
-    <div id="cambiarUsuarioWrapper" class="hidden">
-      <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
-        <dialog id="cambiarUsuarioModal" class="rounded-lg m-auto p-6 shadow-lg w-96 bg-gray-100 flex flex-col overflow-visible border-0">
-
-          <img src="../assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
-
-          <button id="closeCambiarUsuario" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
-            ✕
-          </button>
-
-          <h2 class="text-center mt-8 text-2xl font-semibold">Cambiar usuario</h2>
-
-          <form method="dialog" class="mt-6">
-            <input type="text" placeholder="Nuevo nombre" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
-
-            <div class="flex justify-center">
-              <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                Guardar cambios
-              </button>
+              </ul>
             </div>
-          </form>
-        </dialog>
-      </div>
-    </div>
+          </div>
 
+          <div class="flex justify-center gap-5">
+                    <!-- ----------------------------------------- Botón del carrito ------------------------------------------- -->
+            <div>
+              <div class="flex justify-center items-center gap-10">
+                <a href="./carrito.html"
+                  class="relative cursor-pointer p-2 pr-2.5 rounded-full hover:bg-amber-500 hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z">
+                    </path>
+                  </svg>
+
+                  <span id="counter" class="opacity-0 absolute text-amber-600 -bottom-1 -right-1">2</span>
+                </a>
+              </div>
+            </div>
+                    <!-- ------------------------------------------ Perfil del admin ------------------------------------------- -->
+            <div class="relative">
+              <button id="userMenu_Btn"
+                class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600">
+                  U
+              </button>
+              <div id="modalsContainer" class="hidden">
+                <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
+                  <dialog id="perfilModal" class="rounded-lg m-auto p-6 shadow-lg w-96 bg-gray-100 flex flex-col items-center border-0">
+
+                    <span class="w-15 h-15 rounded-full bg-blue-500 text-xl text-white flex items-center justify-center hover:bg-blue-600">
+                      U
+                    </span>
+
+                    <button id="closePerfil" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
+                      ✕
+                    </button>
+
+                    <h2 class="text-center mt-8 text-2xl font-semibold">Hola Carlos</h2>
+                    <p class="text-center text-sm mt-2 text-gray-600">¿Necesitás algo?</p>
+
+                    <div class="mt-4 text-center">
+                      <a id="cambiarDatosAdmin_Btn" class="text-blue-600 underline hover:text-blue-800 cursor-pointer">
+                        Cambiar datos de usuario
+                      </a>
+                    </div>
+                    <div class="mt-4 text-center">
+                      <a id="cambiarCuenta_Btn" class="text-blue-600 underline hover:text-blue-800 cursor-pointer">
+                        Cambiar cuenta
+                      </a>
+                    </div>
+                    <div class="mt-4 text-center">
+                      <a id="cerrarSesion_Btn" class="text-blue-600 underline hover:text-blue-800 cursor-pointer">
+                        Cerrar sesión
+                      </a>
+                    </div>
+                  </dialog>
+                </div>
+              </div>
+                <!-- Modal "Cambiar usuario" -->
+              <div id="cambiarDatosAdmin_Btn" class="hidden">
+                <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
+                  <dialog id="datosAdmin_Modal" class="rounded-lg m-auto p-6 shadow-lg w-96 bg-gray-100 flex flex-col overflow-visible border-0">
+
+                    <img src="../assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
+
+                    <button id="cerrarDatosAdmin" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
+                      ✕
+                    </button>
+
+                    <h2 class="text-center mt-8 text-2xl font-semibold">Cambiar usuario</h2>
+
+                    <form method="dialog" class="mt-6">
+                      <input type="text" placeholder="Nuevo nombre" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                      <div class="flex justify-center">
+                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                          Guardar cambios
+                        </button>
+                      </div>
+                    </form>
+                  </dialog>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header> <!--Tablas de Admin-->
+      <article class="flex flex-col justify-center items-center">
+                    <!-- Tabla de Paquetes -->
+        <table class="min-w-3xl max-w-full border border-gray-400 border-collapse rounded-lg mt-10">
+          <thead class="bg-gray-300">
+            <tr>
+              <th class="border border-gray-400 px-4 py-2">ID</th>
+              <th class="border border-gray-400 px-4 py-2">Paquete</th>
+              <th class="border border-gray-400 px-4 py-2">Origen</th>
+              <th class="border border-gray-400 px-4 py-2">Hotel</th>
+              <th class="border border-gray-400 px-4 py-2">Precio</th>
+              <th class="border border-gray-400 px-4 py-2">Duración</th>
+              <th class="border border-gray-400 px-4 py-2">Acciones</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+            <tr class="text-center hover:bg-gray-200">
+              <td class="border border-gray-400 px-4 py-2">1</td>
+              <td class="border border-gray-400 px-4 py-2">Aventura en Tierra del Fuego</td>
+              <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+              <td class="border border-gray-400 px-4 py-2">Cap Polonio</td>
+              <td class="border border-gray-400 px-4 py-2">$800000</td>
+              <td class="border border-gray-400 px-4 py-2">5 días</td>
+              <td class="border border-gray-400 px-4 py-2">
+                <div class="flex gap-2 justify-center">
+                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
+                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
+                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
+                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                </div>
+              </td>
+            </tr>
+            <tr class="text-center bg-gray-100 hover:bg-gray-200">
+              <td class="border border-gray-400 px-4 py-2">2</td>
+              <td class="border border-gray-400 px-4 py-2">Aventura en Buenos Aires</td>
+              <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+              <td class="border border-gray-400 px-4 py-2">Metropolitano SUPARA</td>
+              <td class="border border-gray-400 px-4 py-2">$935000</td>
+              <td class="border border-gray-400 px-4 py-2">6 días</td>
+              <td class="border border-gray-400 px-4 py-2">
+                <div class="flex gap-2 justify-center">
+                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
+                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
+                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
+                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                </div>
+              </td>
+            </tr>
+            <tr class="text-center hover:bg-gray-200">
+              <td class="border border-gray-400 px-4 py-2">3</td>
+              <td class="border border-gray-400 px-4 py-2">Aventura en Jujuy - Los Siete Colores</td>
+              <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+              <td class="border border-gray-400 px-4 py-2">Altos de la Viña</td>
+              <td class="border border-gray-400 px-4 py-2">$1150000</td>
+              <td class="border border-gray-400 px-4 py-2">10 días</td>
+              <td class="border border-gray-400 px-4 py-2">
+                <div class="flex gap-2 justify-center">
+                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
+                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
+                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
+                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                </div>
+              </td>
+            </tr>
+            <tr class="text-center bg-gray-100 hover:bg-gray-200">
+              <td class="border border-gray-400 px-4 py-2">4</td>
+              <td class="border border-gray-400 px-4 py-2">Aventura en España - Barcelona</td>
+              <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+              <td class="border border-gray-400 px-4 py-2">Ibis Barcelona Centro</td>
+              <td class="border border-gray-400 px-4 py-2">$2350000</td>
+              <td class="border border-gray-400 px-4 py-2">7 días</td>
+              <td class="border border-gray-400 px-4 py-2">
+                <div class="flex gap-2 justify-center">
+                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
+                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
+                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
+                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                </div>
+              </td>
+            </tr>
+            <tr class="text-center hover:bg-gray-200">
+              <td class="border border-gray-400 px-4 py-2">5</td>
+              <td class="border border-gray-400 px-4 py-2">Aventura en Francia - Paris</td>
+              <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+              <td class="border border-gray-400 px-4 py-2">The People Paris Marais</td>
+              <td class="border border-gray-400 px-4 py-2">$2050000</td>
+              <td class="border border-gray-400 px-4 py-2">5 días</td>
+              <td class="border border-gray-400 px-4 py-2">
+                <div class="flex gap-2 justify-center">
+                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
+                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
+                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
+                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                </div>
+              </td>
+            </tr>
+            <tr class="text-center bg-gray-100 hover:bg-gray-200">
+              <td class="border border-gray-400 px-4 py-2">6</td>
+              <td class="border border-gray-400 px-4 py-2">Aventura en Alemania - Baviera</td>
+              <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+              <td class="border border-gray-400 px-4 py-2">Villa Ludwig</td>
+              <td class="border border-gray-400 px-4 py-2">$2400000</td>
+              <td class="border border-gray-400 px-4 py-2">6 días</td>
+              <td class="border border-gray-400 px-4 py-2">
+                <div class="flex gap-2 justify-center">
+                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
+                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
+                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
+                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+                    <!-- Tabla de Usuarios -->
+        <table class="min-w-3xl max-w-full border border-gray-400 border-collapse rounded-lg mt-10">
+          <thead class="bg-gray-300">
+            <tr>
+              <th class="border border-gray-400 px-4 py-2">ID</th>
+              <th class="border border-gray-400 px-4 py-2">Usuario</th>
+              <th class="border border-gray-400 px-4 py-2">Correo</th>
+              <th class="border border-gray-400 px-4 py-2">Paquete</th>
+              <th class="border border-gray-400 px-4 py-2">Precio</th>
+              <th class="border border-gray-400 px-4 py-2">Fecha</th>
+              <th class="border border-gray-400 px-4 py-2">Acciones</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+            <tr class="text-center hover:bg-gray-200">
+              <td class="border border-gray-400 px-4 py-2">1</td>
+              <td class="border border-gray-400 px-4 py-2">Carlos</td>
+              <td class="border border-gray-400 px-4 py-2">Carlos@gmail.com</td>
+              <td class="border border-gray-400 px-4 py-2">Tierra del Fuego</td>
+              <td class="border border-gray-400 px-4 py-2">$749000</td>
+              <td class="border border-gray-400 px-4 py-2"> 24/7/2025</td>
+              <td class="border border-gray-400 px-4 py-2">
+                <div class="flex gap-2 justify-center">
+                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
+                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
+                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
+                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                </div>
+              </td>
+            </tr>
+            <tr class="text-center bg-gray-100 hover:bg-gray-200">
+              <td class="border border-gray-400 px-4 py-2">2</td>
+              <td class="border border-gray-400 px-4 py-2">María</td>
+              <td class="border border-gray-400 px-4 py-2">Maria@gmail.com</td>
+              <td class="border border-gray-400 px-4 py-2">Bariloche Premium</td>
+              <td class="border border-gray-400 px-4 py-2">$659000</td>
+              <td class="border border-gray-400 px-4 py-2"> 8/8/2025</td>
+              <td class="border border-gray-400 px-4 py-2">
+                <div class="flex gap-2 justify-center">
+                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
+                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
+                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
+                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </main>
     <script src="../scripts/admin.js"></script>
   </body>
 </html>
