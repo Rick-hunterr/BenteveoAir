@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style.css">
-  <title>Benteveo Air</title>
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../style.css">
+  <title>Benteveo Air</title>
 </head>
 
 <body class="flex flex-col min-h-screen">
@@ -18,21 +18,21 @@
     <div class="container w-full max-w-8xl py-2 px-5 flex justify-between items-center">
       <div class="flex items-center gap-24">
         <div class="logo flex items-center hover:scale-105 transition-transform">
-          <a href="../../index.html">
-            <img class="max-w-10 object-contain cursor-pointer" src="../assets/BenteveoAirIsotipo.png" alt="BS-isotipo"
+          <a href="../../../index.html">
+            <img class="max-w-10 object-contain cursor-pointer" src="../../assets/BenteveoAirIsotipo.png" alt="BS-isotipo"
               draggable="false">
           </a>
 
-          <a href="../../index.html" class="max-w-36 object-contain cursor-pointer">
-            <img src="../assets/BenteveoAirLogotipo.png" alt="bs-logotipo">
+          <a href="../../../index.html" class="max-w-36 object-contain cursor-pointer">
+            <img src="../../assets/BenteveoAirLogotipo.png" alt="bs-logotipo">
           </a>
         </div>
 
         <div>
           <ul class="flex gap-12">
-            <li><a class="link p-2" href="../../index.html">Inicio</a></li>
-            <li><a class="link p-2" href="./paquete.html">Paquetes</a></li>
-            <li><a class="link p-2" href="./ayuda.html">Ayuda</a></li>
+            <li><a class="link p-2" href="../../../index.html">Inicio</a></li>
+            <li><a class="link p-2" href="#turistic-packages">Paquetes</a></li>
+            <li><a class="link p-2" href="../help/ayuda.html">Ayuda</a></li>
           </ul>
         </div>
       </div>
@@ -50,7 +50,7 @@
           </button>
         </div>
 
-        <a href="./carrito.html"
+        <a href="../cart/carrito.html"
           class="relative cursor-pointer p-2 pr-2.5 rounded-full hover:bg-amber-500 hover:text-white transition-colors">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
             <path
@@ -110,9 +110,9 @@
       </div>
     </header>
 
-    <section class="w-full max-w-6xl mx-auto py-24 grid grid-cols-3 gap-8">
+    <section id="turistic-packages" class="w-full max-w-6xl mx-auto py-24 grid grid-cols-3 gap-8">
       <div data-type="national" class="packageCard">
-        <img src="../assets/Tierra-fuego.jpg" alt="Tierra del fuego" class="h-80 w-full object-cover brightness-75">
+        <img src="../../assets/Tierra-fuego.jpg" alt="Tierra del fuego" class="h-80 w-full object-cover brightness-75">
 
         <div class="destinyText">
           <span>Córdoba</span>
@@ -166,7 +166,7 @@
       </div>
 
       <div data-type="national" class="packageCard">
-        <img src="../assets/BS.jpeg" alt="Buenos Aires" class="h-80 w-full object-cover brightness-75">
+        <img src="../../assets/BS.jpeg" alt="Buenos Aires" class="h-80 w-full object-cover brightness-75">
 
         <div class="destinyText">
           <span>Córdoba</span>
@@ -221,7 +221,7 @@
       </div>
 
       <div data-type="national" class="packageCard">
-        <img src="../assets/cerro.jpg" alt="Jujuy" class="h-80 w-full object-cover brightness-75">
+        <img src="../../assets/cerro.jpg" alt="Jujuy" class="h-80 w-full object-cover brightness-75">
 
         <div class="destinyText">
           <span>Córdoba</span>
@@ -276,7 +276,7 @@
       </div>
 
       <div data-type="international" class="packageCard">
-        <img src="../assets/barca.jpeg" alt="Jujuy" class="h-80 w-full object-cover brightness-75">
+        <img src="../../assets/barca.jpeg" alt="Jujuy" class="h-80 w-full object-cover brightness-75">
 
         <div class="destinyText">
           <span>Argentina - Córdoba</span>
@@ -331,7 +331,7 @@
       </div>
 
       <div data-type="international" class="packageCard">
-        <img src="../assets/ei.jpg" alt="Jujuy" class="h-80 w-full object-cover brightness-75">
+        <img src="../../assets/ei.jpg" alt="Jujuy" class="h-80 w-full object-cover brightness-75">
 
         <div class="destinyText">
           <span>Argentina - Córdoba</span>
@@ -385,7 +385,7 @@
       </div>
 
       <div data-type="international" class="packageCard">
-        <img src="../assets/ale.jpg" alt="Jujuy" class="h-80 w-full object-cover brightness-75">
+        <img src="../../assets/ale.jpg" alt="Jujuy" class="h-80 w-full object-cover brightness-75">
 
         <div class="destinyText">
           <span>Argentina - Córdoba</span>
@@ -648,12 +648,12 @@
     </div>
   </footer>
 
-  <script src="../scripts/app.js"></script>
-  <script src="../scripts/paquete.js"></script>
-  <script src="../scripts/keepData.js"></script>
-  <script src="../scripts/filterHeader.js"></script>
-  <script src="../scripts/user.js"></script>
-  <script src="../scripts/notification.js"></script>
+  <script src="./paquete.js"></script>
+  <script src="./keepData.js"></script>
+  <script src="./filterHeader.js"></script>
+  <script src="../../scripts/app.js"></script> 
+  <script src="../../scripts/user.js"></script>
+  <script src="../../scripts/notification.js"></script>
 </body>
 
 </html>

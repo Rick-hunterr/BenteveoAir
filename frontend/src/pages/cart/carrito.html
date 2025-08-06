@@ -4,36 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style.css">
-  <title>Benteveo Air</title>
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha384-your-integrity-hash>" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../style.css">
+  <title>Benteveo Air</title>
 </head>
 
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-svh">
 
   <header
     class="z-100 w-full shadow-md flex justify-center items-center text-sm font-medium text-default-dark font-manrope">
     <div class="container w-full max-w-8xl py-2 px-5 flex justify-between items-center">
       <div class="flex items-center gap-24">
         <div class="logo flex items-center hover:scale-105 transition-transform">
-          <a href="../../index.html">
-            <img class="max-w-10 object-contain cursor-pointer" src="../assets/BenteveoAirIsotipo.png" alt="BS-isotipo"
-              draggable="false">
+          <a href="../../../index.html">
+            <img class="max-w-10 object-contain cursor-pointer" src="../../assets/BenteveoAirIsotipo.png"
+              alt="BS-isotipo" draggable="false">
           </a>
 
-          <a href="../../index.html" class="max-w-36 object-contain cursor-pointer">
-            <img src="../assets/BenteveoAirLogotipo.png" alt="bs-logotipo">
+          <a href="../../../index.html" class="max-w-36 object-contain cursor-pointer">
+            <img src="../../assets/BenteveoAirLogotipo.png" alt="bs-logotipo">
           </a>
         </div>
 
         <div>
           <ul class="flex gap-12">
-            <li><a class="link p-2" href="../../index.html">Inicio</a></li>
-            <li><a class="link p-2" href="./paquete.html">Paquetes</a></li>
-            <li><a class="link p-2" href="#help">Ayuda</a></li>
+            <li><a class="link p-2" href="../../../index.html">Inicio</a></li>
+            <li><a class="link p-2" href="../packages/paquete.html">Paquetes</a></li>
+            <li><a class="link p-2" href="../help/ayuda.html">Ayuda</a></li>
           </ul>
         </div>
       </div>
@@ -58,10 +57,9 @@
               d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z">
             </path>
           </svg>
-
-          <span id="notification" class="absolute text-xs font-bold text-amber-600 -bottom-0.5 right-0">0</span>
         </a>
 
+        <!-- Usuario logueado -->
         <div class="hidden relative" id="user-container">
           <button id="userMenuBtn"
             class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600">
@@ -72,78 +70,54 @@
           <div id="userDropdown"
             class="hidden absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-xl py-2 text-sm z-50">
             <p class="px-4 py-2 text-gray-700">Usuario</p>
-
             <button id="logoutBtn" class="w-full text-left px-4 py-2 hover:bg-gray-100 text-red-500">
               Cerrar sesión
             </button>
           </div>
         </div>
+
       </div>
     </div>
   </header>
 
-  <main id="help" class="flex-1 bg-gray-100 grid place-items-center py-16 font-manrope">
-    <div class="relative container max-w-4xl w-full max-h-[600px] h-svh bg-white shadow-md px-12 py-20">
-      <img src="../assets/help-icon.webp" alt="help-icon" draggable="false" class="absolute max-w-16 right-5 top-5">
-      <h1 class="text-5xl font-bold mb-3">
-        ¿Necesitás ayuda?
-      </h1>
+  <main class="flex-1 grid place-items-center py-20">
+    <div class="cart">
+      <div id="packages-record" class="col-span-2 w-full overflow-auto pr-2">
+      </div>
 
-      <p class="text-lg text-gray-700 mb-12">
-        Si tenés dudas o necesitás asistencia, podés comunicarte con nuestro <b>número de consulta</b>. Este canal está
-        disponible para brindarte información, ayudarte con tus reservas, resolver inconvenientes o responder cualquier
-        pregunta relacionada con nuestros servicios. <b>¡Estamos para ayudarte!</b>
-      </p>
+      <div class="history">
+        <h1 class="text-sm font-bold mb-2">
+          Historial de compra
+        </h1>
 
-      <div class="grid grid-cols-3 text-sm">
-        <form action="" class="col-span-2 grid place-items-start gap-2 px-4 py-2">
-          <label for="message" class="font-bold">Déjanos tu mensaje</label>
-          <textarea name="message" id="message" rows="5"
-            class="min-h-[120px] max-h-[120px] border border-gray-500 w-[450px] px-4 py-2 rounded"></textarea>
-          <label for="message" class="text-xs text-gray-500 mb-4">Este mensaje irá directo al buzón de <b>Benteveo
-              Air</b> 😉</label>
-          <input type="submit" value="Enviar"
-            class="bg-blue-500 font-bold tracking-wider text-white rounded-md py-2 px-8 cursor-pointer hover:bg-blue-600 transition-colors">
-        </form>
+        <hr class=" w-[150%] -ml-[25%] border-gray-300">
 
-        <div class="px-4 py-2">
-          <span class="font-bold">Teléfono</span>
-          <p class="mb-4">+54 351-744-9100</p>
+        <div class="py-4">
+          <p class="mb-2">
+            Productos: <span id="product-counter" class="font-bold">0</span>
+          </p>
 
-          <span class="font-bold">Correo electrónico</span>
-          <p>benteveoair@gmail.com</p>
+          <ul id="history" class="grid gap-2 max-h-80 overflow-auto">
+          </ul>
+        </div>
+
+        <p class="text-xl font-medium mb-4">
+          Total: $<span id="total-price" class="text-2xl font-semibold">0</span>
+        </p>
+
+        <div class="grid gap-3 text-start w-full">
+          <button id="buy-cart" class="btn-history bg-emerald-700 hover:bg-emerald-800 transition-colors">
+            Confirmar compra
+          </button>
+          <div id="walletBrick_container"></div>
+
+          <button id="empty-cart" class="btn-history bg-red-500 hover:bg-red-600 transition-colors">
+            Vaciar carrito
+          </button>
         </div>
       </div>
     </div>
   </main>
-
-  <!-- Modal Paquetes -->
-  <div id="modalPaquete" class="hidden">
-    <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-100">
-      <div class="bg-white rounded-lg p-6 w-full max-w-md relative">
-        <button id="cerrarModal"
-          class="absolute top-2 right-2 text-gray-600 hover:text-black text-xl font-bold">&times;</button>
-        <h2 class="text-xl font-bold mb-4 text-center">Confirmar paquete</h2>
-
-        <label class="block text-sm font-medium text-gray-700 mb-1">Fecha de salida:</label>
-        <input type="date" id="fechaInicio" class="w-full mb-4 p-2 border rounded-md">
-
-        <p class="text-sm text-gray-600 mb-4">Fecha de regreso estimada: <span id="fechaFin"
-            class="font-semibold">-</span></p>
-
-        <label class="block text-sm font-medium text-gray-700 mb-1">Ubicación:</label>
-        <input type="text" id="ubicacionDestino" class="w-full mb-4 p-2 border rounded-md" readonly>
-
-        <label class="block text-sm font-medium text-gray-700 mb-1">Cantidad de pasajes:</label>
-        <input type="number" id="cantidadPasajes" value="1" min="1" class="w-full mb-6 p-2 border rounded-md">
-
-        <button id="confirmarPaquete"
-          class="w-full bg-emerald-500 text-white py-2 rounded-md hover:bg-emerald-600 transition">
-          Confirmar paquete
-        </button>
-      </div>
-    </div>
-  </div>
 
   <!-- Modal Inicio de sesion -->
   <div id="inicioWrapper" class="hidden">
@@ -171,7 +145,7 @@
               <i class="fa-solid fa-user"></i>
             </div>
 
-            <input type="email" id="email-login"
+            <input type="text" id="email-login"
               class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Correo electrónico / Usuario">
           </div>
@@ -291,7 +265,7 @@
     </div>
   </div>
 
-  <footer class="bg-gray-900 max-w-full w-full text-white px-16 py-6 snap-start bottom-0">
+  <footer class="bg-gray-900 max-w-full w-full text-white px-16 py-6 snap-start">
     <div class="max-w-7xl w-full m-auto grid gap-3">
       <div class="nombre-empresa">
         <h1 class="text-2xl font-bold">
@@ -323,9 +297,10 @@
     </div>
   </footer>
 
-  <script src="../scripts/app.js"></script>
-  <script src="../scripts/user.js"></script>
-  <script src="../scripts/notification.js"></script>
+  <script src="./cart.js"></script>
+  <script src="../../scripts/app.js"></script>
+  <script src="../../scripts/user.js"></script>
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
 </body>
 
 </html>
