@@ -109,13 +109,12 @@
         </p>
 
         <div class="grid gap-3 text-start w-full">
-          <button id="buy-cart"
-            class="btn-history bg-emerald-700 hover:bg-emerald-800 transition-colors">
+          <button id="buy-cart" class="btn-history bg-emerald-700 hover:bg-emerald-800 transition-colors">
             Confirmar compra
           </button>
+          <div id="walletBrick_container"></div>
 
-          <button id="empty-cart"
-            class="btn-history bg-red-500 hover:bg-red-600 transition-colors">
+          <button id="empty-cart" class="btn-history bg-red-500 hover:bg-red-600 transition-colors">
             Vaciar carrito
           </button>
         </div>
@@ -301,6 +300,7 @@
     </div>
   </footer>
 
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
   <script src="../scripts/app.js"></script>
   <script src="../scripts/cart.js"></script>
 </body>

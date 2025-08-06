@@ -1,5 +1,5 @@
 const loadPackages = () => {
-  const API_URL = 'http://localhost:3000';
+  const API_URL = "http://localhost:3000";
 
   const packagesRecord = document.getElementById("packages-record");
   const emptyCartBtn = document.getElementById("empty-cart");
@@ -26,7 +26,7 @@ const loadPackages = () => {
     if (precio_total > 0) {
       alert(`Felicidades por su compra. El total es de ${precio_total}`);
       localStorage.removeItem("packages");
-      
+
       packagesRecord.innerHTML = "";
       history.innerHTML = "";
       totalEl.textContent = 0;
@@ -155,8 +155,6 @@ const loadPackages = () => {
 
 loadPackages();
 
-
-
 //=========================================================================
 //==================Funcion Carrito conectada a la bd======================
 //=========================================================================
@@ -172,28 +170,41 @@ let packagesStore = JSON.parse(localStorage.getItem("packages")) || [];
 let precio_total = packagesStore.reduce((total, packageItem) => {
   return total + (packageItem.precio || packageItem.price || 0);
 }, 0);
-  
-buyCartBtn.addEventListener("click", async () => {
 
-  if (totalEl) totalEl.textContent = precio_total.toFixed(2);
+buyCartBtn.addEventListener("click", async (e) => {
+  // if (totalEl) totalEl.textContent = precio_total.toFixed(2);
   if (productCounter) productCounter.textContent = packagesStore.length;
 
   if (precio_total > 0 && packagesStore.length > 0) {
+    e.target.style.display = "none";
+
+    console.log(packagesStore);
+    
+    
+    // packagesStorage = JSON.parse(packagesStorage);
+    // const currentPrice = totalEl.textContent;
+
+    const product = {
+      id: "1",
+      titulo: "carrito",
+      precio: 100000000,
+      cantidad: 1,
+    };
+
     try {
       const token = localStorage.getItem("token");
-
 
       const resp = await fetch(`${API_URL}/ordenes`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          ...(token ? { Authorization: `Bearer ${token}` } : {})
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
         },
         body: JSON.stringify({
           fecha: new Date().toISOString().split("T")[0],
           estado: "pendiente",
-          usuario: 10
-        })
+          usuario: 10,
+        }),
       });
 
       const data = await resp.json();
@@ -203,6 +214,36 @@ buyCartBtn.addEventListener("click", async () => {
         return;
       }
 
+      const response = await fetch("http://localhost:3000/create_payment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(packagesStore),
+      });
+
+      // console.log(response);
+
+      const datamp = await response.json();
+      // console.log(data);
+
+      const publicKey = "APP_USR-49d5eceb-fc89-4349-80c6-3cc2dba46f23";
+      const preferenceId = datamp.id;
+
+      const mp = new MercadoPago(publicKey);
+
+      const bricksBuilder = mp.bricks();
+
+      const renderWalletBrick = async (bricksBuilder) => {
+        await bricksBuilder.create("wallet", "walletBrick_container", {
+          initialization: {
+            preferenceId: preferenceId,
+          },
+        });
+      };
+
+      renderWalletBrick(bricksBuilder);
+
       alert("¡Compra realizada con éxito!");
       localStorage.removeItem("packages");
       packagesRecord.innerHTML = "";
@@ -211,7 +252,6 @@ buyCartBtn.addEventListener("click", async () => {
       productCounter.textContent = 0;
       precio_total = 0;
       packagesStore = [];
-
     } catch (err) {
       console.error("Error al comprar:", err);
       alert("No se pudo conectar al servidor");
