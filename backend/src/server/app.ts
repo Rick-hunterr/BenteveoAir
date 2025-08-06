@@ -7,6 +7,7 @@ import destinoVueloRoutes from "../routes/destinoVuelo.routes"
 import servicioRoutes from "../routes/servicio.routes";
 import ordenRoutes from "../routes/orden.routes";
 import detalleOrdenRoutes from "../routes/detalleOrden.routes";
+import paymentMp from "../routes/paymentMp.routes"
 
 const app = express()
 
@@ -20,6 +21,6 @@ app.use("/api/destinos", destinoVueloRoutes)
 app.use("/servicios", servicioRoutes)
 app.use("/ordenes", ordenRoutes)
 app.use("/detalle/ordenes", detalleOrdenRoutes)
-
+app.use("/create_payment", paymentMp)
 
 export default app
