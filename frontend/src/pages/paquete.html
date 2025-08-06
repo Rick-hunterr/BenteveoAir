@@ -61,6 +61,23 @@
 
             <span id="counter" class="opacity-0 absolute text-amber-600 -bottom-1 -right-1">2</span>
           </a>
+
+          <div class="hidden relative" id="user-container">
+            <button id="userMenuBtn"
+              class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600">
+              U
+            </button>
+
+            <!-- Dropdown -->
+            <div id="userDropdown"
+              class="hidden absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-xl py-2 text-sm z-50">
+              <p class="px-4 py-2 text-gray-700">Usuario</p>
+
+              <button id="logoutBtn" class="w-full text-left px-4 py-2 hover:bg-gray-100 text-red-500">
+                Cerrar sesión
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -637,6 +654,7 @@
   <script src="../scripts/paquete.js"></script>
   <script src="../scripts/keepData.js"></script>
   <script src="../scripts/filterHeader.js"></script>
+  <script src="../scripts/user.js"></script>
 </body>
 
 </html>

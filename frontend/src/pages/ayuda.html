@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="../style.css">
   <title>Benteveo Air</title>
   <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     integrity="sha384-your-integrity-hash>" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="flex flex-col min-h-screen">
-  
+
   <header
     class="z-100 w-full shadow-md flex justify-center items-center text-sm font-medium text-default-dark font-manrope">
     <div class="container w-full max-w-8xl py-2 px-5 flex justify-between items-center">
@@ -52,7 +52,8 @@
             </button>
           </div>
 
-          <a href="./carrito.html" class="relative cursor-pointer p-2 pr-2.5 rounded-full hover:bg-amber-500 hover:text-white transition-colors">
+          <a href="./carrito.html"
+            class="relative cursor-pointer p-2 pr-2.5 rounded-full hover:bg-amber-500 hover:text-white transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
               <path
                 d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z">
@@ -61,6 +62,23 @@
 
             <span id="counter" class="opacity-0 absolute text-amber-600 -bottom-1 -right-1">2</span>
           </a>
+
+          <div class="hidden relative" id="user-container">
+            <button id="userMenuBtn"
+              class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600">
+              U
+            </button>
+
+            <!-- Dropdown -->
+            <div id="userDropdown"
+              class="hidden absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-xl py-2 text-sm z-50">
+              <p class="px-4 py-2 text-gray-700">Usuario</p>
+
+              <button id="logoutBtn" class="w-full text-left px-4 py-2 hover:bg-gray-100 text-red-500">
+                Cerrar sesión
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -74,15 +92,20 @@
       </h1>
 
       <p class="text-lg text-gray-700 mb-12">
-        Si tenés dudas o necesitás asistencia, podés comunicarte con nuestro <b>número de consulta</b>. Este canal está disponible para brindarte información, ayudarte con tus reservas, resolver inconvenientes o responder cualquier pregunta relacionada con nuestros servicios. <b>¡Estamos para ayudarte!</b>
+        Si tenés dudas o necesitás asistencia, podés comunicarte con nuestro <b>número de consulta</b>. Este canal está
+        disponible para brindarte información, ayudarte con tus reservas, resolver inconvenientes o responder cualquier
+        pregunta relacionada con nuestros servicios. <b>¡Estamos para ayudarte!</b>
       </p>
 
       <div class="grid grid-cols-3 text-sm">
         <form action="" class="col-span-2 grid place-items-start gap-2 px-4 py-2">
           <label for="message" class="font-bold">Déjanos tu mensaje</label>
-          <textarea name="message" id="message" rows="5" class="min-h-[120px] max-h-[120px] border border-gray-500 w-[450px] px-4 py-2 rounded"></textarea>
-          <label for="message" class="text-xs text-gray-500 mb-4">Este mensaje irá directo al buzón de <b>Benteveo Air</b> 😉</label>
-          <input type="submit" value="Enviar" class="bg-blue-500 font-bold tracking-wider text-white rounded-md py-2 px-8 cursor-pointer hover:bg-blue-600 transition-colors">
+          <textarea name="message" id="message" rows="5"
+            class="min-h-[120px] max-h-[120px] border border-gray-500 w-[450px] px-4 py-2 rounded"></textarea>
+          <label for="message" class="text-xs text-gray-500 mb-4">Este mensaje irá directo al buzón de <b>Benteveo
+              Air</b> 😉</label>
+          <input type="submit" value="Enviar"
+            class="bg-blue-500 font-bold tracking-wider text-white rounded-md py-2 px-8 cursor-pointer hover:bg-blue-600 transition-colors">
         </form>
 
         <div class="px-4 py-2">
@@ -303,6 +326,7 @@
   </footer>
 
   <script src="../scripts/app.js"></script>
+  <script src="../scripts/user.js"></script>
 </body>
 
 </html>
