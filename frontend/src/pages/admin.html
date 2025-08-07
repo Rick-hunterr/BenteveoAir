@@ -66,62 +66,53 @@
                   U
               </button>
               <div id="modalsContainer" class="hidden">
-                <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
-                  <dialog id="perfilModal" class="rounded-lg m-auto p-6 shadow-lg w-96 bg-gray-100 flex flex-col items-center border-0">
+                <dialog id="perfilModal" class="modal hidden">
 
-                    <span class="w-15 h-15 rounded-full bg-blue-500 text-xl text-white flex items-center justify-center hover:bg-blue-600">
-                      U
-                    </span>
+                  <span class="w-15 h-15 rounded-full bg-blue-500 text-xl text-white flex items-center justify-center hover:bg-blue-600">
+                    U
+                  </span>
 
-                    <button id="closePerfil" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
-                      ✕
+                  <button id="closePerfil" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
+                    ✕
+                  </button>
+
+                  <h2 class="text-center mt-8 text-2xl font-semibold">Hola Carlos</h2>
+                  <p class="text-center text-sm mt-2 text-gray-600">¿Necesitás algo?</p>
+
+                  <div class="mt-4 text-center">
+                    <button id="cambiarDatosAdmin_Btn" class="text-blue-600 underline hover:text-blue-800 cursor-pointer">
+                      Cambiar datos de usuario
                     </button>
-
-                    <h2 class="text-center mt-8 text-2xl font-semibold">Hola Carlos</h2>
-                    <p class="text-center text-sm mt-2 text-gray-600">¿Necesitás algo?</p>
-
-                    <div class="mt-4 text-center">
-                      <a id="cambiarDatosAdmin_Btn" class="text-blue-600 underline hover:text-blue-800 cursor-pointer">
-                        Cambiar datos de usuario
-                      </a>
-                    </div>
-                    <div class="mt-4 text-center">
-                      <a id="cambiarCuenta_Btn" class="text-blue-600 underline hover:text-blue-800 cursor-pointer">
-                        Cambiar cuenta
-                      </a>
-                    </div>
-                    <div class="mt-4 text-center">
-                      <a id="cerrarSesion_Btn" class="text-blue-600 underline hover:text-blue-800 cursor-pointer">
-                        Cerrar sesión
-                      </a>
-                    </div>
-                  </dialog>
-                </div>
-              </div>
-                <!-- Modal "Cambiar usuario" -->
-              <div id="cambiarDatosAdmin_Btn" class="hidden">
-                <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
-                  <dialog id="datosAdmin_Modal" class="rounded-lg m-auto p-6 shadow-lg w-96 bg-gray-100 flex flex-col overflow-visible border-0">
-
-                    <img src="../assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
-
-                    <button id="cerrarDatosAdmin" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
-                      ✕
+                  </div>
+                  <div class="mt-4 text-center">
+                    <button id="logout_Btn" class="text-blue-600 underline hover:text-blue-800 cursor-pointer">
+                      Cerrar sesión
                     </button>
+                  </div>
+                </dialog>
+                      <!------------------------------------- Modal "Cambiar datos de usuario" ------------------------------------------>
+                <dialog id="datosAdmin_Modal" class="modal overflow-visible hidden">
 
-                    <h2 class="text-center mt-8 text-2xl font-semibold">Cambiar usuario</h2>
+                  <img src="../assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil"/>
 
-                    <form method="dialog" class="mt-6">
-                      <input type="text" placeholder="Nuevo nombre" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <button id="cerrarDatosAdmin" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
+                    ✕
+                  </button>
 
-                      <div class="flex justify-center">
-                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                          Guardar cambios
-                        </button>
-                      </div>
-                    </form>
-                  </dialog>
-                </div>
+                  <h2 class="text-center mt-8 text-2xl font-semibold">Cambiar datos de usuario</h2>
+
+                  <form method="dialog" class="mt-6">
+                    <input type="text" placeholder="Nuevo nombre" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="text" placeholder="Nueva contraseña" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="text" placeholder="Confirmar contraseña" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                    <div class="flex justify-center">
+                      <button id="guardarDatosAdmin_Btn" type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                        Guardar cambios
+                      </button>
+                    </div>
+                  </form>
+                </dialog>
               </div>
             </div>
           </div>

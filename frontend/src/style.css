@@ -10,6 +10,14 @@
     @apply cursor-pointer text-default-dark/85 hover:text-dark-blue transition-colors;
   }
 
+  .modal {
+    @apply rounded-lg m-auto p-6 shadow-lg w-96 bg-gray-100 flex flex-col items-center border-0;
+  }
+
+  .modal::backdrop {
+    @apply fixed inset-0 bg-black/60 flex items-center justify-center;
+  }
+
   /* PAGINA: INICIO */
   .step-card {
     @apply bg-white px-4 py-6 rounded-xl flex items-center gap-4 hover:scale-101 hover:shadow-lg hover:shadow-amber-500 transition-all;
