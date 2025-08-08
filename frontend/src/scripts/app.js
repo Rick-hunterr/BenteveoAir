@@ -184,10 +184,10 @@ inicioForm.addEventListener("submit", async (e) => {
       const rol = await verificarRol();
       if (rol === "admin") {
         alert("Login exitoso");
-        window.location.href = "admin.html";
+        window.location.href = "src/pages/admin.html";
       } else if (rol === "cliente") {
         alert("Login exitoso");
-        window.location.href = "index.html";
+        window.location.reload() // modifique esto porque generaba un error en la url y la conexion con las demas paginas
       } else {
         alert("Rol no reconocido");
         return;
