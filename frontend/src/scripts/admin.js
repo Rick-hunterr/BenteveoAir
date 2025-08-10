@@ -79,5 +79,38 @@ if (logout_Btn) {
   });
 }
 
+//============================================================================
+//============================== FILTROS ===================================
+//============================================================================
+const allTables_Btn = document.getElementById("allTables_Btn");
+const packagesTable_Btn = document.getElementById("packagesTable_Btn");
+const usersTable_Btn = document.getElementById("usersTable_Btn");
 
+const filterPackagesByType = (filterType) => {
+  tables.forEach((table) => {
+    const typeTable = table.getAttribute("data-type");
 
+    if (filterType === "all" || typeTable === filterType) {
+      table.classList.remove("hidden");
+      table.classList.add("flex");
+    } else {
+      table.classList.remove("flex");
+      table.classList.add("hidden");
+    }
+  });
+};
+
+allTables_Btn.addEventListener("click", () => {
+  console.log("all");
+  filterPackagesByType("all");
+});
+
+packagesTable_Btn.addEventListener("click", () => {
+  console.log("packages");
+  filterPackagesByType("packages");
+});
+
+usersTable_Btn.addEventListener("click", () => {
+  console.log("users");
+  filterPackagesByType("users");
+});
