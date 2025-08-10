@@ -4,6 +4,7 @@ import { Usuario } from "../models/Usuario"
 import { Ubicacion } from "../models/Ubicacion"
 import * as bcrypt from "bcrypt"
 import * as jwt from "jsonwebtoken"
+import { generateVerificationToken, sendVerificationEmail } from '../services/email.service';
 
 const repo = AppDataSource.getRepository(Usuario)
 const repoUbicacion = AppDataSource.getRepository(Ubicacion)
@@ -57,16 +58,31 @@ export async function crearUsuario(req: Request, res: Response) {
       }
     }
 
+    const verificationToken = generateVerificationToken()
+
     const nuevoUsuario = repo.create({
       nombre: nombre,
       email: email,
       contraseña: hashedContraseña,
       rol: rol,
       ubicacion: ubicacionEntity,
+      emailVerificado: false, 
+      verificationToken: verificationToken
     })
 
     const resultado = await repo.save(nuevoUsuario)
-    res.status(201).json(resultado)
+
+     sendVerificationEmail(email, verificationToken)
+      .catch(error => console.error('Error al enviar email de verificación:', error))
+
+     res.status(201).json({
+      id: resultado.id,
+      nombre: resultado.nombre,
+      email: resultado.email,
+      rol: resultado.rol,
+      ubicacion: resultado.ubicacion,
+      message: "Usuario registrado. Por favor verifica tu email."
+    })
   } catch (error) {
     console.error("ERROR al crear usuario:", error)
     res.status(500).json({ 
@@ -98,6 +114,14 @@ export async function loginUsuario(req: Request, res: Response) {
       return
     }
 
+    if (!usuario.emailVerificado) {
+    res.status(401).json({ 
+      error: "Por favor verifica tu email antes de iniciar sesión",
+      emailNotVerified: true 
+    });
+    return;
+  }
+
     const esValido = await bcrypt.compare(contraseña, usuario.contraseña)
 
     if (!esValido) {
@@ -123,6 +147,35 @@ export async function loginUsuario(req: Request, res: Response) {
   } catch (error) {
     console.error("ERROR en loginUsuario:", error)
     res.status(500).json({ error: "Error en el servidor" })
+  }
+}
+
+export async function verifyEmail(req: Request, res: Response) {
+  const { token } = req.query;
+
+  if (!token) {
+    res.status(400).json({ error: "Token de verificación requerido" });
+    return;
+  }
+
+  try {
+    const usuario = await repo.findOne({ 
+      where: { verificationToken: token as string } 
+    });
+
+    if (!usuario) {
+      res.status(404).json({ error: "Token de verificación inválido" });
+      return;
+    }
+
+    usuario.emailVerificado = true;
+    usuario.verificationToken = null;
+    await repo.save(usuario);
+
+    res.redirect(`http://localhost:5174/email-verificado.html?success=true`);
+  } catch (error) {
+    console.error("ERROR al verificar email:", error);
+    res.status(500).json({ error: "Error al verificar email" });
   }
 }
 
