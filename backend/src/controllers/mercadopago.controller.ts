@@ -57,9 +57,9 @@ export async function paymentMercadopago(req: Request, res: Response) {
         //   },
         // ],
         back_urls: {
-          success: "https://localhost:5173", // No contamos con un dominio que utilice el protocolo HTTPS
-          failure: "https://localhost:5173",
-          pending: "https://localhost:5173",
+          success: "https://c0dea736e7ce.ngrok-free.app", // No contamos con un dominio que utilice el protocolo HTTPS
+          failure: "https://c0dea736e7ce.ngrok-free.app", 
+          pending: "https://c0dea736e7ce.ngrok-free.app", 
         },
         auto_return: "approved",
       },

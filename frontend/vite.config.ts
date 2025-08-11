@@ -12,5 +12,6 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
+    // allowedHosts: ["c0dea736e7ce.ngrok-free.app"], Utilice ngrok para probar el redireccionamiento a nuestro sitio web
   },
 });
