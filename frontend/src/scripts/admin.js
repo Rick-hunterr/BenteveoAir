@@ -114,3 +114,74 @@ usersTable_Btn.addEventListener("click", () => {
   console.log("users");
   filterPackagesByType("users");
 });
+
+//============================================================================
+//============================== BOTONES DE ACCIONES =========================
+//============================================================================
+const confirmDelete_Modal = document.getElementById("confirmDelete_Modal");
+const cellValues = [];
+let tRow;
+
+function editarLinea(edit_Btn){
+  let tRow = edit_Btn.parentNode.parentNode.parentNode;
+  const tCells = tRow.children;
+  
+  for (let i = 1; i < tCells.length - 1; i++){
+    cellValues[i] = tCells[i].innerText;
+    tCells[i].contentEditable = "true";
+  }
+  
+  edit_Btn.style.display = "none";
+  edit_Btn.nextElementSibling.style.display = "none";
+  edit_Btn.nextElementSibling.nextElementSibling.style.display = "inline-block";
+  edit_Btn.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "inline-block";
+}
+
+let isDelete;
+
+function eliminarLinea(delete_Btn){
+  tRow = delete_Btn.parentNode.parentNode.parentNode;
+
+  modalsContainer.style.display = "flex";
+  confirmDelete_Modal.style.display = "flex";
+  confirmDelete_Modal.showModal();
+}
+
+function closeDelete_Modal(isDelete){
+  modalsContainer.style.display = "none";
+  confirmDelete_Modal.style.display = "none";
+  confirmDelete_Modal.close();
+  
+  if(isDelete){
+    tRow.parentNode.removeChild(tRow);
+  }; 
+}
+
+function confirmarLinea(confirm_Btn){
+  tRow = confirm_Btn.parentNode.parentNode.parentNode;
+  const tCells = tRow.children;
+
+  for (let i = 1; i < tCells.length - 1; i++){
+    tCells[i].contentEditable = "false";
+  }
+  
+  confirm_Btn.previousElementSibling.previousElementSibling.style.display = "inline-block";
+  confirm_Btn.previousElementSibling.style.display = "inline-block";
+  confirm_Btn.style.display = "none";
+  confirm_Btn.nextElementSibling.style.display = "none";
+}
+
+function cancelarLinea(cancel_Btn){
+  tRow = cancel_Btn.parentNode.parentNode.parentNode;
+  const tCells = tRow.children;
+
+  for (let i = 1; i < tCells.length - 1; i++){
+    tCells[i].innerText = cellValues[i];
+    tCells[i].contentEditable = "false";
+  }
+  
+  cancel_Btn.previousElementSibling.previousElementSibling.previousElementSibling.style.display = "inline-block";
+  cancel_Btn.previousElementSibling.previousElementSibling.style.display = "inline-block";
+  cancel_Btn.previousElementSibling.style.display = "none";
+  cancel_Btn.style.display = "none";
+}

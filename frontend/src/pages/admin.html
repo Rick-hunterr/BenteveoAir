@@ -19,15 +19,15 @@
       </div>
       <div class="min-w-3xs text-center p-2 flex flex-col items-center gap-y-3 border border-gray-400 border-collapse rounded-lg">
         <p class="w-full shadow-lg text-xl font-medium border-b border-gray-400">Filtros</p>
-        <button class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Todo</button>
-        <button class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Paquetes</button>
-        <button class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Usuarios</button>
+        <button id="allTables_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Todo</button>
+        <button id="packagesTable_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Paquetes</button>
+        <button id="usersTable_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Usuarios</button>
       </div>
       <div class="min-w-3xs text-center p-2 flex flex-col items-center gap-y-3 border border-gray-400 border-collapse rounded-lg">
         <p class="w-full shadow-lg text-xl font-medium border-b border-gray-400">Buscar</p>
         <button class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Tabla</button>
         <button class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Atributo</button>
-        <input type="text" placeholder="Por ejemplo: 'Carlos'" class="w-full px-4 py-2 rounded-md bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors"/>
+        <input type="text" name="attribute_Search" placeholder="Por ejemplo: 'Carlos'" class="w-full px-4 py-2 rounded-md bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors"/>
       </div>
     </article>
     <main class="w-full bg-gray-200 flex flex-col items-center">
@@ -59,13 +59,13 @@
                 </a>
               </div>
             </div>
-                    <!-- ------------------------------------------ Perfil del admin ------------------------------------------- -->
             <div class="relative">
               <button id="userMenu_Btn"
                 class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600">
                   U
               </button>
               <div id="modalsContainer" class="hidden">
+                    <!-- ------------------------------------------ Perfil del admin ------------------------------------------- -->
                 <dialog id="perfilModal" class="modal hidden">
 
                   <span class="w-15 h-15 rounded-full bg-blue-500 text-xl text-white flex items-center justify-center hover:bg-blue-600">
@@ -102,9 +102,9 @@
                   <h2 class="text-center mt-8 text-2xl font-semibold">Cambiar datos de usuario</h2>
 
                   <form method="dialog" class="mt-6">
-                    <input type="text" placeholder="Nuevo nombre" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="text" placeholder="Nueva contraseña" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="text" placeholder="Confirmar contraseña" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="text" name="Nombre_Admin" placeholder="Nuevo nombre" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="text" name="NuevaContraseña_Admin" placeholder="Nueva contraseña" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="text" name="ConfirmacionContraseña_Admin" placeholder="Confirmar contraseña" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
 
                     <div class="flex justify-center">
                       <button id="guardarDatosAdmin_Btn" type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
@@ -112,6 +112,29 @@
                       </button>
                     </div>
                   </form>
+                </dialog>
+                    <!-- ------------------------------------------ Modal de Confirmación ------------------------------------------- -->
+                <dialog id="confirmDelete_Modal" class="modal hidden">
+
+                  <span class="w-15 h-15 rounded-full bg-red-500 text-xl text-white flex items-center justify-center">
+                    !
+                  </span>
+
+                  <button onClick="closeDelete_Modal(false)" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
+                    ✕
+                  </button>
+
+                  <h2 class="text-center mt-8 text-2xl font-semibold">¿Estás seguro?</h2>
+                  <p class="text-center text-sm mt-2 text-gray-600">Este elemento será eliminado permanentemente</p>
+
+                  <div class="flex gap-2 mt-4 text-center">
+                    <button onClick="closeDelete_Modal(true)" id="confirmDelete_Btn" class="px-4 py-2 rounded bg-red-200 cursor-pointer hover:bg-red-600 transition-colors">
+                      Eliminar
+                    </button>
+                    <button onClick="closeDelete_Modal(false)" id="cancelDelete_Btn" class="px-4 py-2 rounded bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">
+                      Cancelar
+                    </button>
+                  </div>
                 </dialog>
               </div>
             </div>
@@ -143,11 +166,11 @@
               <td class="border border-gray-400 px-4 py-2">$800000</td>
               <td class="border border-gray-400 px-4 py-2">5 días</td>
               <td class="border border-gray-400 px-4 py-2">
-                <div class="flex gap-2 justify-center">
-                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
-                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
-                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
-                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                <div class="flex flex-wrap gap-2 justify-center">
+                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
                 </div>
               </td>
             </tr>
@@ -160,11 +183,11 @@
               <td class="border border-gray-400 px-4 py-2">$935000</td>
               <td class="border border-gray-400 px-4 py-2">6 días</td>
               <td class="border border-gray-400 px-4 py-2">
-                <div class="flex gap-2 justify-center">
-                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
-                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
-                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
-                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                <div class="flex flex-wrap gap-2 justify-center">
+                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
                 </div>
               </td>
             </tr>
@@ -177,11 +200,11 @@
               <td class="border border-gray-400 px-4 py-2">$1150000</td>
               <td class="border border-gray-400 px-4 py-2">10 días</td>
               <td class="border border-gray-400 px-4 py-2">
-                <div class="flex gap-2 justify-center">
-                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
-                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
-                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
-                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                <div class="flex flex-wrap gap-2 justify-center">
+                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
                 </div>
               </td>
             </tr>
@@ -194,11 +217,11 @@
               <td class="border border-gray-400 px-4 py-2">$2350000</td>
               <td class="border border-gray-400 px-4 py-2">7 días</td>
               <td class="border border-gray-400 px-4 py-2">
-                <div class="flex gap-2 justify-center">
-                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
-                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
-                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
-                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                <div class="flex flex-wrap gap-2 justify-center">
+                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
                 </div>
               </td>
             </tr>
@@ -211,11 +234,11 @@
               <td class="border border-gray-400 px-4 py-2">$2050000</td>
               <td class="border border-gray-400 px-4 py-2">5 días</td>
               <td class="border border-gray-400 px-4 py-2">
-                <div class="flex gap-2 justify-center">
-                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
-                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
-                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
-                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                <div class="flex flex-wrap gap-2 justify-center">
+                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
                 </div>
               </td>
             </tr>
@@ -228,11 +251,11 @@
               <td class="border border-gray-400 px-4 py-2">$2400000</td>
               <td class="border border-gray-400 px-4 py-2">6 días</td>
               <td class="border border-gray-400 px-4 py-2">
-                <div class="flex gap-2 justify-center">
-                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
-                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
-                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
-                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                <div class="flex flex-wrap gap-2 justify-center">
+                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
                 </div>
               </td>
             </tr>
@@ -260,11 +283,11 @@
               <td class="border border-gray-400 px-4 py-2">$749000</td>
               <td class="border border-gray-400 px-4 py-2"> 24/7/2025</td>
               <td class="border border-gray-400 px-4 py-2">
-                <div class="flex gap-2 justify-center">
-                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
-                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
-                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
-                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                <div class="flex flex-wrap gap-2 justify-center">
+                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
                 </div>
               </td>
             </tr>
@@ -276,11 +299,11 @@
               <td class="border border-gray-400 px-4 py-2">$659000</td>
               <td class="border border-gray-400 px-4 py-2"> 8/8/2025</td>
               <td class="border border-gray-400 px-4 py-2">
-                <div class="flex gap-2 justify-center">
-                  <button onclick="editarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors">Editar</button>
-                  <button onclick="eliminarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors">Eliminar</button>
-                  <button onclick="confirmarLinea()" class="bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors hidden">Confirmar</button>
-                  <button onclick="cancelarLinea()" class="bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors hidden">Cancelar</button>
+                <div class="flex flex-wrap gap-2 justify-center">
+                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
                 </div>
               </td>
             </tr>

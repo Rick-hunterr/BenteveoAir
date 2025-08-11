@@ -83,6 +83,23 @@
   .delete {
     @apply border-2 border-red-600/50 font-bold rounded-md py-1 px-2 bg-red-600/70 text-white text-sm cursor-pointer hover:scale-105 hover:bg-red-600 transition-transform flex;
   }
+
+  /* PAGINA: ADMIN */
+  .editRow_Btn {
+    @apply bg-yellow-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-amber-400 transition-colors;
+  }
+
+  .deleteRow_Btn {
+    @apply bg-red-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors;
+  }
+
+  .confirmRow_Btn {
+    @apply bg-green-400 text-black px-3 py-1 rounded cursor-pointer hover:bg-green-500 transition-colors;
+  }
+
+  .cancelRow_Btn {
+    @apply bg-red-400 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors;
+  }
 }
 
 @theme {
