@@ -85,6 +85,7 @@ if (logout_Btn) {
 const allTables_Btn = document.getElementById("allTables_Btn");
 const packagesTable_Btn = document.getElementById("packagesTable_Btn");
 const usersTable_Btn = document.getElementById("usersTable_Btn");
+const tables = document.querySelectorAll("table");
 
 const filterPackagesByType = (filterType) => {
   tables.forEach((table) => {
@@ -92,27 +93,22 @@ const filterPackagesByType = (filterType) => {
 
     if (filterType === "all" || typeTable === filterType) {
       table.classList.remove("hidden");
-      table.classList.add("flex");
     } else {
-      table.classList.remove("flex");
       table.classList.add("hidden");
     }
   });
 };
 
 allTables_Btn.addEventListener("click", () => {
-  console.log("all");
   filterPackagesByType("all");
 });
 
 packagesTable_Btn.addEventListener("click", () => {
-  console.log("packages");
-  filterPackagesByType("packages");
+  filterPackagesByType("packages_Table");
 });
 
 usersTable_Btn.addEventListener("click", () => {
-  console.log("users");
-  filterPackagesByType("users");
+  filterPackagesByType("users_Table");
 });
 
 //============================================================================
@@ -121,6 +117,7 @@ usersTable_Btn.addEventListener("click", () => {
 const confirmDelete_Modal = document.getElementById("confirmDelete_Modal");
 const cellValues = [];
 let tRow;
+let isDelete;
 
 function editarLinea(edit_Btn){
   let tRow = edit_Btn.parentNode.parentNode.parentNode;
@@ -137,8 +134,6 @@ function editarLinea(edit_Btn){
   edit_Btn.nextElementSibling.nextElementSibling.nextElementSibling.style.display = "inline-block";
 }
 
-let isDelete;
-
 function eliminarLinea(delete_Btn){
   tRow = delete_Btn.parentNode.parentNode.parentNode;
 
@@ -151,7 +146,7 @@ function closeDelete_Modal(isDelete){
   modalsContainer.style.display = "none";
   confirmDelete_Modal.style.display = "none";
   confirmDelete_Modal.close();
-  
+
   if(isDelete){
     tRow.parentNode.removeChild(tRow);
   }; 

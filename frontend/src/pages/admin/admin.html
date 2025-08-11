@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
     <title>Benteveo Air</title>
-  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico">
   </head>
   <body class="flex">
     <article class="flex flex-col items-center gap-y-3 bg-white min-w-2xs w-xs h-screen sticky top-0 overflow-y-scroll shadow-md">
       <div class="sticky top-0 w-full shadow-lg py-2 bg-white flex justify-center items-center hover:scale-105 transition-transform">
-        <a href="../../index.html">
-          <img class="max-w-10 object-contain cursor-pointer" src="../assets/BenteveoAirIsotipo.png" alt="BS-isotipo" draggable="false">
+        <a href="../../../index.html">
+          <img class="max-w-10 object-contain cursor-pointer" src="../../assets/BenteveoAirIsotipo.png" alt="BS-isotipo" draggable="false">
         </a>
-        <a href="../../index.html" class="max-w-36 object-contain cursor-pointer">
-          <img src="../assets/BenteveoAirLogotipo.png" alt="bs-logotipo">
+        <a href="../../../index.html" class="max-w-36 object-contain cursor-pointer">
+          <img src="../../assets/BenteveoAirLogotipo.png" alt="bs-logotipo">
         </a>
       </div>
       <div class="min-w-3xs text-center p-2 flex flex-col items-center gap-y-3 border border-gray-400 border-collapse rounded-lg">
@@ -36,9 +36,9 @@
           <div class="flex items-center gap-24">
             <div>
               <ul class="flex gap-12">
-                <li><a class="link p-2" href="../../index.html">Inicio</a></li>
-                <li><a class="link p-2" href="./paquete.html">Paquetes</a></li>
-                <li><a class="link p-2" href="./ayuda.html">Ayuda</a></li>
+                <li><a class="link p-2" href="../../../index.html">Inicio</a></li>
+                <li><a class="link p-2" href="../packages/paquete.html">Paquetes</a></li>
+                <li><a class="link p-2" href="../help/ayuda.html">Ayuda</a></li>
               </ul>
             </div>
           </div>
@@ -93,7 +93,7 @@
                       <!------------------------------------- Modal "Cambiar datos de usuario" ------------------------------------------>
                 <dialog id="datosAdmin_Modal" class="modal overflow-visible hidden">
 
-                  <img src="../assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil"/>
+                  <img src="../../assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil"/>
 
                   <button id="cerrarDatosAdmin" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
                     ✕
@@ -262,7 +262,7 @@
           </tbody>
         </table>
                     <!-- Tabla de Usuarios -->
-        <table class="min-w-3xl max-w-full border border-gray-400 border-collapse rounded-lg mt-10">
+        <table data-type="users_Table" class="min-w-3xl max-w-full border border-gray-400 border-collapse rounded-lg mt-10">
           <thead class="bg-gray-300">
             <tr>
               <th class="border border-gray-400 px-4 py-2">ID</th>
@@ -311,6 +311,6 @@
         </table>
       </article>
     </main>
-    <script src="../scripts/admin.js"></script>
+    <script src="admin.js"></script>
   </body>
 </html>
