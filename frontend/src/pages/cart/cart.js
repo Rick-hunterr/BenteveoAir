@@ -165,6 +165,9 @@ const history = document.getElementById("history");
 const totalEl = document.getElementById("total-price");
 const productCounter = document.getElementById("product-counter");
 
+console.log(productCounter);
+
+
 let packagesStore = JSON.parse(localStorage.getItem("packages")) || [];
 
 let precio_total = packagesStore.reduce((total, packageItem) => {
@@ -178,18 +181,12 @@ buyCartBtn.addEventListener("click", async (e) => {
   if (precio_total > 0 && packagesStore.length > 0) {
     e.target.style.display = "none";
 
-    console.log(packagesStore);
-    
-    
-    // packagesStorage = JSON.parse(packagesStorage);
-    // const currentPrice = totalEl.textContent;
-
-    const product = {
-      id: "1",
-      titulo: "carrito",
-      precio: 100000000,
-      cantidad: 1,
-    };
+    // const product = {
+    //   id: "1",
+    //   titulo: "carrito",
+    //   precio: 100000000,
+    //   cantidad: 1,
+    // };
 
     try {
       const token = localStorage.getItem("token");
@@ -222,16 +219,10 @@ buyCartBtn.addEventListener("click", async (e) => {
         body: JSON.stringify(packagesStore),
       });
 
-      // console.log(response);
-
       const datamp = await response.json();
-      // console.log(data);
-
       const publicKey = "APP_USR-49d5eceb-fc89-4349-80c6-3cc2dba46f23";
       const preferenceId = datamp.id;
-
       const mp = new MercadoPago(publicKey);
-
       const bricksBuilder = mp.bricks();
 
       const renderWalletBrick = async (bricksBuilder) => {

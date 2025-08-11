@@ -1,81 +1,77 @@
 const API_URL = "http://localhost:3000";
 
-
 //=========================================================================
 //======================== Mostrar inicio de sesion =======================
 //=========================================================================
 
-const modalWrapper = document.getElementById('inicioWrapper');
+const modalWrapper = document.getElementById("inicioWrapper");
 const modalRegistro = document.getElementById("registroWrapper");
-const modal = document.getElementById('inicio');
-const openModal = document.getElementById('openInicio');
-const closeModal = document.getElementById('closeInicio');
-const volverI = document.getElementById('volver-I');
-const volverR = document.getElementById('volver-R');
+const modal = document.getElementById("inicio");
+const openModal = document.getElementById("openInicio");
+const closeModal = document.getElementById("closeInicio");
+const volverI = document.getElementById("volver-I");
+const volverR = document.getElementById("volver-R");
 
-const cerrarModal = document.getElementById("cerrarModal")
+const cerrarModal = document.getElementById("cerrarModal");
 const confirmarPaquete = document.getElementById("confirmarPaquete");
 const modal1 = document.getElementById("modalPaquete");
 
-openModal.addEventListener('click', () => {
-  modalWrapper.classList.remove('hidden');
+openModal.addEventListener("click", () => {
+  modalWrapper.classList.remove("hidden");
   modal.showModal();
 });
 
-volverR.addEventListener('click', (e) => {
+volverR.addEventListener("click", (e) => {
   e.preventDefault();
   modal.close();
-  modalWrapper.classList.add('hidden');
-  registroWrapper.classList.remove('hidden');
+  modalWrapper.classList.add("hidden");
+  registroWrapper.classList.remove("hidden");
   registro.showModal();
 });
 
-closeModal.addEventListener('click', () => {
+closeModal.addEventListener("click", () => {
   modal.close();
-  modalWrapper.classList.add('hidden');
+  modalWrapper.classList.add("hidden");
 });
 
-modalWrapper.addEventListener('click', (e) => {
+modalWrapper.addEventListener("click", (e) => {
   if (e.target === modalWrapper) {
     modal.close();
   }
 });
 
-modal.addEventListener('click', (e) => {
+modal.addEventListener("click", (e) => {
   e.stopPropagation();
 });
-
-
 
 //=========================================================================
 //======================== Mostrar registro ===============================
 //=========================================================================
 
-const registroWrapper = document.getElementById('registroWrapper');
-const registro = document.getElementById('registro');
-const openRegistro = document.getElementById('openRegistro');
-const closeRegistro = document.getElementById('closeRegistro');
+const registroWrapper = document.getElementById("registroWrapper");
+const registro = document.getElementById("registro");
+const openRegistro = document.getElementById("openRegistro");
+const closeRegistro = document.getElementById("closeRegistro");
 
-
-openRegistro.addEventListener('click', () => {
-  registroWrapper.classList.remove('hidden');
+openRegistro.addEventListener("click", () => {
+  registroWrapper.classList.remove("hidden");
   registro.showModal();
 });
 
-closeRegistro.addEventListener('click', () => {
+closeRegistro.addEventListener("click", () => {
   registro.close();
-  registroWrapper.classList.add('hidden');
+  registroWrapper.classList.add("hidden");
 });
 
-volverI.addEventListener('click', (e) => {
+volverI.addEventListener("click", (e) => {
   e.preventDefault();
   registro.close();
-  registroWrapper.classList.add('hidden');
-  modalWrapper.classList.remove('hidden');
+  registroWrapper.classList.add("hidden");
+  modalWrapper.classList.remove("hidden");
   modal.showModal();
 });
 
-registroWrapper.addEventListener('click', (e) => {
+registroWrapper.addEventListener("click", (e) => {
   if (e.target === registroWrapper) {
     registro.close();
   }
@@ -119,31 +115,23 @@ ocultarRegister.addEventListener("click", () => {
   mostrarRegister.classList.remove("hidden");
 });
 
-
-
 //=========================================================================
 //=============== modal de confirmación cargar paquete ====================
 //=========================================================================
+
 if (confirmarPaquete) {
   confirmarPaquete.addEventListener("click", () => {
     modal1.classList.add("hidden");
   });
 }
 
-
-
-
-
 //=========================================================================
 //=============GUARDAR DATOS DEL FORMULARIO EN LA BASE DE DATOS===========
 //=========================================================================
 
-
-
 //=========================================================================
 //============================== LOGIN ====================================
 //=========================================================================
-
 
 // Asegúrate de seleccionar el formulario de inicio de sesión correctamente
 const inicioForm = document.getElementById("inicio");
@@ -163,9 +151,9 @@ inicioForm.addEventListener("submit", async (e) => {
     const resp = await fetch(`${API_URL}/usuarios/login`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, contraseña })
+      body: JSON.stringify({ email, contraseña }),
     });
 
     let data;
@@ -184,16 +172,14 @@ inicioForm.addEventListener("submit", async (e) => {
       const rol = await verificarRol();
       if (rol === "admin") {
         alert("Login exitoso");
-        window.location.href = "src/pages/admin.html";
+        window.location.href = "/src/pages/admin/admin.html"
       } else if (rol === "cliente") {
         alert("Login exitoso");
-        window.location.reload() // modifique esto porque generaba un error en la url y la conexion con las demas paginas
+        window.location.reload(); // modifique esto porque generaba un error en la url y la conexion con las demas paginas
       } else {
         alert("Rol no reconocido");
         return;
       }
-
-
     } else {
       alert(data?.error || "Error al iniciar sesión");
     }
@@ -209,9 +195,9 @@ async function verificarRol() {
   if (!token) return;
 
   try {
-    console.log("Verificando rol del usuario, con token:", token );
+    console.log("Verificando rol del usuario, con token:", token);
     const resp = await fetch(`${API_URL}/usuarios/rol`, {
-      headers: { "Authorization": `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${token}` },
     });
 
     if (!resp.ok) throw new Error("Error al verificar rol");
@@ -223,9 +209,6 @@ async function verificarRol() {
     return null;
   }
 }
-
-
-
 
 //=========================================================================
 //============================== CERRAR SESIÓN ==========================
@@ -255,7 +238,6 @@ if (logoutBtn) {
   });
 }
 
-
 //=========================================================================
 //============================== REGISTRO =================================
 //=========================================================================
@@ -281,7 +263,7 @@ registro.addEventListener("submit", async (e) => {
     const resp = await fetch(`${API_URL}/usuarios`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ nombre, email, contraseña, rol: "cliente" })
+      body: JSON.stringify({ nombre, email, contraseña, rol: "cliente" }),
     });
     const data = await resp.json();
 
@@ -295,7 +277,6 @@ registro.addEventListener("submit", async (e) => {
     registroWrapper.classList.add("hidden");
     modalWrapper.classList.remove("hidden");
     modal.showModal();
-
   } catch (err) {
     console.error("Fetch registro:", err);
     alert("No se pudo conectar al servidor");
