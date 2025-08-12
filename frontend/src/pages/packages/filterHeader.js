@@ -1,17 +1,18 @@
 const allFilterBtn = document.getElementById("all-btn");
 const natFilterBtn = document.getElementById("nat-btn");
 const interFilterBtn = document.getElementById("inter-btn");
+const packages = document.querySelectorAll("#turistic-packages .packageCard");
 
 const filterPackagesByType = (filterType) => {
-  packages.forEach((package) => {
-    const typePackage = package.getAttribute("data-type");
+  packages.forEach((pkg) => {
+    const typePackage = pkg.getAttribute("data-type");
 
     if (filterType === "all" || typePackage === filterType) {
-      package.classList.remove("hidden");
-      package.classList.add("flex");
+      pkg.classList.remove("hidden");
+      pkg.classList.add("flex");
     } else {
-      package.classList.remove("flex");
-      package.classList.add("hidden");
+      pkg.classList.remove("flex");
+      pkg.classList.add("hidden");
     }
   });
 };

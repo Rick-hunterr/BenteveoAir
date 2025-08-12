@@ -1,6 +1,6 @@
 const user = localStorage.getItem("token");
-const registerBtn = document.getElementById("openRegistro");
-const loginBtn = document.getElementById("openInicio");
+const registerBtn = document.getElementById("open-register");
+const loginBtn = document.getElementById("open-login");
 const userContainer = document.getElementById("user-container");
 
 if (user) {
