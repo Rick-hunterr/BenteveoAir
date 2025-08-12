@@ -1,80 +1,53 @@
 const API_URL = "http://localhost:3000";
 
+const loginModal = document.getElementById("login-wrapper");
+const registerModal = document.getElementById("register-wrapper");
+const openLoginBtn = document.getElementById("open-login");
+const closeLoginBtn = document.getElementById("close-login");
+const backToLogin = document.getElementById("back-to-login");
+const backToRegister = document.getElementById("back-to-register");
+
+const packageModal = document.getElementById("package-modal");
+const confirmPkgBtn = document.getElementById("confirm-package");
+const closePackageModal = document.getElementById("close-package-modal");
+
 //=========================================================================
 //======================== Mostrar inicio de sesion =======================
 //=========================================================================
 
-const modalWrapper = document.getElementById("inicioWrapper");
-const modalRegistro = document.getElementById("registroWrapper");
-const modal = document.getElementById("inicio");
-const openModal = document.getElementById("openInicio");
-const closeModal = document.getElementById("closeInicio");
-const volverI = document.getElementById("volver-I");
-const volverR = document.getElementById("volver-R");
-
-const cerrarModal = document.getElementById("cerrarModal");
-const confirmarPaquete = document.getElementById("confirmarPaquete");
-const modal1 = document.getElementById("modalPaquete");
-
-openModal.addEventListener("click", () => {
-  modalWrapper.classList.remove("hidden");
-  modal.showModal();
+openLoginBtn.addEventListener("click", () => {
+  loginModal.classList.remove("hidden");
 });
 
-volverR.addEventListener("click", (e) => {
+closeLoginBtn.addEventListener("click", () => {
+  loginModal.classList.add("hidden");
+});
+
+backToRegister.addEventListener("click", (e) => {
   e.preventDefault();
-  modal.close();
-  modalWrapper.classList.add("hidden");
-  registroWrapper.classList.remove("hidden");
-  registro.showModal();
-});
-
-closeModal.addEventListener("click", () => {
-  modal.close();
-  modalWrapper.classList.add("hidden");
-});
-
-modalWrapper.addEventListener("click", (e) => {
-  if (e.target === modalWrapper) {
-    modal.close();
-  }
-});
-
-modal.addEventListener("click", (e) => {
-  e.stopPropagation();
+  loginModal.classList.add("hidden");
+  registerModal.classList.remove("hidden");
 });
 
 //=========================================================================
 //======================== Mostrar registro ===============================
 //=========================================================================
 
-const registroWrapper = document.getElementById("registroWrapper");
-const registro = document.getElementById("registro");
-const openRegistro = document.getElementById("openRegistro");
-const closeRegistro = document.getElementById("closeRegistro");
+const openRegisterBtn = document.getElementById("open-register");
+const closeRegisterBtn = document.getElementById("close-register");
 
-openRegistro.addEventListener("click", () => {
-  registroWrapper.classList.remove("hidden");
-  registro.showModal();
+openRegisterBtn.addEventListener("click", () => {
+  registerModal.classList.remove("hidden");
 });
 
-closeRegistro.addEventListener("click", () => {
-  registro.close();
-  registroWrapper.classList.add("hidden");
+closeRegisterBtn.addEventListener("click", () => {
+  registerModal.classList.add("hidden");
 });
 
-volverI.addEventListener("click", (e) => {
+backToLogin.addEventListener("click", (e) => {
   e.preventDefault();
-  registro.close();
-  registroWrapper.classList.add("hidden");
-  modalWrapper.classList.remove("hidden");
-  modal.showModal();
-});
-
-registroWrapper.addEventListener("click", (e) => {
-  if (e.target === registroWrapper) {
-    registro.close();
-  }
+  registerModal.classList.add("hidden");
+  loginModal.classList.remove("hidden");
 });
 
 //=========================================================================
@@ -83,45 +56,45 @@ registroWrapper.addEventListener("click", (e) => {
 
 /* Inicio de sesión */
 const passwordLogin = document.getElementById("password-login");
-const mostrarLogin = document.getElementById("mostrar-login");
-const ocultarLogin = document.getElementById("ocultar-login");
+const showPswLogin = document.getElementById("show-psw-login");
+const hidePswLogin = document.getElementById("hide-psw-login");
 
-mostrarLogin.addEventListener("click", () => {
+showPswLogin.addEventListener("click", () => {
   passwordLogin.type = "text";
-  mostrarLogin.classList.add("hidden");
-  ocultarLogin.classList.remove("hidden");
+  showPswLogin.classList.add("hidden");
+  hidePswLogin.classList.remove("hidden");
 });
 
-ocultarLogin.addEventListener("click", () => {
+hidePswLogin.addEventListener("click", () => {
   passwordLogin.type = "password";
-  ocultarLogin.classList.add("hidden");
-  mostrarLogin.classList.remove("hidden");
+  hidePswLogin.classList.add("hidden");
+  showPswLogin.classList.remove("hidden");
 });
 
 /* Registro */
 const passwordRegister = document.getElementById("password-register");
-const mostrarRegister = document.getElementById("mostrar-register");
-const ocultarRegister = document.getElementById("ocultar-register");
+const showPswRegister = document.getElementById("show-psw-register");
+const hidePswRegister = document.getElementById("hide-psw-register");
 
-mostrarRegister.addEventListener("click", () => {
+showPswRegister.addEventListener("click", () => {
   passwordRegister.type = "text";
-  mostrarRegister.classList.add("hidden");
-  ocultarRegister.classList.remove("hidden");
+  showPswRegister.classList.add("hidden");
+  hidePswRegister.classList.remove("hidden");
 });
 
-ocultarRegister.addEventListener("click", () => {
+hidePswRegister.addEventListener("click", () => {
   passwordRegister.type = "password";
-  ocultarRegister.classList.add("hidden");
-  mostrarRegister.classList.remove("hidden");
+  hidePswRegister.classList.add("hidden");
+  showPswRegister.classList.remove("hidden");
 });
 
 //=========================================================================
 //=============== modal de confirmación cargar paquete ====================
 //=========================================================================
 
-if (confirmarPaquete) {
-  confirmarPaquete.addEventListener("click", () => {
-    modal1.classList.add("hidden");
+if (confirmPkgBtn) {
+  confirmPkgBtn.addEventListener("click", () => {
+    packageModal.classList.add("hidden");
   });
 }
 
@@ -172,7 +145,7 @@ inicioForm.addEventListener("submit", async (e) => {
       const rol = await verificarRol();
       if (rol === "admin") {
         alert("Login exitoso");
-        window.location.href = "/src/pages/admin/admin.html"
+        window.location.href = "/src/pages/admin/admin.html";
       } else if (rol === "cliente") {
         alert("Login exitoso");
         window.location.reload(); // modifique esto porque generaba un error en la url y la conexion con las demas paginas
@@ -273,10 +246,8 @@ registro.addEventListener("submit", async (e) => {
     }
 
     alert("Registro exitoso. Por favor inicia sesión.");
-    registro.close();
-    registroWrapper.classList.add("hidden");
-    modalWrapper.classList.remove("hidden");
-    modal.showModal();
+    registerModal.classList.add("hidden");
+    loginModal.classList.remove("hidden");
   } catch (err) {
     console.error("Fetch registro:", err);
     alert("No se pudo conectar al servidor");

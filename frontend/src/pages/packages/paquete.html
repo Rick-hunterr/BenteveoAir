@@ -38,12 +38,12 @@
 
       <div class="flex gap-7 items-center">
         <div class="flex gap-2">
-          <button id="openRegistro"
+          <button id="open-register"
             class="border border-amber-400 text-amber-500 font-bold rounded-4xl py-2 px-4 cursor-pointer hover:bg-amber-400 hover:text-white transition-colors">
             Registrarse
           </button>
 
-          <button id="openInicio"
+          <button id="open-login"
             class="bg-amber-500 border border-amber-500 text-white font-bold rounded-4xl py-2 px-4 cursor-pointer hover:bg-amber-400 hover:border-amber-400 transition-colors">
             Iniciar sesión
           </button>
@@ -442,18 +442,20 @@
   </main>
 
   <!-- Modal Paquetes -->
-  <div id="modalPaquete" class="hidden">
+  <div id="package-modal" class="hidden">
     <div class="fixed inset-0 bg-black/50 flex items-center justify-center z-100">
       <div class="bg-white rounded-lg p-6 w-full max-w-md relative">
-        <button id="cerrarModal"
+        <button id="close-package-modal"
           class="absolute top-2 right-2 text-gray-600 hover:text-black text-xl font-bold">&times;</button>
+
         <h2 class="text-xl font-bold mb-4 text-center">Confirmar paquete</h2>
 
         <label class="block text-sm font-medium text-gray-700 mb-1">Fecha de salida:</label>
         <input type="date" id="fechaInicio" class="w-full mb-4 p-2 border rounded-md">
 
-        <p class="text-sm text-gray-600 mb-4">Fecha de regreso estimada: <span id="fechaFin"
-            class="font-semibold">-</span></p>
+        <p class="text-sm text-gray-600 mb-4">Fecha de regreso estimada:
+          <span id="fechaFin" class="font-semibold">-</span>
+        </p>
 
         <label class="block text-sm font-medium text-gray-700 mb-1">Ubicación:</label>
         <input type="text" id="ubicacionDestino" class="w-full mb-4 p-2 border rounded-md" readonly>
@@ -461,7 +463,7 @@
         <label class="block text-sm font-medium text-gray-700 mb-1">Cantidad de pasajes:</label>
         <input type="number" id="cantidadPasajes" value="1" min="1" class="w-full mb-6 p-2 border rounded-md">
 
-        <button id="confirmarPaquete"
+        <button id="confirm-package"
           class="w-full bg-emerald-500 text-white py-2 rounded-md hover:bg-emerald-600 transition">
           Confirmar paquete
         </button>
@@ -470,7 +472,7 @@
   </div>
 
   <!-- Modal Inicio de sesion -->
-  <div id="inicioWrapper" class="hidden">
+  <div id="login-wrapper" class="hidden">
     <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
       <dialog id="inicio"
         class="rounded-lg p-6 shadow-lg w-96 m-auto bg-gray-100 flex flex-col overflow-visible border-0">
@@ -478,7 +480,7 @@
         <img src="../../assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2"
           alt="Foto de perfil">
 
-        <button id="closeInicio"
+        <button id="close-login"
           class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
           ✕
         </button>
@@ -507,11 +509,11 @@
               class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Contraseña">
 
-            <div id="mostrar-login" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
+            <div id="show-psw-login" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
               <i class="fa-solid fa-eye"></i>
             </div>
 
-            <div id="ocultar-login"
+            <div id="hide-psw-login"
               class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hidden">
               <i class="fa-solid fa-eye-slash"></i>
             </div>
@@ -519,7 +521,7 @@
 
           <p class="mb-3">
             ¿No tenés una cuenta?
-            <a href="" id="volver-R" class="text-gray-700 underline">
+            <a href="" id="back-to-register" class="text-gray-700 underline">
               Registrate
             </a>
           </p>
@@ -535,7 +537,7 @@
   </div>
 
   <!-- Modal Registro -->
-  <div id="registroWrapper" class="hidden">
+  <div id="register-wrapper" class="hidden">
     <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
       <dialog id="registro"
         class="rounded-lg p-6 shadow-lg w-96 m-auto bg-gray-100 flex flex-col overflow-visible border-0">
@@ -543,7 +545,7 @@
         <img src="../../assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2"
           alt="Foto de perfil">
 
-        <button id="closeRegistro"
+        <button id="close-register"
           class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
           ✕
         </button>
@@ -583,11 +585,11 @@
               class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Contraseña">
 
-            <div id="mostrar-register" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
+            <div id="show-psw-register" class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer">
               <i class="fa-solid fa-eye"></i>
             </div>
 
-            <div id="ocultar-register"
+            <div id="hide-psw-register"
               class="text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hidden">
               <i class="fa-solid fa-eye-slash"></i>
             </div>
@@ -595,7 +597,7 @@
 
           <p class="mb-3">
             ¿Ya tenés una cuenta?
-            <a href="" id="volver-I" class="text-gray-700 underline">
+            <a href="" id="back-to-login" class="text-gray-700 underline">
               Inicia sesión
             </a>
           </p>

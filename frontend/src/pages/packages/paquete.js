@@ -29,6 +29,7 @@ const infoPaquetes = {
   },
 };
 
+
 function abrirModal(destino) {
   const paquete = infoPaquetes[destino];
   if (!paquete) return;
@@ -48,15 +49,13 @@ function abrirModal(destino) {
     }
   };
 
-  modal1.classList.remove("hidden");
-}
-
-
-if (cerrarModal) {
-  cerrarModal.addEventListener("click", () => {
-    modal1.classList.add("hidden");
+  packageModal.classList.remove("hidden");
+  
+  closePackageModal.addEventListener("click", () => {
+    packageModal.classList.add("hidden");
   });
 }
+
 
 document.getElementById("add-to-cart").addEventListener("click", () => abrirModal("Tierra"));
 document.getElementById("add-to-cart-Buenos").addEventListener("click", () => abrirModal("Buenos"));
