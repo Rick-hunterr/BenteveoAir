@@ -1,56 +1,67 @@
-const packages = document.querySelectorAll(".packageCard");
-
-const saveData = () => {
-  let emptyStore = [];
-  let store = localStorage.getItem("packages");
-
-  for (const package of packages) {
-    const btnAdd = package.querySelector(".add-to-cart");
-
-    btnAdd.addEventListener("click", () => {
-      if (store) {
-        emptyStore = JSON.parse(localStorage.getItem("packages"));
-
-        const flightType = package.querySelector("#flight-type").textContent;
-        const flightDuration =
-          package.querySelector("#flight-duration").textContent;
-        const hotelName = package.querySelector("#hotel-name").textContent;
-        const packageName = package.querySelector("#package-name").textContent;
-        let packagePrice = package.querySelector("#package-price").textContent;
-        packagePrice = parseInt(packagePrice.replace(/\./g, ""));
-
-        const packageData = {
-          name: packageName,
-          price: packagePrice,
-          flightType: flightType,
-          flightDuration: flightDuration,
-          hotel: hotelName,
-        };
-
-        emptyStore.push(packageData);
-        localStorage.setItem("packages", JSON.stringify(emptyStore));
-      } else {
-        const flightType = package.querySelector("#flight-type").textContent;
-        const flightDuration =
-          package.querySelector("#flight-duration").textContent;
-        const hotelName = package.querySelector("#hotel-name").textContent;
-        const packageName = package.querySelector("#package-name").textContent;
-        let packagePrice = package.querySelector("#package-price").textContent;
-        packagePrice = parseInt(packagePrice.replace(/\./g, ""));
-
-        const packageData = {
-          name: packageName,
-          price: packagePrice,
-          flightType: flightType,
-          flightDuration: flightDuration,
-          hotel: hotelName,
-        };
-
-        emptyStore.push(packageData);
-        localStorage.setItem("packages", JSON.stringify(emptyStore));
-      }
-    });
-  }
+const packageData = (name, price, flightType, flightDuration, hotelName) => {
+  return {
+    name: name,
+    price: price,
+    flightType: flightType,
+    flightDuration: flightDuration,
+    hotel: hotelName,
+  };
 };
 
-saveData();
+const packages = document.querySelectorAll("#turistic-packages .packageCard");
+const packageDataStore = [];
+
+packages.forEach((pkg) => {
+  const addToCart = pkg.querySelector(".add-to-cart");
+
+  addToCart.addEventListener("click", () => {
+    const packageName = pkg.querySelector("#package-name").textContent;
+    let packagePrice = pkg.querySelector("#package-price").textContent;
+    packagePrice = parseInt(packagePrice.replace(/\./g, ""));
+
+    const flightType = pkg.querySelector("#flight-type").textContent;
+    const flightDuration = pkg.querySelector("#flight-duration").textContent;
+    const hotelName = pkg.querySelector("#hotel-name").textContent;
+
+    const firstData = packageData(
+      packageName,
+      packagePrice,
+      flightType,
+      flightDuration,
+      hotelName
+    );
+
+    packageDataStore.push(firstData);
+  });
+});
+
+const resguardarDatosDelPaquete = () => {
+  const packageModal = document.getElementById("package-modal");
+  const confirmPkgBtn = document.getElementById("confirm-package");
+
+  let packagesStorage = JSON.parse(localStorage.getItem("packages") || "[]");
+
+  confirmPkgBtn.addEventListener("click", () => {
+    const fechaSalida = packageModal.querySelector("#fechaInicio").value;
+    const fechaRegreso = packageModal.querySelector("#fechaFin").textContent;
+    const cantPasajes = packageModal.querySelector("#cantidadPasajes").value;
+
+    const modalData = {
+      fechaSalida: fechaSalida,
+      fechaRegreso: fechaRegreso,
+      cantPasajes: cantPasajes,
+    };
+
+    let updateData = {};
+    packageDataStore.forEach((data) => {
+      updateData = { ...data, ...modalData }; // aca ya tendria que tener un objeto que cubra todas las propiedades
+    });
+
+    packagesStorage.push(updateData);
+    // const nuevoCOntenidoDelItem = [...primerosDatos, ...modalData]; // [todas, las, propiedades] Teniendo en cuenta mi imaginacion esto puede funcar
+
+    localStorage.setItem("packages", JSON.stringify(packagesStorage));
+  });
+};
+
+resguardarDatosDelPaquete();
