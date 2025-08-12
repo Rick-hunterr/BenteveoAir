@@ -7,10 +7,6 @@ const closeLoginBtn = document.getElementById("close-login");
 const backToLogin = document.getElementById("back-to-login");
 const backToRegister = document.getElementById("back-to-register");
 
-const packageModal = document.getElementById("package-modal");
-const confirmPkgBtn = document.getElementById("confirm-package");
-const closePackageModal = document.getElementById("close-package-modal");
-
 //=========================================================================
 //======================== Mostrar inicio de sesion =======================
 //=========================================================================
@@ -87,16 +83,6 @@ hidePswRegister.addEventListener("click", () => {
   hidePswRegister.classList.add("hidden");
   showPswRegister.classList.remove("hidden");
 });
-
-//=========================================================================
-//=============== modal de confirmación cargar paquete ====================
-//=========================================================================
-
-if (confirmPkgBtn) {
-  confirmPkgBtn.addEventListener("click", () => {
-    packageModal.classList.add("hidden");
-  });
-}
 
 //=========================================================================
 //=============GUARDAR DATOS DEL FORMULARIO EN LA BASE DE DATOS===========
