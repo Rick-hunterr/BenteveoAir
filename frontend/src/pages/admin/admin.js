@@ -85,11 +85,11 @@ if (logout_Btn) {
 const confirmDelete_Modal = document.getElementById("confirmDelete_Modal");
 const cellValues = [];
 let tRow;
-let isDelete;
+let tCells;
 
 function editarLinea(edit_Btn){
-  let tRow = edit_Btn.parentNode.parentNode.parentNode;
-  const tCells = tRow.children;
+  tRow = edit_Btn.parentNode.parentNode.parentNode;
+  tCells = tRow.children;
   
   for (let i = 1; i < tCells.length - 1; i++){
     cellValues[i] = tCells[i].innerText;
@@ -122,7 +122,7 @@ function closeDelete_Modal(isDelete){
 
 function confirmarLinea(confirm_Btn){
   tRow = confirm_Btn.parentNode.parentNode.parentNode;
-  const tCells = tRow.children;
+  tCells = tRow.children;
 
   for (let i = 1; i < tCells.length - 1; i++){
     tCells[i].contentEditable = "false";
@@ -136,7 +136,7 @@ function confirmarLinea(confirm_Btn){
 
 function cancelarLinea(cancel_Btn){
   tRow = cancel_Btn.parentNode.parentNode.parentNode;
-  const tCells = tRow.children;
+  tCells = tRow.children;
 
   for (let i = 1; i < tCells.length - 1; i++){
     tCells[i].innerText = cellValues[i];
@@ -147,4 +147,55 @@ function cancelarLinea(cancel_Btn){
   cancel_Btn.previousElementSibling.previousElementSibling.style.display = "inline-block";
   cancel_Btn.previousElementSibling.style.display = "none";
   cancel_Btn.style.display = "none";
+}
+
+function crearLinea(create_Btn){
+  tRow = create_Btn.parentNode.parentNode.parentNode;
+  tCells = tRow.children;
+  const alltRows = tRow.parentNode.children;
+  let isEmpty;
+
+  for (let i = 1; i < tCells.length - 1; i++){
+    if(tCells[i].innerText == ""){
+      isEmpty = true;
+    }
+    else{tCells[i].contentEditable = "false";}
+  }
+  
+  if(isEmpty){
+    alert("Por favor llene todas las columnas");
+  }
+  else{
+    tCells[0].innerText = alltRows.length;
+
+    nuevaLineaVacia();
+
+    create_Btn.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.style.display = "inline-block";
+    create_Btn.previousElementSibling.previousElementSibling.previousElementSibling.style.display = "inline-block";
+
+    create_Btn.parentElement.removeChild(create_Btn);
+  }
+}
+
+function nuevaLineaVacia(){
+  const newtRow = document.createElement("tr");
+
+  newtRow.innerHTML += '<td class="border border-gray-400 px-4 py-2"></td>'
+  for (let i = 1; i < tCells.length - 1; i++){
+    newtRow.innerHTML += '<td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>'
+  }
+  newtRow.innerHTML += '<td class="border border-gray-400 px-4 py-2"></td>'
+  
+  let newtCells = newtRow.children;
+
+  newtCells[newtCells.length - 1].innerHTML += '<div class="flex flex-wrap gap-2 justify-center">' + '<button onclick="editarLinea(this)" class="editRow_Btn hidden">Editar</button>' +
+  '<button onclick="eliminarLinea(this)" class="deleteRow_Btn hidden">Eliminar</button>' + '<button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>' +
+  '<button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>' + '<button onclick="crearLinea(this)" class="createRow_Btn">Crear</button></div>';
+
+  tRow.parentNode.appendChild(newtRow);
+
+  newtRow.classList.add("text-center", "bg-gray-100", "hover:bg-gray-200");
+  for (let i = 0; i < newtCells.length; i++){
+    newtCells[i].classList.add("border", "border-gray-400", "px-4", "py-2");
+  }
 }

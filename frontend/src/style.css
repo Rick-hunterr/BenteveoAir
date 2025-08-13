@@ -100,6 +100,10 @@
   .cancelRow_Btn {
     @apply bg-red-400 text-black px-3 py-1 rounded cursor-pointer hover:bg-red-500 transition-colors;
   }
+
+  .createRow_Btn {
+    @apply bg-green-300 text-black px-3 py-1 rounded cursor-pointer hover:bg-green-400 transition-colors;
+  }
 }
 
 @theme {
