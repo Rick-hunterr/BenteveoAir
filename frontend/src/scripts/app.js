@@ -50,39 +50,40 @@ backToLogin.addEventListener("click", (e) => {
 //======================== Mostrar/ocultar contraseña =====================
 //=========================================================================
 
-/* Inicio de sesión */
-const passwordLogin = document.getElementById("password-login");
-const showPswLogin = document.getElementById("show-psw-login");
-const hidePswLogin = document.getElementById("hide-psw-login");
+document.querySelectorAll('.password-field').forEach(field => {
+  const input = field.querySelector('input');
+  const show = field.querySelector('.show-psw');
+  const hide = field.querySelector('.hide-psw');
 
-showPswLogin.addEventListener("click", () => {
-  passwordLogin.type = "text";
-  showPswLogin.classList.add("hidden");
-  hidePswLogin.classList.remove("hidden");
+  show.addEventListener('click', () => {
+    input.type = 'text';
+    show.classList.add('hidden');
+    hide.classList.remove('hidden');
+  });
+
+  hide.addEventListener('click', () => {
+    input.type = 'password';
+    hide.classList.add('hidden');
+    show.classList.remove('hidden');
+  });
 });
 
-hidePswLogin.addEventListener("click", () => {
-  passwordLogin.type = "password";
-  hidePswLogin.classList.add("hidden");
-  showPswLogin.classList.remove("hidden");
-});
+//=========================================================================
+//=========================== Nuevos Datos ================================
+//=========================================================================
 
-/* Registro */
-const passwordRegister = document.getElementById("password-register");
-const showPswRegister = document.getElementById("show-psw-register");
-const hidePswRegister = document.getElementById("hide-psw-register");
+const confirmPassword = document.getElementById("confirmPassword-register");
 
-showPswRegister.addEventListener("click", () => {
-  passwordRegister.type = "text";
-  showPswRegister.classList.add("hidden");
-  hidePswRegister.classList.remove("hidden");
-});
-
-hidePswRegister.addEventListener("click", () => {
-  passwordRegister.type = "password";
-  hidePswRegister.classList.add("hidden");
-  showPswRegister.classList.remove("hidden");
-});
+if (confirmPassword) {
+  confirmPassword.addEventListener("input", () => {
+    const password = document.getElementById("password-register").value;
+    if (confirmPassword.value !== password) {
+      confirmPassword.setCustomValidity("Las contraseñas no coinciden");
+    } else {
+      confirmPassword.setCustomValidity("");
+    }
+  });
+}
 
 //=========================================================================
 //=============GUARDAR DATOS DEL FORMULARIO EN LA BASE DE DATOS===========
@@ -146,6 +147,7 @@ inicioForm.addEventListener("submit", async (e) => {
     console.error("Error al iniciar sesión:", error);
     alert("Error al iniciar sesión");
   }
+
 });
 
 //Funcion para verificar si el que esta iniciando es administrador o usuario
@@ -208,6 +210,7 @@ registro.addEventListener("submit", async (e) => {
   const nombre = document.getElementById("user-register").value.trim();
   const email = document.getElementById("email-register").value.trim();
   const contraseña = document.getElementById("password-register").value;
+  const birthdayInput = document.getElementById("birthday-register").value;
 
   if (!nombre || !email || !contraseña) {
     alert("Todos los campos son obligatorios");
@@ -215,6 +218,21 @@ registro.addEventListener("submit", async (e) => {
   }
   if (contraseña.length < 4) {
     alert("La contraseña debe tener al menos 4 caracteres");
+    return;
+  }
+
+  // Validación de edad
+  const birthday = new Date(birthdayInput);
+  const today = new Date();
+  let age = today.getFullYear() - birthday.getFullYear();
+  const monthDiff = today.getMonth() - birthday.getMonth();
+
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthday.getDate())) {
+    age--;
+  }
+
+  if (age < 18) {
+    alert("Debes ser mayor de 18 años para registrarte.");
     return;
   }
 
