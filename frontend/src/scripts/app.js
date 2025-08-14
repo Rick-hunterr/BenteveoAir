@@ -211,8 +211,9 @@ registro.addEventListener("submit", async (e) => {
   const email = document.getElementById("email-register").value.trim();
   const contraseña = document.getElementById("password-register").value;
   const birthdayInput = document.getElementById("birthday-register").value;
+  const confirmContraseña = document.getElementById("confirmPassword-register").value;
 
-  if (!nombre || !email || !contraseña) {
+  if (!nombre || !email || !contraseña || !birthdayInput || !confirmContraseña) {
     alert("Todos los campos son obligatorios");
     return;
   }
