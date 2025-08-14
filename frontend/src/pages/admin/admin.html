@@ -9,7 +9,7 @@
   </head>
   <body class="flex">
     <article class="flex flex-col items-center gap-y-3 bg-white min-w-2xs w-xs h-screen sticky top-0 overflow-y-scroll shadow-md">
-      <div class="sticky top-0 w-full shadow-lg py-2 bg-white flex justify-center items-center hover:scale-105 transition-transform">
+      <div class="sticky top-0 z-100 w-full bg-white shadow-lg py-2 bg-white flex justify-center items-center hover:scale-105 transition-transform">
         <a href="../../../index.html">
           <img class="max-w-10 object-contain cursor-pointer" src="../../assets/BenteveoAirIsotipo.png" alt="BS-isotipo" draggable="false">
         </a>
@@ -23,10 +23,20 @@
         <button id="packagesTable_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Paquetes</button>
         <button id="usersTable_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Usuarios</button>
       </div>
-      <div class="min-w-3xs text-center p-2 flex flex-col items-center gap-y-3 border border-gray-400 border-collapse rounded-lg">
+      <div class="relative min-w-3xs text-center p-2 flex flex-col items-center gap-y-3 border border-gray-400 border-collapse rounded-lg">
         <p class="w-full shadow-lg text-xl font-medium border-b border-gray-400">Buscar</p>
         <button class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Tabla</button>
+        <div class="absolute top-22 min-w-60 bg-gray-200 p-2 flex flex-col items-center gap-y-3 rounded-lg hidden">
+          <button class="w-full px-4 py-2 rounded-md bg-gray-100 cursor-pointer hover:bg-amber-300 transition-colors">Paquetes</button>
+          <button class="w-full px-4 py-2 rounded-md bg-gray-100 cursor-pointer hover:bg-amber-300 transition-colors">Usuarios</button>
+        </div>
         <button class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Atributo</button>
+        <div class="absolute top-35 left-3 min-w-60 max-h-50 bg-gray-200 p-2 flex flex-col items-center gap-y-3 overflow-y-scroll rounded-lg">
+          <button class="w-full px-4 py-2 rounded-md bg-gray-100 cursor-pointer hover:bg-amber-300 transition-colors">Paquetes</button>
+          <button class="w-full px-4 py-2 rounded-md bg-gray-100 cursor-pointer hover:bg-amber-300 transition-colors">Usuarios</button>
+          <button class="w-full px-4 py-2 rounded-md bg-gray-100 cursor-pointer hover:bg-amber-300 transition-colors">Paquetes</button>
+          <button class="w-full px-4 py-2 rounded-md bg-gray-100 cursor-pointer hover:bg-amber-300 transition-colors">Usuarios</button>
+        </div>
         <input type="text" name="attribute_Search" placeholder="Por ejemplo: 'Carlos'" class="w-full px-4 py-2 rounded-md bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors"/>
       </div>
     </article>
