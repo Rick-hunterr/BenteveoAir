@@ -14,6 +14,7 @@ if (userMenu_Btn && modalsContainer) {
   userMenu_Btn.addEventListener("click", (e) => {
     e.stopPropagation();
     modalsContainer.classList.remove("hidden");
+    modalsContainer.style.display = "flex";
     perfilModal.classList.remove("hidden");
     perfilModal.showModal();
   });

@@ -1,370 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../style.css">
-    <title>Benteveo Air</title>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../style.css">
+  <title>Benteveo Air</title>
   <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico">
-  </head>
-  <body class="flex">
-    <article class="flex flex-col items-center gap-y-3 bg-white min-w-2xs w-xs h-screen sticky top-0 overflow-y-scroll shadow-md">
-      <div class="sticky top-0 z-100 w-full bg-white shadow-lg py-2 bg-white flex justify-center items-center hover:scale-105 transition-transform">
-        <a href="../../../index.html">
-          <img class="max-w-10 object-contain cursor-pointer" src="../../assets/BenteveoAirIsotipo.png" alt="BS-isotipo" draggable="false">
-        </a>
-        <a href="../../../index.html" class="max-w-36 object-contain cursor-pointer">
-          <img src="../../assets/BenteveoAirLogotipo.png" alt="bs-logotipo">
-        </a>
-      </div>
-      <div class="min-w-3xs text-center p-2 flex flex-col items-center gap-y-3 border border-gray-400 border-collapse rounded-lg">
-        <p class="w-full shadow-lg text-xl font-medium border-b border-gray-400">Filtros</p>
-        <button id="allTables_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Todo</button>
-        <button id="packagesTable_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Paquetes</button>
-        <button id="usersTable_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Usuarios</button>
-      </div>
-      <div class="relative min-w-3xs text-center p-2 flex flex-col items-center gap-y-3 border border-gray-400 border-collapse rounded-lg">
-        <p class="w-full shadow-lg text-xl font-medium border-b border-gray-400">Buscar</p>
-        <button class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Tabla</button>
-        <div class="absolute top-22 min-w-60 bg-gray-200 p-2 flex flex-col items-center gap-y-3 rounded-lg hidden">
-          <button class="w-full px-4 py-2 rounded-md bg-gray-100 cursor-pointer hover:bg-amber-300 transition-colors">Paquetes</button>
-          <button class="w-full px-4 py-2 rounded-md bg-gray-100 cursor-pointer hover:bg-amber-300 transition-colors">Usuarios</button>
-        </div>
-        <button class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Atributo</button>
-        <div class="absolute top-35 left-3 min-w-60 max-h-50 bg-gray-200 p-2 flex flex-col items-center gap-y-3 overflow-y-scroll rounded-lg">
-          <button class="w-full px-4 py-2 rounded-md bg-gray-100 cursor-pointer hover:bg-amber-300 transition-colors">Paquetes</button>
-          <button class="w-full px-4 py-2 rounded-md bg-gray-100 cursor-pointer hover:bg-amber-300 transition-colors">Usuarios</button>
-          <button class="w-full px-4 py-2 rounded-md bg-gray-100 cursor-pointer hover:bg-amber-300 transition-colors">Paquetes</button>
-          <button class="w-full px-4 py-2 rounded-md bg-gray-100 cursor-pointer hover:bg-amber-300 transition-colors">Usuarios</button>
-        </div>
-        <input type="text" name="attribute_Search" placeholder="Por ejemplo: 'Carlos'" class="w-full px-4 py-2 rounded-md bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors"/>
-      </div>
-    </article>
-    <main class="w-full bg-gray-200 flex flex-col items-center">
-      <header class="z-100 w-full bg-white shadow-md flex justify-center items-center text-sm font-medium text-default-dark font-manrope">
-        <div class="container max-w-8xl py-2 px-5 flex justify-between items-center">
-          <div class="flex items-center gap-24">
-            <div>
-              <ul class="flex gap-12">
-                <li><a class="link p-2" href="../../../index.html">Inicio</a></li>
-                <li><a class="link p-2" href="../packages/paquete.html">Paquetes</a></li>
-                <li><a class="link p-2" href="../help/ayuda.html">Ayuda</a></li>
-              </ul>
-            </div>
-          </div>
+</head>
 
-          <div class="flex justify-center gap-5">
+<body class="flex">
+  <article class="flex flex-col items-center gap-y-3 bg-white min-w-2xs w-xs h-screen sticky top-0 overflow-y-scroll shadow-md">
+    <div class="sticky top-0 z-100 w-full bg-white shadow-lg py-2 bg-white flex justify-center items-center hover:scale-105 transition-transform">
+      <a href="../../../index.html">
+        <img class="max-w-10 object-contain cursor-pointer" src="../../assets/BenteveoAirIsotipo.png" alt="BS-isotipo" draggable="false">
+      </a>
+      <a href="../../../index.html" class="max-w-36 object-contain cursor-pointer">
+        <img src="../../assets/BenteveoAirLogotipo.png" alt="bs-logotipo">
+      </a>
+    </div>
+    <div class="min-w-3xs text-center p-2 flex flex-col items-center gap-y-3 border border-gray-400 border-collapse rounded-lg">
+      <p class="w-full shadow-lg text-xl font-medium border-b border-gray-400">Filtros</p>
+      <button id="allTables_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Todo</button>
+      <button id="packagesTable_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Paquetes</button>
+      <button id="usersTable_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Usuarios</button>
+    </div>
+  </article>
+  <main class="w-full bg-gray-200 flex flex-col items-center">
+    <header class="z-100 w-full bg-white shadow-md text-sm font-medium text-default-dark font-manrope">
+      <div class="container max-w-8xl py-2 px-5 flex justify-between items-center gap-24">
+        <ul class="flex gap-12">
+          <li><a class="link p-2" href="../../../index.html">Inicio</a></li>
+          <li><a class="link p-2" href="../packages/paquete.html">Paquetes</a></li>
+          <li><a class="link p-2" href="../help/ayuda.html">Ayuda</a></li>
+        </ul>
+
+        <div class="flex justify-center gap-5">
                     <!-- ----------------------------------------- Botón del carrito ------------------------------------------- -->
-            <div>
-              <div class="flex justify-center items-center gap-10">
-                <a href="./carrito.html"
-                  class="relative cursor-pointer p-2 pr-2.5 rounded-full hover:bg-amber-500 hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                      d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z">
-                    </path>
-                  </svg>
+          <div class="flex justify-center items-center gap-10">
+            <a href="./carrito.html"
+              class="relative cursor-pointer p-2 pr-2.5 rounded-full hover:bg-amber-500 hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M10.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M17.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M8.82 15.77c.31.75 1.04 1.23 1.85 1.23h6.18c.79 0 1.51-.47 1.83-1.2l3.24-7.4c.14-.31.11-.67-.08-.95S21.34 7 21 7H7.33L5.92 3.62C5.76 3.25 5.4 3 5 3H2v2h2.33zM19.47 9l-2.62 6h-6.18l-2.5-6z">
+                </path>
+              </svg>
 
-                  <span id="counter" class="opacity-0 absolute text-amber-600 -bottom-1 -right-1">2</span>
-                </a>
-              </div>
-            </div>
-            <div class="relative">
-              <button id="userMenu_Btn"
-                class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600">
-                  U
-              </button>
-              <div id="modalsContainer" class="hidden">
+              <span id="counter" class="opacity-0 absolute text-amber-600 -bottom-1 -right-1">2</span>
+            </a>
+          </div>
+          <div class="relative">
+            <button id="userMenu_Btn" class="w-10 h-10 rounded-full border border-amber-400">
+              <img src="../../assets/User-Benteveo2.png" class="hover:scale-95 transition-transform"/>
+            </button>
+            <div id="modalsContainer" class="hidden">
                     <!-- ------------------------------------------ Perfil del admin ------------------------------------------- -->
-                <dialog id="perfilModal" class="modal hidden">
+              <dialog id="perfilModal" class="modal rounded-xl p-6 shadow-xl w-96 m-auto 
+                  bg-gradient-to-b from-white via-yellow-50 to-yellow-100
+                  flex flex-col overflow-visible border border-yellow-200 hidden">
 
-                  <span class="w-15 h-15 rounded-full bg-blue-500 text-xl text-white flex items-center justify-center hover:bg-blue-600">
-                    U
-                  </span>
+                <img src="../../assets/User-Benteveo2.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil">
 
-                  <button id="closePerfil" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
-                    ✕
-                  </button>
+                <button id="closePerfil" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
+                  ✕
+                </button>
 
-                  <h2 class="text-center mt-8 text-2xl font-semibold">Hola Carlos</h2>
-                  <p class="text-center text-sm mt-2 text-gray-600">¿Necesitás algo?</p>
+                <h2 class="text-center mt-8 text-2xl font-semibold">Hola Carlos</h2>
+                <p class="text-center text-sm mt-2 text-gray-600">¿Necesitás algo?</p>
 
-                  <div class="mt-4 text-center">
-                    <button id="cambiarDatosAdmin_Btn" class="text-blue-600 underline hover:text-blue-800 cursor-pointer">
-                      Cambiar datos de usuario
-                    </button>
-                  </div>
-                  <div class="mt-4 text-center">
-                    <button id="logout_Btn" class="text-blue-600 underline hover:text-blue-800 cursor-pointer">
-                      Cerrar sesión
-                    </button>
-                  </div>
-                </dialog>
+                <button id="cambiarDatosAdmin_Btn" class="text-yellow-600 font-medium mt-4 text-center hover:underline cursor-pointer">
+                  Cambiar datos de usuario
+                </button>
+                <button id="logout_Btn" class="text-yellow-600 font-medium mt-4 text-center hover:underline cursor-pointer">
+                  Cerrar sesión
+                </button>
+              </dialog>
                       <!------------------------------------- Modal "Cambiar datos de usuario" ------------------------------------------>
-                <dialog id="datosAdmin_Modal" class="modal overflow-visible hidden">
+              <dialog id="datosAdmin_Modal" class="modal rounded-xl p-6 shadow-xl w-96 m-auto 
+                  bg-gradient-to-b from-white via-yellow-50 to-yellow-100
+                  flex flex-col overflow-visible border border-yellow-200 hidden">
 
-                  <img src="../../assets/perfil.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil"/>
+                <img src="../../assets/User-Benteveo2.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2" alt="Foto de perfil"/>
 
-                  <button id="cerrarDatosAdmin" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
-                    ✕
+                <button id="cerrarDatosAdmin" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
+                  ✕
+                </button>
+
+                <h2 class="text-center mt-8 text-2xl font-semibold">Cambiar datos de usuario</h2>
+
+                <form method="dialog" class="mt-6">
+                  <input type="text" name="Nombre_Admin" placeholder="Nuevo nombre" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <input type="text" name="NuevaContraseña_Admin" placeholder="Nueva contraseña" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <input type="text" name="ConfirmacionContraseña_Admin" placeholder="Confirmar contraseña" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                  <button id="guardarDatosAdmin_Btn" type="submit" class="w-full py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition cursor-pointer">
+                    Guardar cambios
                   </button>
-
-                  <h2 class="text-center mt-8 text-2xl font-semibold">Cambiar datos de usuario</h2>
-
-                  <form method="dialog" class="mt-6">
-                    <input type="text" name="Nombre_Admin" placeholder="Nuevo nombre" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="text" name="NuevaContraseña_Admin" placeholder="Nueva contraseña" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="text" name="ConfirmacionContraseña_Admin" placeholder="Confirmar contraseña" class="w-full px-4 py-2 rounded bg-gray-200 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
-
-                    <div class="flex justify-center">
-                      <button id="guardarDatosAdmin_Btn" type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                        Guardar cambios
-                      </button>
-                    </div>
-                  </form>
-                </dialog>
+                </form>
+              </dialog>
                     <!-- ------------------------------------------ Modal de Eliminación ------------------------------------------- -->
-                <dialog id="confirmDelete_Modal" class="modal hidden">
+              <dialog id="confirmDelete_Modal" class="modal rounded-xl p-6 shadow-xl w-96 m-auto 
+                  bg-gradient-to-b from-white via-red-50 to-red-100
+                  flex flex-col overflow-visible border border-red-200 hidden">
 
-                  <span class="w-15 h-15 rounded-full bg-red-500 text-3xl text-black flex items-center justify-center">
-                    !
-                  </span>
+                <span class="w-15 h-15 rounded-full bg-red-500 text-3xl text-black flex items-center justify-center">
+                  !
+                </span>
 
-                  <button onClick="closeDelete_Modal(false)" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
-                    ✕
+                <button onClick="closeDelete_Modal(false)" class="text-gray-500 hover:text-gray-700 absolute right-5 top-5 text-xl cursor-pointer">
+                  ✕
+                </button>
+
+                <h2 class="text-center mt-8 text-2xl font-semibold">¿Estás seguro?</h2>
+                <p class="text-center text-sm mt-2 text-gray-600">Este elemento será eliminado permanentemente</p>
+
+                <div class="flex gap-2 mt-4 text-center">
+                  <button onClick="closeDelete_Modal(true)" id="confirmDelete_Btn" class="px-4 py-2 rounded bg-red-200 cursor-pointer hover:bg-red-600 transition-colors">
+                    Eliminar
                   </button>
-
-                  <h2 class="text-center mt-8 text-2xl font-semibold">¿Estás seguro?</h2>
-                  <p class="text-center text-sm mt-2 text-gray-600">Este elemento será eliminado permanentemente</p>
-
-                  <div class="flex gap-2 mt-4 text-center">
-                    <button onClick="closeDelete_Modal(true)" id="confirmDelete_Btn" class="px-4 py-2 rounded bg-red-200 cursor-pointer hover:bg-red-600 transition-colors">
-                      Eliminar
-                    </button>
-                    <button onClick="closeDelete_Modal(false)" id="cancelDelete_Btn" class="px-4 py-2 rounded bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">
-                      Cancelar
-                    </button>
-                  </div>
-                </dialog>
-              </div>
+                  <button onClick="closeDelete_Modal(false)" id="cancelDelete_Btn" class="px-4 py-2 rounded bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">
+                    Cancelar
+                  </button>
+                </div>
+              </dialog>
             </div>
           </div>
         </div>
-      </header> <!--Tablas de Admin-->
-      <article class="flex flex-col justify-center items-center">
+      </div>
+    </header> <!--Tablas de Admin-->
+    <article class="flex flex-col justify-center items-center">
                     <!-- Tabla de Paquetes -->
-        <table data-type="packages_Table" class="min-w-3xl max-w-full border border-gray-400 border-collapse rounded-lg mt-10">
-          <thead class="bg-gray-300">
-            <tr>
-              <th class="border border-gray-400 px-4 py-2">ID</th>
-              <th class="border border-gray-400 px-4 py-2">Paquete</th>
-              <th class="border border-gray-400 px-4 py-2">Origen</th>
-              <th class="border border-gray-400 px-4 py-2">Hotel</th>
-              <th class="border border-gray-400 px-4 py-2">Servicios</th>
-              <th class="border border-gray-400 px-4 py-2">Precio</th>
-              <th class="border border-gray-400 px-4 py-2">Descuento</th>
-              <th class="border border-gray-400 px-4 py-2">Duración</th>
-              <th class="border border-gray-400 px-4 py-2">Acciones</th>
-            </tr>
-          </thead>
-          <tbody class="bg-white">
-            <tr class="text-center hover:bg-gray-200">
-              <td class="border border-gray-400 px-4 py-2">1</td>
-              <td class="border border-gray-400 px-4 py-2">Aventura en Tierra del Fuego</td>
-              <td class="border border-gray-400 px-4 py-2">Córdoba</td>
-              <td class="border border-gray-400 px-4 py-2">Cap Polonio</td>
-              <td class="border border-gray-400 px-4 py-2">Catering</td>
-              <td class="border border-gray-400 px-4 py-2">$800000</td>
-              <td class="border border-gray-400 px-4 py-2">5%</td>
-              <td class="border border-gray-400 px-4 py-2">5 días</td>
-              <td class="border border-gray-400 px-4 py-2">
-                <div class="flex flex-wrap gap-2 justify-center">
-                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
-                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
-                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
-                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
-                </div>
-              </td>
-            </tr>
-            <tr class="text-center bg-gray-100 hover:bg-gray-200">
-              <td class="border border-gray-400 px-4 py-2">2</td>
-              <td class="border border-gray-400 px-4 py-2">Aventura en Buenos Aires</td>
-              <td class="border border-gray-400 px-4 py-2">Córdoba</td>
-              <td class="border border-gray-400 px-4 py-2">Metropolitano SUPARA</td>
-              <td class="border border-gray-400 px-4 py-2">Wi-Fi</td>
-              <td class="border border-gray-400 px-4 py-2">$935000</td>
-              <td class="border border-gray-400 px-4 py-2">5%</td>
-              <td class="border border-gray-400 px-4 py-2">6 días</td>
-              <td class="border border-gray-400 px-4 py-2">
-                <div class="flex flex-wrap gap-2 justify-center">
-                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
-                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
-                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
-                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
-                </div>
-              </td>
-            </tr>
-            <tr class="text-center hover:bg-gray-200">
-              <td class="border border-gray-400 px-4 py-2">3</td>
-              <td class="border border-gray-400 px-4 py-2">Aventura en Jujuy - Los Siete Colores</td>
-              <td class="border border-gray-400 px-4 py-2">Córdoba</td>
-              <td class="border border-gray-400 px-4 py-2">Altos de la Viña</td>
-              <td class="border border-gray-400 px-4 py-2">Wi-Fi</td>
-              <td class="border border-gray-400 px-4 py-2">$1150000</td>
-              <td class="border border-gray-400 px-4 py-2">15%</td>
-              <td class="border border-gray-400 px-4 py-2">10 días</td>
-              <td class="border border-gray-400 px-4 py-2">
-                <div class="flex flex-wrap gap-2 justify-center">
-                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
-                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
-                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
-                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
-                </div>
-              </td>
-            </tr>
-            <tr class="text-center bg-gray-100 hover:bg-gray-200">
-              <td class="border border-gray-400 px-4 py-2">4</td>
-              <td class="border border-gray-400 px-4 py-2">Aventura en España - Barcelona</td>
-              <td class="border border-gray-400 px-4 py-2">Córdoba</td>
-              <td class="border border-gray-400 px-4 py-2">Ibis Barcelona Centro</td>
-              <td class="border border-gray-400 px-4 py-2">Ninguno</td>
-              <td class="border border-gray-400 px-4 py-2">$2350000</td>
-              <td class="border border-gray-400 px-4 py-2">10%</td>
-              <td class="border border-gray-400 px-4 py-2">7 días</td>
-              <td class="border border-gray-400 px-4 py-2">
-                <div class="flex flex-wrap gap-2 justify-center">
-                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
-                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
-                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
-                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
-                </div>
-              </td>
-            </tr>
-            <tr class="text-center hover:bg-gray-200">
-              <td class="border border-gray-400 px-4 py-2">5</td>
-              <td class="border border-gray-400 px-4 py-2">Aventura en Francia - Paris</td>
-              <td class="border border-gray-400 px-4 py-2">Córdoba</td>
-              <td class="border border-gray-400 px-4 py-2">The People Paris Marais</td>
-              <td class="border border-gray-400 px-4 py-2">Catering</td>
-              <td class="border border-gray-400 px-4 py-2">$2050000</td>
-              <td class="border border-gray-400 px-4 py-2">7%</td>
-              <td class="border border-gray-400 px-4 py-2">5 días</td>
-              <td class="border border-gray-400 px-4 py-2">
-                <div class="flex flex-wrap gap-2 justify-center">
-                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
-                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
-                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
-                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
-                </div>
-              </td>
-            </tr>
-            <tr class="text-center bg-gray-100 hover:bg-gray-200">
-              <td class="border border-gray-400 px-4 py-2">6</td>
-              <td class="border border-gray-400 px-4 py-2">Aventura en Alemania - Baviera</td>
-              <td class="border border-gray-400 px-4 py-2">Córdoba</td>
-              <td class="border border-gray-400 px-4 py-2">Villa Ludwig</td>
-              <td class="border border-gray-400 px-4 py-2">Catering y Wi-Fi</td>
-              <td class="border border-gray-400 px-4 py-2">$2400000</td>
-              <td class="border border-gray-400 px-4 py-2">8%</td>
-              <td class="border border-gray-400 px-4 py-2">6 días</td>
-              <td class="border border-gray-400 px-4 py-2">
-                <div class="flex flex-wrap gap-2 justify-center">
-                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
-                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
-                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
-                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
-                </div>
-              </td>
-            </tr>
-            <tr class="text-center bg-gray-100 hover:bg-gray-200">
-              <td class="border border-gray-400 px-4 py-2"></td>
-              <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-              <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-              <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-              <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-              <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-              <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-              <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-              <td class="border border-gray-400 px-4 py-2">
-                <div class="flex flex-wrap gap-2 justify-center">
-                  <button onclick="editarLinea(this)" class="editRow_Btn hidden">Editar</button>
-                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn hidden">Eliminar</button>
-                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
-                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
-                  <button onclick="crearLinea(this)" class="createRow_Btn">Crear</button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <table data-type="packages_Table" class="min-w-3xl max-w-full border border-gray-400 border-collapse rounded-lg mt-10">
+        <thead class="bg-gray-300">
+          <tr>
+            <th class="border border-gray-400 px-4 py-2">ID</th>
+            <th class="border border-gray-400 px-4 py-2">Paquete</th>
+            <th class="border border-gray-400 px-4 py-2">Origen</th>
+            <th class="border border-gray-400 px-4 py-2">Hotel</th>
+            <th class="border border-gray-400 px-4 py-2">Servicios</th>
+            <th class="border border-gray-400 px-4 py-2">Precio</th>
+            <th class="border border-gray-400 px-4 py-2">Descuento</th>
+            <th class="border border-gray-400 px-4 py-2">Duración</th>
+            <th class="border border-gray-400 px-4 py-2">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white">
+          <tr class="text-center hover:bg-gray-200">
+            <td class="border border-gray-400 px-4 py-2">1</td>
+            <td class="border border-gray-400 px-4 py-2">Aventura en Tierra del Fuego</td>
+            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+            <td class="border border-gray-400 px-4 py-2">Cap Polonio</td>
+            <td class="border border-gray-400 px-4 py-2">Catering</td>
+            <td class="border border-gray-400 px-4 py-2">$800000</td>
+            <td class="border border-gray-400 px-4 py-2">5%</td>
+            <td class="border border-gray-400 px-4 py-2">5 días</td>
+            <td class="border border-gray-400 px-4 py-2">
+              <div class="flex flex-wrap gap-2 justify-center">
+                <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="text-center bg-gray-100 hover:bg-gray-200">
+            <td class="border border-gray-400 px-4 py-2">2</td>
+            <td class="border border-gray-400 px-4 py-2">Aventura en Buenos Aires</td>
+            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+            <td class="border border-gray-400 px-4 py-2">Metropolitano SUPARA</td>
+            <td class="border border-gray-400 px-4 py-2">Wi-Fi</td>
+            <td class="border border-gray-400 px-4 py-2">$935000</td>
+            <td class="border border-gray-400 px-4 py-2">5%</td>
+            <td class="border border-gray-400 px-4 py-2">6 días</td>
+            <td class="border border-gray-400 px-4 py-2">
+              <div class="flex flex-wrap gap-2 justify-center">
+                <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="text-center hover:bg-gray-200">
+            <td class="border border-gray-400 px-4 py-2">3</td>
+            <td class="border border-gray-400 px-4 py-2">Aventura en Jujuy - Los Siete Colores</td>
+            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+            <td class="border border-gray-400 px-4 py-2">Altos de la Viña</td>
+            <td class="border border-gray-400 px-4 py-2">Wi-Fi</td>
+            <td class="border border-gray-400 px-4 py-2">$1150000</td>
+            <td class="border border-gray-400 px-4 py-2">15%</td>
+            <td class="border border-gray-400 px-4 py-2">10 días</td>
+            <td class="border border-gray-400 px-4 py-2">
+              <div class="flex flex-wrap gap-2 justify-center">
+                <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="text-center bg-gray-100 hover:bg-gray-200">
+            <td class="border border-gray-400 px-4 py-2">4</td>
+            <td class="border border-gray-400 px-4 py-2">Aventura en España - Barcelona</td>
+            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+            <td class="border border-gray-400 px-4 py-2">Ibis Barcelona Centro</td>
+            <td class="border border-gray-400 px-4 py-2">Ninguno</td>
+            <td class="border border-gray-400 px-4 py-2">$2350000</td>
+            <td class="border border-gray-400 px-4 py-2">10%</td>
+            <td class="border border-gray-400 px-4 py-2">7 días</td>
+            <td class="border border-gray-400 px-4 py-2">
+              <div class="flex flex-wrap gap-2 justify-center">
+                <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="text-center hover:bg-gray-200">
+            <td class="border border-gray-400 px-4 py-2">5</td>
+            <td class="border border-gray-400 px-4 py-2">Aventura en Francia - Paris</td>
+            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+            <td class="border border-gray-400 px-4 py-2">The People Paris Marais</td>
+            <td class="border border-gray-400 px-4 py-2">Catering</td>
+            <td class="border border-gray-400 px-4 py-2">$2050000</td>
+            <td class="border border-gray-400 px-4 py-2">7%</td>
+            <td class="border border-gray-400 px-4 py-2">5 días</td>
+            <td class="border border-gray-400 px-4 py-2">
+              <div class="flex flex-wrap gap-2 justify-center">
+                <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="text-center bg-gray-100 hover:bg-gray-200">
+            <td class="border border-gray-400 px-4 py-2">6</td>
+            <td class="border border-gray-400 px-4 py-2">Aventura en Alemania - Baviera</td>
+            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+            <td class="border border-gray-400 px-4 py-2">Villa Ludwig</td>
+            <td class="border border-gray-400 px-4 py-2">Catering y Wi-Fi</td>
+            <td class="border border-gray-400 px-4 py-2">$2400000</td>
+            <td class="border border-gray-400 px-4 py-2">8%</td>
+            <td class="border border-gray-400 px-4 py-2">6 días</td>
+            <td class="border border-gray-400 px-4 py-2">
+              <div class="flex flex-wrap gap-2 justify-center">
+                <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="text-center bg-gray-100 hover:bg-gray-200">
+            <td class="border border-gray-400 px-4 py-2"></td>
+            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
+            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
+            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
+            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
+            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
+            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
+            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
+            <td class="border border-gray-400 px-4 py-2">
+              <div class="flex flex-wrap gap-2 justify-center">
+                <button onclick="editarLinea(this)" class="editRow_Btn hidden">Editar</button>
+                <button onclick="eliminarLinea(this)" class="deleteRow_Btn hidden">Eliminar</button>
+                <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
+                <button onclick="crearLinea(this)" class="createRow_Btn">Crear</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
                     <!-- Tabla de Usuarios -->
-        <table data-type="users_Table" class="min-w-3xl max-w-full border border-gray-400 border-collapse rounded-lg mt-10">
-          <thead class="bg-gray-300">
-            <tr>
-              <th class="border border-gray-400 px-4 py-2">ID</th>
-              <th class="border border-gray-400 px-4 py-2">Usuario</th>
-              <th class="border border-gray-400 px-4 py-2">Correo</th>
-              <th class="border border-gray-400 px-4 py-2">Paquete</th>
-              <th class="border border-gray-400 px-4 py-2">Precio</th>
-              <th class="border border-gray-400 px-4 py-2">Fecha</th>
-              <th class="border border-gray-400 px-4 py-2">Acciones</th>
-            </tr>
-          </thead>
-          <tbody class="bg-white">
-            <tr class="text-center hover:bg-gray-200">
-              <td class="border border-gray-400 px-4 py-2">1</td>
-              <td class="border border-gray-400 px-4 py-2">Carlos</td>
-              <td class="border border-gray-400 px-4 py-2">Carlos@gmail.com</td>
-              <td class="border border-gray-400 px-4 py-2">Tierra del Fuego</td>
-              <td class="border border-gray-400 px-4 py-2">$749000</td>
-              <td class="border border-gray-400 px-4 py-2"> 24/7/2025</td>
-              <td class="border border-gray-400 px-4 py-2">
-                <div class="flex flex-wrap gap-2 justify-center">
-                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
-                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
-                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
-                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
-                </div>
-              </td>
-            </tr>
-            <tr class="text-center bg-gray-100 hover:bg-gray-200">
-              <td class="border border-gray-400 px-4 py-2">2</td>
-              <td class="border border-gray-400 px-4 py-2">María</td>
-              <td class="border border-gray-400 px-4 py-2">Maria@gmail.com</td>
-              <td class="border border-gray-400 px-4 py-2">Bariloche Premium</td>
-              <td class="border border-gray-400 px-4 py-2">$659000</td>
-              <td class="border border-gray-400 px-4 py-2"> 8/8/2025</td>
-              <td class="border border-gray-400 px-4 py-2">
-                <div class="flex flex-wrap gap-2 justify-center">
-                  <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
-                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
-                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
-                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
-                </div>
-              </td>
-            </tr>
-            <tr class="text-center bg-gray-100 hover:bg-gray-200">
-              <td class="border border-gray-400 px-4 py-2"></td>
-              <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-              <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-              <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-              <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-              <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-              <td class="border border-gray-400 px-4 py-2">
-                <div class="flex flex-wrap gap-2 justify-center">
-                  <button onclick="editarLinea(this)" class="editRow_Btn hidden">Editar</button>
-                  <button onclick="eliminarLinea(this)" class="deleteRow_Btn hidden">Eliminar</button>
-                  <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
-                  <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
-                  <button onclick="crearLinea(this)" class="createRow_Btn">Crear</button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </article>
-    </main>
-    <script src="admin.js"></script>
-    <script src="tableFilter.js"></script>
-  </body>
+      <table data-type="users_Table" class="min-w-3xl max-w-full border border-gray-400 border-collapse rounded-lg mt-10">
+        <thead class="bg-gray-300">
+          <tr>
+            <th class="border border-gray-400 px-4 py-2">ID</th>
+            <th class="border border-gray-400 px-4 py-2">Usuario</th>
+            <th class="border border-gray-400 px-4 py-2">Correo</th>
+            <th class="border border-gray-400 px-4 py-2">Paquete</th>
+            <th class="border border-gray-400 px-4 py-2">Precio</th>
+            <th class="border border-gray-400 px-4 py-2">Fecha</th>
+            <th class="border border-gray-400 px-4 py-2">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white">
+          <tr class="text-center hover:bg-gray-200">
+            <td class="border border-gray-400 px-4 py-2">1</td>
+            <td class="border border-gray-400 px-4 py-2">Carlos</td>
+            <td class="border border-gray-400 px-4 py-2">Carlos@gmail.com</td>
+            <td class="border border-gray-400 px-4 py-2">Tierra del Fuego</td>
+            <td class="border border-gray-400 px-4 py-2">$749000</td>
+            <td class="border border-gray-400 px-4 py-2"> 24/7/2025</td>
+            <td class="border border-gray-400 px-4 py-2">
+              <div class="flex flex-wrap gap-2 justify-center">
+                <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="text-center bg-gray-100 hover:bg-gray-200">
+            <td class="border border-gray-400 px-4 py-2">2</td>
+            <td class="border border-gray-400 px-4 py-2">María</td>
+            <td class="border border-gray-400 px-4 py-2">Maria@gmail.com</td>
+            <td class="border border-gray-400 px-4 py-2">Bariloche Premium</td>
+            <td class="border border-gray-400 px-4 py-2">$659000</td>
+            <td class="border border-gray-400 px-4 py-2"> 8/8/2025</td>
+            <td class="border border-gray-400 px-4 py-2">
+              <div class="flex flex-wrap gap-2 justify-center">
+                <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
+                <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
+                <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="text-center bg-gray-100 hover:bg-gray-200">
+            <td class="border border-gray-400 px-4 py-2"></td>
+            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
+            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
+            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
+            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
+            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
+            <td class="border border-gray-400 px-4 py-2">
+              <div class="flex flex-wrap gap-2 justify-center">
+                <button onclick="editarLinea(this)" class="editRow_Btn hidden">Editar</button>
+                <button onclick="eliminarLinea(this)" class="deleteRow_Btn hidden">Eliminar</button>
+                <button onclick="confirmarLinea(this)" class="confirmRow_Btn hidden">Confirmar</button>
+                <button onclick="cancelarLinea(this)" class="cancelRow_Btn hidden">Cancelar</button>
+                <button onclick="crearLinea(this)" class="createRow_Btn">Crear</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+  </main>
+  <script src="admin.js"></script>
+  <script src="tableFilter.js"></script>
+</body>
 </html>
