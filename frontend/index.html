@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="src/assets/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    integrity="sha384-your-integrity-hash>" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link rel="stylesheet" href="src/style.css">
   <title>Benteveo Air</title>
 </head>
@@ -400,8 +401,7 @@
   <!-- Modal Inicio de sesion -->
   <div id="login-wrapper" class="hidden">
     <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
-      <dialog id="inicio"
-        class="rounded-xl p-6 shadow-xl w-96 m-auto 
+      <dialog id="inicio" class="rounded-xl p-6 shadow-xl w-96 m-auto 
          bg-gradient-to-b from-white via-yellow-50 to-yellow-100
          flex flex-col overflow-visible border border-yellow-200">
 
@@ -443,8 +443,7 @@
               <i class="fa-solid fa-eye"></i>
             </div>
 
-            <div
-              class="text-yellow-600 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hidden hide-psw">
+            <div class="text-yellow-600 absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer hidden hide-psw">
               <i class="fa-solid fa-eye-slash"></i>
             </div>
           </div>
@@ -456,7 +455,8 @@
           </p>
 
           <div class="flex justify-center">
-            <button type="submit" class="w-full py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition cursor-pointer">
+            <button type="submit"
+              class="w-full py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition cursor-pointer">
               Iniciar sesión
             </button>
           </div>
@@ -468,16 +468,14 @@
   <!-- Modal Registro -->
   <div id="register-wrapper" class="hidden">
     <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-100">
-      <dialog id="registro"
-        class="rounded-xl p-6 shadow-xl w-96 m-auto 
+      <dialog id="registro" class="rounded-xl p-6 shadow-xl w-96 m-auto 
          bg-gradient-to-b from-white via-yellow-50 to-yellow-100
          flex flex-col overflow-visible border border-yellow-200">
 
         <img src="src/assets/User-Benteveo.png" class="w-24 absolute top-[-48px] left-1/2 transform -translate-x-1/2"
           alt="Foto de perfil">
 
-        <button id="close-register"
-          class="text-gray-500 hover:text-gray-800 absolute right-5 top-5 text-2xl">
+        <button id="close-register" class="text-gray-500 hover:text-gray-800 absolute right-5 top-5 text-2xl">
           ✕
         </button>
 
@@ -500,12 +498,12 @@
             <div class="  bg-yellow-100 w-10 h-10 text-yellow-600 flex items-center justify-center">
               <i class="fa-solid fa-envelope"></i>
             </div>
-            
+
             <input type="email" id="email-register"
-            class="w-full rounded rounded-tl-none rounded-bl-none px-3 text-sm py-2 border-l-2 border-l-transparent focus:border-l-amber-600 focus:outline-none"
-            placeholder="Correo electrónico">
+              class="w-full rounded rounded-tl-none rounded-bl-none px-3 text-sm py-2 border-l-2 border-l-transparent focus:border-l-amber-600 focus:outline-none"
+              placeholder="Correo electrónico">
           </div>
-          
+
           <!-- Campo de cumpleaños -->
           <div class="flex items-center rounded-lg overflow-hidden bg-white shadow-sm mb-4">
             <div class="bg-yellow-100 w-10 h-10 text-yellow-600 flex items-center justify-center">
@@ -516,7 +514,7 @@
               class="w-full rounded rounded-tl-none rounded-bl-none px-3 py-2 text-sm border-l-2 border-l-transparent focus:border-l-amber-600 focus:outline-none"
               placeholder="Fecha de nacimiento">
           </div>
-          
+
           <!-- Campo de contraseña -->
           <div class="password-field flex items-center rounded-lg overflow-hidden bg-white shadow-sm relative mb-4">
             <div class="bg-yellow-100 w-10 h-10 text-yellow-600 flex items-center justify-center">
@@ -565,7 +563,8 @@
           </p>
 
           <div class="flex justify-center">
-            <button type="submit" class="w-full py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition cursor-pointer">
+            <button type="submit"
+              class="w-full py-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition cursor-pointer">
               Registrarse
             </button>
 

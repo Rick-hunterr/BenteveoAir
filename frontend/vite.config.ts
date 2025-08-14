@@ -11,7 +11,6 @@ const API_URL = process.env.VITE_API_URL || "http://localhost:10000";
 
 export default defineConfig({
   plugins: [tailwindcss()],
-  // Configuración para desarrollo local
   server: {
     port: 5173,
     proxy: {
@@ -21,8 +20,8 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
-    //allowedHosts: ["033fcfca19db.ngrok-free.app"], // temporal
-    allowedHosts: ["0.0.0.0"], // permite acceder desde cualquier host local o túnel
+    //allowedHosts: ["033fcfca19db.ngrok-free.app"], // temporal 
+    allowedHosts: ["0.0.0.0"], // permite accesos desde túneles o hosts locales
   },
   define: {
     "import.meta.env.VITE_API_URL": JSON.stringify(API_URL),
@@ -30,7 +29,14 @@ export default defineConfig({
   build: {
     outDir: "dist",
     rollupOptions: {
-      input: "index.html",
+      input: {
+        main: "index.html",
+        admin: "src/pages/admin/admin.html",
+        carrito: "src/pages/cart/carrito.html",
+        ayuda: "src/pages/help/ayuda.html",
+        paquete: "src/pages/packages/paquete.html",
+        emailVerificado: "email-verificado.html"
+      },
     },
   },
 });
