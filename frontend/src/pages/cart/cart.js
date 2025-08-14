@@ -175,18 +175,10 @@ let precio_total = packagesStore.reduce((total, packageItem) => {
 }, 0);
 
 buyCartBtn.addEventListener("click", async (e) => {
-  // if (totalEl) totalEl.textContent = precio_total.toFixed(2);
   if (productCounter) productCounter.textContent = packagesStore.length;
 
   if (precio_total > 0 && packagesStore.length > 0) {
     e.target.style.display = "none";
-
-    // const product = {
-    //   id: "1",
-    //   titulo: "carrito",
-    //   precio: 100000000,
-    //   cantidad: 1,
-    // };
 
     try {
       const token = localStorage.getItem("token");
@@ -211,7 +203,7 @@ buyCartBtn.addEventListener("click", async (e) => {
         return;
       }
 
-      const response = await fetch("http://localhost:3000/create_payment", {
+      const response = await fetch(`${API_URL}/create_payment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

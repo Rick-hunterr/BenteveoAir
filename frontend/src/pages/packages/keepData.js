@@ -54,11 +54,10 @@ const resguardarDatosDelPaquete = () => {
 
     let updateData = {};
     packageDataStore.forEach((data) => {
-      updateData = { ...data, ...modalData }; // aca ya tendria que tener un objeto que cubra todas las propiedades
+      updateData = { ...data, ...modalData };
     });
 
     packagesStorage.push(updateData);
-    // const nuevoCOntenidoDelItem = [...primerosDatos, ...modalData]; // [todas, las, propiedades] Teniendo en cuenta mi imaginacion esto puede funcar
 
     localStorage.setItem("packages", JSON.stringify(packagesStorage));
   });
