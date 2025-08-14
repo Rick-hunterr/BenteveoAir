@@ -16,19 +16,11 @@ export const AppDataSource = new DataSource(
   isProduction
     ? {
         type: "postgres",
-        url: process.env.DATABASE_URL, // Render usa esto
-        ssl: { rejectUnauthorized: false },// Render requiere SSL
-        synchronize: true, //En producción, esto debería ser false
+        url: process.env.DATABASE_URL, // Render
+        ssl: { rejectUnauthorized: false },
+        synchronize: true,
         logging: false,
-        entities: [
-          Usuario,
-          Ubicacion,
-          Producto,
-          Servicio,
-          DestinoVuelo,
-          Orden,
-          DetalleOrden,
-        ],
+        entities: [Usuario, Ubicacion, Producto, Servicio, DestinoVuelo, Orden, DetalleOrden],
       }
     : {
         type: "postgres",
@@ -39,14 +31,6 @@ export const AppDataSource = new DataSource(
         database: process.env.DB_NAME,
         synchronize: true,
         logging: false,
-        entities: [
-          Usuario,
-          Ubicacion,
-          Producto,
-          Servicio,
-          DestinoVuelo,
-          Orden,
-          DetalleOrden,
-        ],
+        entities: [Usuario, Ubicacion, Producto, Servicio, DestinoVuelo, Orden, DetalleOrden],
       }
 )
