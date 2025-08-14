@@ -10,21 +10,6 @@ const preference = new Preference(client);
 
 export async function paymentMercadopago(req: Request, res: Response) {
   const packages = req.body;
-  
-  // console.log(req.body[0].name);
-  // packages.forEach(($package: {name: String, price: Number}) => {
-  //   const { name, price } = $package;
-  //   console.log(name);
-  //   console.log(price);
-  // });
-
-  // if (!product.titulo || !product.precio || !product.cantidad) {
-  //   return res
-  //     .status(400)
-  //     .json({ error: "El producto debe tener titulo, precio y cantidad" });
-  // }
-
-  // res.status(201).json(product); // Si no tiene respuesta alguna, entonces el fetch obtendra un error al no obtener respuesta por parte del servidor
 
   try {
     const items: {
@@ -48,18 +33,10 @@ export async function paymentMercadopago(req: Request, res: Response) {
     const paymentResponse = await preference.create({
       body: {
         items: items,
-        // items: [
-        //   {
-        //     id: "1",
-        //     title: "Titulo",
-        //     unit_price: 1000,
-        //     quantity: 1,
-        //   },
-        // ],
         back_urls: {
-          success: "https://c0dea736e7ce.ngrok-free.app", // No contamos con un dominio que utilice el protocolo HTTPS
-          failure: "https://c0dea736e7ce.ngrok-free.app", 
-          pending: "https://c0dea736e7ce.ngrok-free.app", 
+          success: "https://033fcfca19db.ngrok-free.app", // No contamos con un dominio que utilice el protocolo HTTPS
+          failure: "https://033fcfca19db.ngrok-free.app", 
+          pending: "https://033fcfca19db.ngrok-free.app", 
         },
         auto_return: "approved",
       },

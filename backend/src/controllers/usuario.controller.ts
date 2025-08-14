@@ -172,7 +172,7 @@ export async function verifyEmail(req: Request, res: Response) {
     usuario.verificationToken = null;
     await repo.save(usuario);
 
-    res.redirect(`http://localhost:5173/email-verificado.html?success=true`);
+    res.redirect(`https://033fcfca19db.ngrok-free.app/email-verificado.html?success=true`);
   } catch (error) {
     console.error("ERROR al verificar email:", error);
     res.status(500).json({ error: "Error al verificar email" });
