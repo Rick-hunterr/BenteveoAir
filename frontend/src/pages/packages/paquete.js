@@ -53,13 +53,20 @@ function abrirModal(destino) {
   };
 
   packageModal.classList.remove("hidden");
+  packageModal.classList.add("block");
 
   closePackageModal.addEventListener("click", () => {
+    packageModal.classList.remove("block");
     packageModal.classList.add("hidden");
   });
 
   confirmPkgBtn.addEventListener("click", () => {
-    packageModal.classList.add("hidden");
+    if (!packageModal.hasAttribute("data-error")) {
+      packageModal.classList.add("hidden");
+      return
+    }
+    
+    packageModal.classList.remove("hidden");
   });
 }
 

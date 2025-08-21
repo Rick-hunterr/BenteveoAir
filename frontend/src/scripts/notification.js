@@ -6,8 +6,10 @@ if (modalPackage) {
   const confirmPkgBtn = modalPackage.querySelector("#confirm-package");
 
   confirmPkgBtn.addEventListener("click", () => {
-    counter++;
-    notification.textContent = counter;
+    if (!modalPackage.hasAttribute("data-error")) {
+      counter++;
+      notification.textContent = counter;
+    }
   });
 }
 

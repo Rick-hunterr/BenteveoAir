@@ -46,6 +46,14 @@ const resguardarDatosDelPaquete = () => {
     const fechaRegreso = packageModal.querySelector("#fechaFin").textContent;
     const cantPasajes = packageModal.querySelector("#cantidadPasajes").value;
 
+    if (!fechaSalida) {
+      packageModal.setAttribute("data-error", true)
+      alert("Ingresa la fecha de salida")
+      return
+    }
+
+    packageModal.removeAttribute("data-error")
+
     const modalData = {
       fechaSalida: fechaSalida,
       fechaRegreso: fechaRegreso,
