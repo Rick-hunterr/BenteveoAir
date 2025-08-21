@@ -1,9 +1,6 @@
 const loadPackages = () => {
-  const API_URL = "http://localhost:3000";
-
   const packagesRecord = document.getElementById("packages-record");
   const emptyCartBtn = document.getElementById("empty-cart");
-  const buyCartBtn = document.getElementById("buy-cart");
   const history = document.getElementById("history");
   const productCounter = document.getElementById("product-counter");
   const totalEl = document.getElementById("total-price");
@@ -20,19 +17,6 @@ const loadPackages = () => {
     history.innerHTML = "";
     totalEl.textContent = 0;
     productCounter.textContent = 0;
-  });
-
-  buyCartBtn.addEventListener("click", () => {
-    if (precio_total > 0) {
-      alert(`Felicidades por su compra. El total es de ${precio_total}`);
-      localStorage.removeItem("packages");
-
-      packagesRecord.innerHTML = "";
-      history.innerHTML = "";
-      totalEl.textContent = 0;
-      productCounter.textContent = 0;
-      precio_total = 0;
-    }
   });
 
   const createDeleteButton = () => {
@@ -165,9 +149,6 @@ const history = document.getElementById("history");
 const totalEl = document.getElementById("total-price");
 const productCounter = document.getElementById("product-counter");
 
-console.log(productCounter);
-
-
 let packagesStore = JSON.parse(localStorage.getItem("packages")) || [];
 
 let precio_total = packagesStore.reduce((total, packageItem) => {
@@ -175,9 +156,9 @@ let precio_total = packagesStore.reduce((total, packageItem) => {
 }, 0);
 
 buyCartBtn.addEventListener("click", async (e) => {
-  if (productCounter) productCounter.textContent = packagesStore.length;
+  let currentPackages = JSON.parse(localStorage.getItem("packages")) || [];
 
-  if (precio_total > 0 && packagesStore.length > 0) {
+  if (currentPackages.length > 0) {
     e.target.style.display = "none";
 
     try {
@@ -227,7 +208,6 @@ buyCartBtn.addEventListener("click", async (e) => {
 
       renderWalletBrick(bricksBuilder);
 
-      alert("¡Compra realizada con éxito!");
       localStorage.removeItem("packages");
       packagesRecord.innerHTML = "";
       history.innerHTML = "";
@@ -235,6 +215,7 @@ buyCartBtn.addEventListener("click", async (e) => {
       productCounter.textContent = 0;
       precio_total = 0;
       packagesStore = [];
+      alert("¡Compra realizada con éxito!");
     } catch (err) {
       console.error("Error al comprar:", err);
       alert("No se pudo conectar al servidor");
