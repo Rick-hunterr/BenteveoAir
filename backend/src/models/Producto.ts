@@ -3,8 +3,10 @@ import {
     PrimaryGeneratedColumn,
     Column,
     ManyToOne,
+    OneToMany,
     JoinColumn
 } from "typeorm"
+import { Calificaciones } from "./Calificaciones"
 import { Servicio } from "./Servicio"
 import { DestinoVuelo } from "./DestinoVuelo"
 
@@ -34,11 +36,11 @@ export class Producto {
     @Column({ type: "real", nullable: true })
     descuento?: number
 
-    @Column({ type: "real", nullable: true })
-    calificacion?: number
-
     @Column({ type: "numeric", precision: 10, scale: 2 })
     precio!: number
+
+    @OneToMany(() => Calificaciones, calificaciones => calificaciones.producto)
+    calificaciones?: Calificaciones[]
 
     @ManyToOne(() => Servicio, { nullable: true, onDelete: "SET NULL" })
     @JoinColumn({ name: "servicio_id" })

@@ -75,7 +75,7 @@ export async function crearProducto(req: Request, res: Response) {
     const imagen = req.body.imagen
     const hotel = req.body.hotel
     const descuento = req.body.descuento
-    const calificacion = req.body.calificacion
+    const calificaciones = req.body.calificaciones
     const precio = req.body.precio
     const servicioId = req.body.servicioId
     const destinoVueloId = req.body.destinoVueloId
@@ -107,7 +107,7 @@ export async function crearProducto(req: Request, res: Response) {
             imagen: imagen,
             hotel: hotel,
             descuento: descuento,
-            calificacion: calificacion,
+            calificaciones: calificaciones,
             precio: precio,
             servicio: servicio,
             destinoVuelo: destinoVuelo

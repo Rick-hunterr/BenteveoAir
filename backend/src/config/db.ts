@@ -6,6 +6,7 @@ import { Servicio } from "../models/Servicio"
 import { DestinoVuelo } from "../models/DestinoVuelo"
 import { Orden } from "../models/Orden"
 import { DetalleOrden } from "../models/DetalleOrden"
+import { Calificaciones } from "../models/Calificaciones"
 import * as dotenv from "dotenv"
 
 dotenv.config()
@@ -20,7 +21,7 @@ export const AppDataSource = new DataSource(
         ssl: { rejectUnauthorized: false },
         synchronize: true,
         logging: false,
-        entities: [Usuario, Ubicacion, Producto, Servicio, DestinoVuelo, Orden, DetalleOrden],
+        entities: [Usuario, Ubicacion, Producto, Servicio, DestinoVuelo, Orden, DetalleOrden, Calificaciones],
       }
     : {
         type: "postgres",
@@ -31,6 +32,6 @@ export const AppDataSource = new DataSource(
         database: process.env.DB_NAME,
         synchronize: true,
         logging: false,
-        entities: [Usuario, Ubicacion, Producto, Servicio, DestinoVuelo, Orden, DetalleOrden],
+        entities: [Usuario, Ubicacion, Producto, Servicio, DestinoVuelo, Orden, DetalleOrden, Calificaciones],
       }
 )
