@@ -211,9 +211,9 @@ registro.addEventListener("submit", async (e) => {
   const email = document.getElementById("email-register").value.trim();
   const contraseña = document.getElementById("password-register").value;
   const birthdayInput = document.getElementById("birthday-register").value;
-  const confirmContraseña = document.getElementById("confirmPassword-register").value;
+  const confirmarContraseña = document.getElementById("confirmPassword-register").value;
 
-  if (!nombre || !email || !contraseña || !birthdayInput || !confirmContraseña) {
+  if (!nombre || !email || !contraseña || !birthdayInput || !confirmarContraseña) {
     alert("Todos los campos son obligatorios");
     return;
   }
@@ -241,7 +241,7 @@ registro.addEventListener("submit", async (e) => {
     const resp = await fetch(`${API_URL}/usuarios`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ nombre, email, contraseña, rol: "cliente" }),
+      body: JSON.stringify({ nombre, email, contraseña, confirmarContraseña, rol: "cliente" }),
     });
     const data = await resp.json();
 

@@ -23,12 +23,13 @@ export async function crearUsuario(req: Request, res: Response) {
   const nombre = req.body.nombre
   const email = req.body.email
   const contraseña = req.body.contraseña
+  const confirmarContraseña = req.body.confirmarContraseña
   const rol = req.body.rol
   const ubicacion = req.body.ubicacion
 
-  if (!nombre || !email || !contraseña || !rol) {
+  if (!nombre || !email || !contraseña || !confirmarContraseña || !rol) {
     res.status(400).json({ 
-      error: "Nombre, email, contraseña y rol son requeridos" 
+      error: "Nombre, email, contraseña, confirmarContraseña y rol son requeridos" 
     })
     return
   }
@@ -36,6 +37,13 @@ export async function crearUsuario(req: Request, res: Response) {
   if (contraseña.length < 4) {
     res.status(400).json({ 
       error: "La contraseña debe tener al menos 4 caracteres" 
+    })
+    return
+  }
+
+  if (contraseña !== confirmarContraseña) {
+    res.status(400).json({ 
+      error: "Las contraseñas no coinciden" 
     })
     return
   }
@@ -64,6 +72,7 @@ export async function crearUsuario(req: Request, res: Response) {
       nombre: nombre,
       email: email,
       contraseña: hashedContraseña,
+      confirmarContraseña: hashedContraseña,
       rol: rol,
       ubicacion: ubicacionEntity,
       emailVerificado: false, 
