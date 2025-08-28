@@ -13,6 +13,12 @@ dotenv.config()
 
 const isProduction = process.env.NODE_ENV === "production"
 
+if (!isProduction) {
+  dotenv.config({ path: ".env.local" });
+} else {
+  dotenv.config({ path: ".env.production" }); 
+}
+
 export const AppDataSource = new DataSource(
   isProduction
     ? {

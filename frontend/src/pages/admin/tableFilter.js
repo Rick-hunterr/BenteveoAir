@@ -3,6 +3,7 @@
 //============================================================================
 const allTables_Btn = document.getElementById("allTables_Btn");
 const packagesTable_Btn = document.getElementById("packagesTable_Btn");
+const ordersTable_Btn = document.getElementById("ordersTable_Btn");
 const usersTable_Btn = document.getElementById("usersTable_Btn");
 const tables = document.querySelectorAll("table");
 
@@ -24,6 +25,10 @@ allTables_Btn.addEventListener("click", () => {
 
 packagesTable_Btn.addEventListener("click", () => {
   filterPackagesByType("packages_Table");
+});
+
+ordersTable_Btn.addEventListener("click", () => {
+  filterPackagesByType("orders_Table");
 });
 
 usersTable_Btn.addEventListener("click", () => {

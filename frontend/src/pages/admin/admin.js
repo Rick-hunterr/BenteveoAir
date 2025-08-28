@@ -76,7 +76,7 @@ if (logout_Btn) {
     
     localStorage.removeItem("token");
     alert("Sesión cerrada");
-    location.reload();
+    location.href = "/src/index.html";
   });
 }
 

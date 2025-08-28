@@ -23,6 +23,7 @@
       <p class="w-full shadow-lg text-xl font-medium border-b border-gray-400">Filtros</p>
       <button id="allTables_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Todo</button>
       <button id="packagesTable_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Paquetes</button>
+      <button id="ordersTable_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Ordenes</button>
       <button id="usersTable_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Usuarios</button>
     </div>
   </article>
@@ -135,7 +136,7 @@
           <tr>
             <th class="border border-gray-400 px-4 py-2">ID</th>
             <th class="border border-gray-400 px-4 py-2">Paquete</th>
-            <th class="border border-gray-400 px-4 py-2">Origen</th>
+            <th class="border border-gray-400 px-4 py-2">Destino</th>
             <th class="border border-gray-400 px-4 py-2">Hotel</th>
             <th class="border border-gray-400 px-4 py-2">Servicios</th>
             <th class="border border-gray-400 px-4 py-2">Precio</th>
@@ -148,7 +149,7 @@
           <tr class="text-center hover:bg-gray-200">
             <td class="border border-gray-400 px-4 py-2">1</td>
             <td class="border border-gray-400 px-4 py-2">Aventura en Tierra del Fuego</td>
-            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+            <td class="border border-gray-400 px-4 py-2">Tierra del Fuego</td>
             <td class="border border-gray-400 px-4 py-2">Cap Polonio</td>
             <td class="border border-gray-400 px-4 py-2">Catering</td>
             <td class="border border-gray-400 px-4 py-2">$800000</td>
@@ -166,7 +167,7 @@
           <tr class="text-center bg-gray-100 hover:bg-gray-200">
             <td class="border border-gray-400 px-4 py-2">2</td>
             <td class="border border-gray-400 px-4 py-2">Aventura en Buenos Aires</td>
-            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+            <td class="border border-gray-400 px-4 py-2">Buenos Aires</td>
             <td class="border border-gray-400 px-4 py-2">Metropolitano SUPARA</td>
             <td class="border border-gray-400 px-4 py-2">Wi-Fi</td>
             <td class="border border-gray-400 px-4 py-2">$935000</td>
@@ -184,7 +185,7 @@
           <tr class="text-center hover:bg-gray-200">
             <td class="border border-gray-400 px-4 py-2">3</td>
             <td class="border border-gray-400 px-4 py-2">Aventura en Jujuy - Los Siete Colores</td>
-            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+            <td class="border border-gray-400 px-4 py-2">Jujuy</td>
             <td class="border border-gray-400 px-4 py-2">Altos de la Viña</td>
             <td class="border border-gray-400 px-4 py-2">Wi-Fi</td>
             <td class="border border-gray-400 px-4 py-2">$1150000</td>
@@ -202,7 +203,7 @@
           <tr class="text-center bg-gray-100 hover:bg-gray-200">
             <td class="border border-gray-400 px-4 py-2">4</td>
             <td class="border border-gray-400 px-4 py-2">Aventura en España - Barcelona</td>
-            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+            <td class="border border-gray-400 px-4 py-2">Barcelona</td>
             <td class="border border-gray-400 px-4 py-2">Ibis Barcelona Centro</td>
             <td class="border border-gray-400 px-4 py-2">Ninguno</td>
             <td class="border border-gray-400 px-4 py-2">$2350000</td>
@@ -219,8 +220,8 @@
           </tr>
           <tr class="text-center hover:bg-gray-200">
             <td class="border border-gray-400 px-4 py-2">5</td>
-            <td class="border border-gray-400 px-4 py-2">Aventura en Francia - Paris</td>
-            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+            <td class="border border-gray-400 px-4 py-2">Aventura en Francia - París</td>
+            <td class="border border-gray-400 px-4 py-2">París</td>
             <td class="border border-gray-400 px-4 py-2">The People Paris Marais</td>
             <td class="border border-gray-400 px-4 py-2">Catering</td>
             <td class="border border-gray-400 px-4 py-2">$2050000</td>
@@ -238,9 +239,9 @@
           <tr class="text-center bg-gray-100 hover:bg-gray-200">
             <td class="border border-gray-400 px-4 py-2">6</td>
             <td class="border border-gray-400 px-4 py-2">Aventura en Alemania - Baviera</td>
-            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+            <td class="border border-gray-400 px-4 py-2">Baviera</td>
             <td class="border border-gray-400 px-4 py-2">Villa Ludwig</td>
-            <td class="border border-gray-400 px-4 py-2">Catering y Wi-Fi</td>
+            <td class="border border-gray-400 px-4 py-2">Wi-Fi</td>
             <td class="border border-gray-400 px-4 py-2">$2400000</td>
             <td class="border border-gray-400 px-4 py-2">8%</td>
             <td class="border border-gray-400 px-4 py-2">6 días</td>
@@ -274,6 +275,40 @@
           </tr>
         </tbody>
       </table>
+                    <!-- Tabla de Ordenes -->
+      <table data-type="orders_Table" class="min-w-3xl max-w-full border border-gray-400 border-collapse rounded-lg mt-10">
+        <thead class="bg-gray-300">
+          <tr>
+            <th class="border border-gray-400 px-4 py-2">ID</th>
+            <th class="border border-gray-400 px-4 py-2">Producto</th>
+            <th class="border border-gray-400 px-4 py-2">Cliente</th>
+            <th class="border border-gray-400 px-4 py-2">Cantidad</th>
+            <th class="border border-gray-400 px-4 py-2">Precio</th>
+            <th class="border border-gray-400 px-4 py-2">Fecha</th>
+            <th class="border border-gray-400 px-4 py-2">Estado</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white">
+          <tr class="text-center hover:bg-gray-200">
+            <td class="border border-gray-400 px-4 py-2">1</td>
+            <td class="border border-gray-400 px-4 py-2">Aventura en Tierra del Fuego</td>
+            <td class="border border-gray-400 px-4 py-2">Carlos@gmail.com</td>
+            <td class="border border-gray-400 px-4 py-2">1</td>
+            <td class="border border-gray-400 px-4 py-2">$749000</td>
+            <td class="border border-gray-400 px-4 py-2">24/10/2025</td>
+            <td class="border border-gray-400 px-4 py-2">Pago</td>
+          </tr>
+          <tr class="text-center hover:bg-gray-200">
+            <td class="border border-gray-400 px-4 py-2">2</td>
+            <td class="border border-gray-400 px-4 py-2">Aventura en España - Barcelona</td>
+            <td class="border border-gray-400 px-4 py-2">María@gmail.com</td>
+            <td class="border border-gray-400 px-4 py-2">2</td>
+            <td class="border border-gray-400 px-4 py-2">$4300000</td>
+            <td class="border border-gray-400 px-4 py-2">28/10/2025</td>
+            <td class="border border-gray-400 px-4 py-2">Pendiente</td>
+          </tr>
+        </tbody>
+      </table>
                     <!-- Tabla de Usuarios -->
       <table data-type="users_Table" class="min-w-3xl max-w-full border border-gray-400 border-collapse rounded-lg mt-10">
         <thead class="bg-gray-300">
@@ -281,9 +316,9 @@
             <th class="border border-gray-400 px-4 py-2">ID</th>
             <th class="border border-gray-400 px-4 py-2">Usuario</th>
             <th class="border border-gray-400 px-4 py-2">Correo</th>
-            <th class="border border-gray-400 px-4 py-2">Paquete</th>
-            <th class="border border-gray-400 px-4 py-2">Precio</th>
-            <th class="border border-gray-400 px-4 py-2">Fecha</th>
+            <th class="border border-gray-400 px-4 py-2">País</th>
+            <th class="border border-gray-400 px-4 py-2">Provincia</th>
+            <th class="border border-gray-400 px-4 py-2">Estado</th>
             <th class="border border-gray-400 px-4 py-2">Acciones</th>
           </tr>
         </thead>
@@ -292,9 +327,9 @@
             <td class="border border-gray-400 px-4 py-2">1</td>
             <td class="border border-gray-400 px-4 py-2">Carlos</td>
             <td class="border border-gray-400 px-4 py-2">Carlos@gmail.com</td>
-            <td class="border border-gray-400 px-4 py-2">Tierra del Fuego</td>
-            <td class="border border-gray-400 px-4 py-2">$749000</td>
-            <td class="border border-gray-400 px-4 py-2"> 24/7/2025</td>
+            <td class="border border-gray-400 px-4 py-2">Argentina</td>
+            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+            <td class="border border-gray-400 px-4 py-2">Activo</td>
             <td class="border border-gray-400 px-4 py-2">
               <div class="flex flex-wrap gap-2 justify-center">
                 <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
@@ -308,9 +343,9 @@
             <td class="border border-gray-400 px-4 py-2">2</td>
             <td class="border border-gray-400 px-4 py-2">María</td>
             <td class="border border-gray-400 px-4 py-2">Maria@gmail.com</td>
-            <td class="border border-gray-400 px-4 py-2">Bariloche Premium</td>
-            <td class="border border-gray-400 px-4 py-2">$659000</td>
-            <td class="border border-gray-400 px-4 py-2"> 8/8/2025</td>
+            <td class="border border-gray-400 px-4 py-2">Argentina</td>
+            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
+            <td class="border border-gray-400 px-4 py-2">Activo</td>
             <td class="border border-gray-400 px-4 py-2">
               <div class="flex flex-wrap gap-2 justify-center">
                 <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
