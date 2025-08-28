@@ -25,6 +25,12 @@ requiredVars.forEach((v) => {
   }
 });
 
+if (!isProduction) {
+  dotenv.config({ path: ".env.local" });
+} else {
+  dotenv.config({ path: ".env.production" }); 
+}
+
 export const AppDataSource = new DataSource(
   isProduction
     ? {

@@ -23,7 +23,12 @@
       <p class="w-full shadow-lg text-xl font-medium border-b border-gray-400">Filtros</p>
       <button id="allTables_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Todo</button>
       <button id="packagesTable_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Paquetes</button>
+      <button id="ordersTable_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Ordenes</button>
       <button id="usersTable_Btn" class="w-full py-2 rounded-full bg-gray-200 cursor-pointer hover:bg-amber-300 transition-colors">Usuarios</button>
+    </div>
+    <div class="min-w-3xs text-center p-2 flex flex-col items-center gap-y-3 border border-gray-400 border-collapse rounded-lg">
+      <p class="w-full shadow-lg text-xl font-medium border-b border-gray-400">Búsqueda</p>
+      <input id="search_input" class="w-full py-2 px-4 rounded-full bg-gray-200 cursor-pointer focus:bg-gray-300"/>
     </div>
   </article>
   <main class="w-full bg-gray-200 flex flex-col items-center">
@@ -135,7 +140,7 @@
           <tr>
             <th class="border border-gray-400 px-4 py-2">ID</th>
             <th class="border border-gray-400 px-4 py-2">Paquete</th>
-            <th class="border border-gray-400 px-4 py-2">Origen</th>
+            <th class="border border-gray-400 px-4 py-2">Destino</th>
             <th class="border border-gray-400 px-4 py-2">Hotel</th>
             <th class="border border-gray-400 px-4 py-2">Servicios</th>
             <th class="border border-gray-400 px-4 py-2">Precio</th>
@@ -146,15 +151,15 @@
         </thead>
         <tbody class="bg-white">
           <tr class="text-center hover:bg-gray-200">
-            <td class="border border-gray-400 px-4 py-2">1</td>
-            <td class="border border-gray-400 px-4 py-2">Aventura en Tierra del Fuego</td>
-            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
-            <td class="border border-gray-400 px-4 py-2">Cap Polonio</td>
-            <td class="border border-gray-400 px-4 py-2">Catering</td>
-            <td class="border border-gray-400 px-4 py-2">$800000</td>
-            <td class="border border-gray-400 px-4 py-2">5%</td>
-            <td class="border border-gray-400 px-4 py-2">5 días</td>
-            <td class="border border-gray-400 px-4 py-2">
+            <td class="tableData">1</td>
+            <td class="tableData">Aventura en Tierra del Fuego</td>
+            <td class="tableData">Tierra del Fuego</td>
+            <td class="tableData">Cap Polonio</td>
+            <td class="tableData">Catering</td>
+            <td class="tableData">$800000</td>
+            <td class="tableData">5%</td>
+            <td class="tableData">5 días</td>
+            <td class="tableData">
               <div class="flex flex-wrap gap-2 justify-center">
                 <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
                 <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
@@ -164,15 +169,15 @@
             </td>
           </tr>
           <tr class="text-center bg-gray-100 hover:bg-gray-200">
-            <td class="border border-gray-400 px-4 py-2">2</td>
-            <td class="border border-gray-400 px-4 py-2">Aventura en Buenos Aires</td>
-            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
-            <td class="border border-gray-400 px-4 py-2">Metropolitano SUPARA</td>
-            <td class="border border-gray-400 px-4 py-2">Wi-Fi</td>
-            <td class="border border-gray-400 px-4 py-2">$935000</td>
-            <td class="border border-gray-400 px-4 py-2">5%</td>
-            <td class="border border-gray-400 px-4 py-2">6 días</td>
-            <td class="border border-gray-400 px-4 py-2">
+            <td class="tableData">2</td>
+            <td class="tableData">Aventura en Buenos Aires</td>
+            <td class="tableData">Buenos Aires</td>
+            <td class="tableData">Metropolitano SUPARA</td>
+            <td class="tableData">Wi-Fi</td>
+            <td class="tableData">$935000</td>
+            <td class="tableData">5%</td>
+            <td class="tableData">6 días</td>
+            <td class="tableData">
               <div class="flex flex-wrap gap-2 justify-center">
                 <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
                 <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
@@ -182,15 +187,15 @@
             </td>
           </tr>
           <tr class="text-center hover:bg-gray-200">
-            <td class="border border-gray-400 px-4 py-2">3</td>
-            <td class="border border-gray-400 px-4 py-2">Aventura en Jujuy - Los Siete Colores</td>
-            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
-            <td class="border border-gray-400 px-4 py-2">Altos de la Viña</td>
-            <td class="border border-gray-400 px-4 py-2">Wi-Fi</td>
-            <td class="border border-gray-400 px-4 py-2">$1150000</td>
-            <td class="border border-gray-400 px-4 py-2">15%</td>
-            <td class="border border-gray-400 px-4 py-2">10 días</td>
-            <td class="border border-gray-400 px-4 py-2">
+            <td class="tableData">3</td>
+            <td class="tableData">Aventura en Jujuy - Los Siete Colores</td>
+            <td class="tableData">Jujuy</td>
+            <td class="tableData">Altos de la Viña</td>
+            <td class="tableData">Wi-Fi</td>
+            <td class="tableData">$1150000</td>
+            <td class="tableData">15%</td>
+            <td class="tableData">10 días</td>
+            <td class="tableData">
               <div class="flex flex-wrap gap-2 justify-center">
                 <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
                 <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
@@ -200,15 +205,15 @@
             </td>
           </tr>
           <tr class="text-center bg-gray-100 hover:bg-gray-200">
-            <td class="border border-gray-400 px-4 py-2">4</td>
-            <td class="border border-gray-400 px-4 py-2">Aventura en España - Barcelona</td>
-            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
-            <td class="border border-gray-400 px-4 py-2">Ibis Barcelona Centro</td>
-            <td class="border border-gray-400 px-4 py-2">Ninguno</td>
-            <td class="border border-gray-400 px-4 py-2">$2350000</td>
-            <td class="border border-gray-400 px-4 py-2">10%</td>
-            <td class="border border-gray-400 px-4 py-2">7 días</td>
-            <td class="border border-gray-400 px-4 py-2">
+            <td class="tableData">4</td>
+            <td class="tableData">Aventura en España - Barcelona</td>
+            <td class="tableData">Barcelona</td>
+            <td class="tableData">Ibis Barcelona Centro</td>
+            <td class="tableData">Ninguno</td>
+            <td class="tableData">$2350000</td>
+            <td class="tableData">10%</td>
+            <td class="tableData">7 días</td>
+            <td class="tableData">
               <div class="flex flex-wrap gap-2 justify-center">
                 <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
                 <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
@@ -218,15 +223,15 @@
             </td>
           </tr>
           <tr class="text-center hover:bg-gray-200">
-            <td class="border border-gray-400 px-4 py-2">5</td>
-            <td class="border border-gray-400 px-4 py-2">Aventura en Francia - Paris</td>
-            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
-            <td class="border border-gray-400 px-4 py-2">The People Paris Marais</td>
-            <td class="border border-gray-400 px-4 py-2">Catering</td>
-            <td class="border border-gray-400 px-4 py-2">$2050000</td>
-            <td class="border border-gray-400 px-4 py-2">7%</td>
-            <td class="border border-gray-400 px-4 py-2">5 días</td>
-            <td class="border border-gray-400 px-4 py-2">
+            <td class="tableData">5</td>
+            <td class="tableData">Aventura en Francia - París</td>
+            <td class="tableData">París</td>
+            <td class="tableData">The People Paris Marais</td>
+            <td class="tableData">Catering</td>
+            <td class="tableData">$2050000</td>
+            <td class="tableData">7%</td>
+            <td class="tableData">5 días</td>
+            <td class="tableData">
               <div class="flex flex-wrap gap-2 justify-center">
                 <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
                 <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
@@ -236,15 +241,15 @@
             </td>
           </tr>
           <tr class="text-center bg-gray-100 hover:bg-gray-200">
-            <td class="border border-gray-400 px-4 py-2">6</td>
-            <td class="border border-gray-400 px-4 py-2">Aventura en Alemania - Baviera</td>
-            <td class="border border-gray-400 px-4 py-2">Córdoba</td>
-            <td class="border border-gray-400 px-4 py-2">Villa Ludwig</td>
-            <td class="border border-gray-400 px-4 py-2">Catering y Wi-Fi</td>
-            <td class="border border-gray-400 px-4 py-2">$2400000</td>
-            <td class="border border-gray-400 px-4 py-2">8%</td>
-            <td class="border border-gray-400 px-4 py-2">6 días</td>
-            <td class="border border-gray-400 px-4 py-2">
+            <td class="tableData">6</td>
+            <td class="tableData">Aventura en Alemania - Baviera</td>
+            <td class="tableData">Baviera</td>
+            <td class="tableData">Villa Ludwig</td>
+            <td class="tableData">Wi-Fi</td>
+            <td class="tableData">$2400000</td>
+            <td class="tableData">8%</td>
+            <td class="tableData">6 días</td>
+            <td class="tableData">
               <div class="flex flex-wrap gap-2 justify-center">
                 <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
                 <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
@@ -254,15 +259,15 @@
             </td>
           </tr>
           <tr class="text-center bg-gray-100 hover:bg-gray-200">
-            <td class="border border-gray-400 px-4 py-2"></td>
-            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-            <td class="border border-gray-400 px-4 py-2">
+            <td class="tableData"></td>
+            <td contenteditable="true" class="tableData"></td>
+            <td contenteditable="true" class="tableData"></td>
+            <td contenteditable="true" class="tableData"></td>
+            <td contenteditable="true" class="tableData"></td>
+            <td contenteditable="true" class="tableData"></td>
+            <td contenteditable="true" class="tableData"></td>
+            <td contenteditable="true" class="tableData"></td>
+            <td class="tableData">
               <div class="flex flex-wrap gap-2 justify-center">
                 <button onclick="editarLinea(this)" class="editRow_Btn hidden">Editar</button>
                 <button onclick="eliminarLinea(this)" class="deleteRow_Btn hidden">Eliminar</button>
@@ -274,6 +279,40 @@
           </tr>
         </tbody>
       </table>
+                    <!-- Tabla de Ordenes -->
+      <table data-type="orders_Table" class="min-w-3xl max-w-full border border-gray-400 border-collapse rounded-lg mt-10">
+        <thead class="bg-gray-300">
+          <tr>
+            <th class="border border-gray-400 px-4 py-2">ID</th>
+            <th class="border border-gray-400 px-4 py-2">Producto</th>
+            <th class="border border-gray-400 px-4 py-2">Cliente</th>
+            <th class="border border-gray-400 px-4 py-2">Cantidad</th>
+            <th class="border border-gray-400 px-4 py-2">Precio</th>
+            <th class="border border-gray-400 px-4 py-2">Fecha</th>
+            <th class="border border-gray-400 px-4 py-2">Estado</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white">
+          <tr class="text-center hover:bg-gray-200">
+            <td class="tableData">1</td>
+            <td class="tableData">Aventura en Tierra del Fuego</td>
+            <td class="tableData">Carlos@gmail.com</td>
+            <td class="tableData">1</td>
+            <td class="tableData">$749000</td>
+            <td class="tableData">24/10/2025</td>
+            <td class="tableData">Pago</td>
+          </tr>
+          <tr class="text-center hover:bg-gray-200">
+            <td class="tableData">2</td>
+            <td class="tableData">Aventura en España - Barcelona</td>
+            <td class="tableData">María@gmail.com</td>
+            <td class="tableData">2</td>
+            <td class="tableData">$4300000</td>
+            <td class="tableData">28/10/2025</td>
+            <td class="tableData">Pendiente</td>
+          </tr>
+        </tbody>
+      </table>
                     <!-- Tabla de Usuarios -->
       <table data-type="users_Table" class="min-w-3xl max-w-full border border-gray-400 border-collapse rounded-lg mt-10">
         <thead class="bg-gray-300">
@@ -281,21 +320,21 @@
             <th class="border border-gray-400 px-4 py-2">ID</th>
             <th class="border border-gray-400 px-4 py-2">Usuario</th>
             <th class="border border-gray-400 px-4 py-2">Correo</th>
-            <th class="border border-gray-400 px-4 py-2">Paquete</th>
-            <th class="border border-gray-400 px-4 py-2">Precio</th>
-            <th class="border border-gray-400 px-4 py-2">Fecha</th>
+            <th class="border border-gray-400 px-4 py-2">País</th>
+            <th class="border border-gray-400 px-4 py-2">Provincia</th>
+            <th class="border border-gray-400 px-4 py-2">Estado</th>
             <th class="border border-gray-400 px-4 py-2">Acciones</th>
           </tr>
         </thead>
         <tbody class="bg-white">
           <tr class="text-center hover:bg-gray-200">
-            <td class="border border-gray-400 px-4 py-2">1</td>
-            <td class="border border-gray-400 px-4 py-2">Carlos</td>
-            <td class="border border-gray-400 px-4 py-2">Carlos@gmail.com</td>
-            <td class="border border-gray-400 px-4 py-2">Tierra del Fuego</td>
-            <td class="border border-gray-400 px-4 py-2">$749000</td>
-            <td class="border border-gray-400 px-4 py-2"> 24/7/2025</td>
-            <td class="border border-gray-400 px-4 py-2">
+            <td class="tableData">1</td>
+            <td class="tableData">Carlos</td>
+            <td class="tableData">Carlos@gmail.com</td>
+            <td class="tableData">Argentina</td>
+            <td class="tableData">Córdoba</td>
+            <td class="tableData">Activo</td>
+            <td class="tableData">
               <div class="flex flex-wrap gap-2 justify-center">
                 <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
                 <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
@@ -305,13 +344,13 @@
             </td>
           </tr>
           <tr class="text-center bg-gray-100 hover:bg-gray-200">
-            <td class="border border-gray-400 px-4 py-2">2</td>
-            <td class="border border-gray-400 px-4 py-2">María</td>
-            <td class="border border-gray-400 px-4 py-2">Maria@gmail.com</td>
-            <td class="border border-gray-400 px-4 py-2">Bariloche Premium</td>
-            <td class="border border-gray-400 px-4 py-2">$659000</td>
-            <td class="border border-gray-400 px-4 py-2"> 8/8/2025</td>
-            <td class="border border-gray-400 px-4 py-2">
+            <td class="tableData">2</td>
+            <td class="tableData">María</td>
+            <td class="tableData">Maria@gmail.com</td>
+            <td class="tableData">Argentina</td>
+            <td class="tableData">Córdoba</td>
+            <td class="tableData">Activo</td>
+            <td class="tableData">
               <div class="flex flex-wrap gap-2 justify-center">
                 <button onclick="editarLinea(this)" class="editRow_Btn">Editar</button>
                 <button onclick="eliminarLinea(this)" class="deleteRow_Btn">Eliminar</button>
@@ -321,13 +360,13 @@
             </td>
           </tr>
           <tr class="text-center bg-gray-100 hover:bg-gray-200">
-            <td class="border border-gray-400 px-4 py-2"></td>
-            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-            <td contenteditable="true" class="border border-gray-400 px-4 py-2"></td>
-            <td class="border border-gray-400 px-4 py-2">
+            <td class="tableData"></td>
+            <td contenteditable="true" class="tableData"></td>
+            <td contenteditable="true" class="tableData"></td>
+            <td contenteditable="true" class="tableData"></td>
+            <td contenteditable="true" class="tableData"></td>
+            <td contenteditable="true" class="tableData"></td>
+            <td class="tableData">
               <div class="flex flex-wrap gap-2 justify-center">
                 <button onclick="editarLinea(this)" class="editRow_Btn hidden">Editar</button>
                 <button onclick="eliminarLinea(this)" class="deleteRow_Btn hidden">Eliminar</button>
@@ -342,6 +381,6 @@
     </article>
   </main>
   <script src="admin.js"></script>
-  <script src="tableFilter.js"></script>
+  <script src="tablesScript.js"></script>
 </body>
 </html>
