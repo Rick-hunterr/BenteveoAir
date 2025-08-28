@@ -22,7 +22,8 @@ export class Usuario {
   contraseña!: string
 
   @Column({ type: "varchar", length: 255 })
-  confirmarContraseña!: string
+  confirmarContraseña?: string;
+
 
   @Column({ type: "varchar", length: 50 })
   rol!: string

@@ -34,9 +34,9 @@ export async function paymentMercadopago(req: Request, res: Response) {
       body: {
         items: items,
         back_urls: {
-          success: "https://033fcfca19db.ngrok-free.app", // No contamos con un dominio que utilice el protocolo HTTPS
-          failure: "https://033fcfca19db.ngrok-free.app", 
-          pending: "https://033fcfca19db.ngrok-free.app", 
+          success: "https://7289ba75b98d.ngrok-free.app", // No contamos con un dominio que utilice el protocolo HTTPS
+          failure: "https://7289ba75b98d.ngrok-free.app", 
+          pending: "https://7289ba75b98d.ngrok-free.app", 
         },
         auto_return: "approved",
       },

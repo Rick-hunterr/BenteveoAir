@@ -20,8 +20,8 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
-    //allowedHosts: ["033fcfca19db.ngrok-free.app"], // temporal 
-    allowedHosts: ["0.0.0.0"], // permite accesos desde túneles o hosts locales
+    allowedHosts: ["7289ba75b98d.ngrok-free.app"], // temporal 
+    //allowedHosts: ["0.0.0.0"], // permite accesos desde túneles o hosts locales
   },
   define: {
     "import.meta.env.VITE_API_URL": JSON.stringify(API_URL),

@@ -28,22 +28,22 @@ export async function crearUsuario(req: Request, res: Response) {
   const ubicacion = req.body.ubicacion
 
   if (!nombre || !email || !contraseña || !confirmarContraseña || !rol) {
-    res.status(400).json({ 
-      error: "Nombre, email, contraseña, confirmarContraseña y rol son requeridos" 
+    res.status(400).json({
+      error: "Nombre, email, contraseña, confirmarContraseña y rol son requeridos"
     })
     return
   }
 
   if (contraseña.length < 4) {
-    res.status(400).json({ 
-      error: "La contraseña debe tener al menos 4 caracteres" 
+    res.status(400).json({
+      error: "La contraseña debe tener al menos 4 caracteres"
     })
     return
   }
 
   if (contraseña !== confirmarContraseña) {
-    res.status(400).json({ 
-      error: "Las contraseñas no coinciden" 
+    res.status(400).json({
+      error: "Las contraseñas no coinciden"
     })
     return
   }
@@ -75,16 +75,17 @@ export async function crearUsuario(req: Request, res: Response) {
       confirmarContraseña: hashedContraseña,
       rol: rol,
       ubicacion: ubicacionEntity,
-      emailVerificado: false, 
+      emailVerificado: false,
       verificationToken: verificationToken
     })
 
     const resultado = await repo.save(nuevoUsuario)
 
-     sendVerificationEmail(email, verificationToken)
+    sendVerificationEmail(email, verificationToken)
       .catch(error => console.error('Error al enviar email de verificación:', error))
+      .finally(() => console.log('Email de verificación enviado'))
 
-     res.status(201).json({
+    res.status(201).json({
       id: resultado.id,
       nombre: resultado.nombre,
       email: resultado.email,
@@ -94,9 +95,9 @@ export async function crearUsuario(req: Request, res: Response) {
     })
   } catch (error) {
     console.error("ERROR al crear usuario:", error)
-    res.status(500).json({ 
-      error: "Error al crear usuario", 
-      details: (error as any).message 
+    res.status(500).json({
+      error: "Error al crear usuario",
+      details: (error as any).message
     })
   }
 }
@@ -124,12 +125,13 @@ export async function loginUsuario(req: Request, res: Response) {
     }
 
     if (!usuario.emailVerificado) {
-    res.status(401).json({ 
-      error: "Por favor verifica tu email antes de iniciar sesión",
-      emailNotVerified: true 
-    });
-    return;
-  }
+      console.log("Email no verificado para el usuario:", email);
+      res.status(401).json({
+        error: "Por favor verifica tu email antes de iniciar sesión",
+        emailNotVerified: true
+      });
+      return;
+    }
 
     const esValido = await bcrypt.compare(contraseña, usuario.contraseña)
 
@@ -151,7 +153,7 @@ export async function loginUsuario(req: Request, res: Response) {
 
     if (!rol) {
       verificarRol(req, res)
-    }    
+    }
 
   } catch (error) {
     console.error("ERROR en loginUsuario:", error)
@@ -168,8 +170,8 @@ export async function verifyEmail(req: Request, res: Response) {
   }
 
   try {
-    const usuario = await repo.findOne({ 
-      where: { verificationToken: token as string } 
+    const usuario = await repo.findOne({
+      where: { verificationToken: token as string }
     });
 
     if (!usuario) {
@@ -181,7 +183,7 @@ export async function verifyEmail(req: Request, res: Response) {
     usuario.verificationToken = null;
     await repo.save(usuario);
 
-    res.redirect(`https://033fcfca19db.ngrok-free.app/email-verificado.html?success=true`);
+    res.redirect(`https://7289ba75b98d.ngrok-free.app/email-verificado.html?success=true`);
   } catch (error) {
     console.error("ERROR al verificar email:", error);
     res.status(500).json({ error: "Error al verificar email" });
